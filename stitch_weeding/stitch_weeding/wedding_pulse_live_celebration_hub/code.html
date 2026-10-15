@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}
+@keyframes pulse-subtle { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.85; transform: scale(1.03); } }
+.animate-pulse-subtle { animation: pulse-subtle 3s infinite ease-in-out; }
+@keyframes shimmer-gold { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+.shimmer-gold { background: linear-gradient(90deg, rgba(253,193,171,0.2) 0%, rgba(255,235,210,0.7) 50%, rgba(253,193,171,0.2) 100%); background-size: 200% 100%; animation: shimmer-gold 4s infinite linear; }
+</style><script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"outline":"#737872","inverse-surface":"#362f2d","on-primary-fixed":"#0e1f12","on-surface":"#211a18","on-tertiary":"#ffffff","surface-dim":"#e4d7d4","on-primary-fixed-variant":"#394b3b","tertiary":"#814f3c","surface-container-low":"#fff1ed","surface-container":"#f9ebe7","on-secondary-container":"#794d3b","surface":"#fff8f6","surface-container-high":"#f3e5e2","on-primary-container":"#f6fff4","on-tertiary-fixed-variant":"#683b29","secondary-container":"#fdc1ab","secondary":"#805341","inverse-primary":"#b7ccb7","on-error":"#ffffff","tertiary-container":"#9d6752","on-primary":"#ffffff","on-secondary-fixed":"#311306","surface-tint":"#506352","secondary-fixed":"#ffdbce","secondary-fixed-dim":"#f4b9a3","surface-bright":"#fff8f6","tertiary-fixed-dim":"#f9b79f","tertiary-fixed":"#ffdbce","primary-fixed-dim":"#b7ccb7","inverse-on-surface":"#fceeea","error-container":"#ffdad6","on-surface-variant":"#434843","surface-container-lowest":"#ffffff","background":"#fff8f6","on-secondary-fixed-variant":"#653c2c","on-secondary":"#ffffff","primary":"#4d6150","on-background":"#211a18","on-error-container":"#93000a","surface-container-highest":"#ede0dc","on-tertiary-fixed":"#331104","error":"#ba1a1a","outline-variant":"#c3c8c0","on-tertiary-container":"#fffbff","primary-container":"#667a68","primary-fixed":"#d2e8d3","surface-variant":"#ede0dc"},borderRadius:{"DEFAULT":"0.125rem","lg":"0.25rem","xl":"0.5rem","full":"0.75rem"},spacing:{"gutter-desktop":"2.5rem","space-lg":"2rem","margin-tablet":"2.5rem","space-md":"1.25rem","margin":"1.25rem","space-xs":"0.375rem","space-xl":"3.5rem","margin-desktop":"4rem","space-sm":"0.75rem","gutter":"1.5rem"},fontFamily:{"quote-italic":["Playfair Display"],"headline-sm":["Playfair Display"],"label-uppercase":["Montserrat"],"label-md":["Montserrat"],"headline-lg-mobile":["Playfair Display"],"display-hero":["Playfair Display"],"body-lg":["Montserrat"],"display-hero-mobile":["Playfair Display"],"headline-md":["Playfair Display"],"headline-lg":["Playfair Display"],"body-md":["Montserrat"],"body-sm":["Montserrat"]},fontSize:{"quote-italic":["20px",{lineHeight:"32px",letterSpacing:"0.01em",fontWeight:"400"}],"headline-sm":["22px",{lineHeight:"30px",letterSpacing:"0.01em",fontWeight:"500"}],"label-uppercase":["11px",{lineHeight:"16px",letterSpacing:"0.18em",fontWeight:"500"}],"label-md":["14px",{lineHeight:"20px",letterSpacing:"0.02em",fontWeight:"400"}],"headline-lg-mobile":["30px",{lineHeight:"38px",letterSpacing:"0em",fontWeight:"400"}],"display-hero":["56px",{lineHeight:"68px",letterSpacing:"-0.01em",fontWeight:"400"}],"body-lg":["17px",{lineHeight:"28px",letterSpacing:"0.015em",fontWeight:"300"}],"display-hero-mobile":["38px",{lineHeight:"46px",letterSpacing:"-0.01em",fontWeight:"400"}],"headline-md":["28px",{lineHeight:"36px",letterSpacing:"0em",fontWeight:"500"}],"headline-lg":["40px",{lineHeight:"48px",letterSpacing:"-0.005em",fontWeight:"400"}],"body-md":["15px",{lineHeight:"24px",letterSpacing:"0.01em",fontWeight:"300"}],"body-sm":["13px",{lineHeight:"20px",letterSpacing:"0.01em",fontWeight:"400"}]}}}};</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-20 max-w-7xl mx-auto px-gutter flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md"><a class="group flex flex-col justify-center text-left" data-path="overview" href="#"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight group-hover:text-primary transition-colors">J&amp;P</span><span class="font-label-uppercase text-label-uppercase text-secondary uppercase">Atelier Nuptial</span></a><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container text-on-surface-variant font-label-uppercase text-label-uppercase"><span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span><span>Live Celebration at Villa Bellissima</span></div></div><nav class="hidden lg:flex items-center gap-space-xs p-1" data-active-classes="bg-primary-container text-on-primary-container rounded-full"><a aria-current="page" class="px-space-sm py-space-xs font-label-md transition-all bg-primary-container text-on-primary-container rounded-full" data-path="overview" href="#">Overview</a><a class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-photo-stream" href="#photo-section">Live Photo Stream</a><a class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="event-chronogram-&amp;-milestones" href="#milestones-section">Event Chronogram &amp; Milestones</a><a class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="guest-to-guest-lounge" href="#guest-lounge">Guest-to-Guest Lounge</a><a class="px-space-sm py-space-xs rounded-full font-label-md text-label-md text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-all" data-path="live-status-&amp;-admin-pulses" href="#admin-pulses">Live Status &amp; Admin Pulses</a></nav><div class="flex items-center gap-space-sm"><div class="hidden sm:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-medium">Concierge Desk</span><span class="font-label-uppercase text-label-uppercase text-secondary uppercase">Guest Access</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center cursor-pointer hover:ring-2 hover:ring-secondary/40 transition-all"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Atmospheric Scrim & Ambient Canvas Elements -->
+<div class="relative w-full overflow-hidden bg-background">
+<!-- Subtle Ambient Lighting Glow -->
+<div class="pointer-events-none absolute -top-40 right-1/4 w-[700px] h-[700px] rounded-full bg-secondary-container/25 blur-[130px]"></div>
+<div class="pointer-events-none absolute top-[480px] -left-32 w-[550px] h-[550px] rounded-full bg-primary-fixed/30 blur-[120px]"></div>
+<div class="pointer-events-none absolute top-[1200px] right-10 w-[600px] h-[600px] rounded-full bg-secondary-fixed/25 blur-[140px]"></div>
+<!-- 1. Top Hero & Live Energy Header -->
+<section class="relative max-w-7xl mx-auto px-gutter pt-space-md pb-space-md">
+<!-- Live Celebration Status Ribbon & Live Music Banner -->
+<div class="flex flex-wrap items-center justify-between gap-space-sm mb-space-sm">
+<div class="flex flex-wrap items-center gap-2">
+<div class="flex items-center gap-space-xs bg-surface-container-low/95 backdrop-blur-md px-space-md py-1.5 rounded-full shadow-sm border border-secondary-container/40">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-primary -ml-2.5"></span>
+<span class="font-label-uppercase text-label-uppercase tracking-widest text-on-surface uppercase font-semibold">Real-Time Nuptial Sync Active</span>
+<span class="text-outline-variant font-light mx-1">•</span>
+<span class="font-label-uppercase text-label-uppercase text-secondary font-medium">Villa Bellissima, Siena</span>
+</div>
+<div class="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-secondary-container/40 border border-secondary/20 text-on-secondary-container text-xs font-label-md">
+<span class="material-symbols-outlined text-secondary text-[16px]">celebration</span>
+<span class="font-medium">65% of Nuptial Journey Flowing</span>
+</div>
+</div>
+<!-- Live Soundscape Banner -->
+<div class="flex items-center gap-space-xs px-3 py-1.5 rounded-full bg-primary-fixed/50 border border-primary/20 text-on-primary-fixed-variant font-label-md text-label-md shadow-xs">
+<span class="material-symbols-outlined text-primary text-[18px] animate-pulse">graphic_eq</span>
+<span class="font-quote-italic italic text-secondary text-sm">Now Playing:</span>
+<span class="font-medium text-xs">“Estate” • Italian Jazz Trio (Lemon Grove)</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</div>
+</div>
+<!-- Main Editorial Header Framing -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-end mb-space-md">
+<div class="lg:col-span-8 flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-sm">
+<span class="h-px w-10 bg-secondary"></span>
+<span class="font-label-uppercase text-label-uppercase tracking-[0.25em] text-secondary uppercase font-semibold">Tuscan Solstice Celebration • Live Hub</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface tracking-tight leading-[1.06]">
+            Wedding Pulse <span class="font-quote-italic text-quote-italic italic font-normal text-secondary">&amp; Live Stream</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mt-1 leading-relaxed">
+            Experience the living rhythm of Julia &amp; Pedro's nuptials in real-time across the cypress gardens, starlit loggia, and grand ballroom. Share snaps, toast tables, and sync with every heartfelt milestone.
+          </p>
+</div>
+<!-- Quick Interaction Deck -->
+<div class="lg:col-span-4 flex flex-col sm:flex-row lg:flex-col gap-space-xs justify-end">
+<button class="group flex items-center justify-between px-space-md py-3 rounded-xl bg-primary text-on-primary shadow-md hover:bg-on-primary-fixed-variant transition-all duration-300 ring-2 ring-primary/20 hover:shadow-lg" onclick="document.getElementById('upload-tray').scrollIntoView({behavior: 'smooth'})">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[22px]">photo_camera</span>
+<span class="font-label-uppercase text-label-uppercase tracking-wider font-semibold">Drop Snap to Live Stream</span>
+</div>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="flex gap-space-xs">
+<button class="flex-1 flex items-center justify-center gap-space-xs px-3 py-2.5 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors border border-outline-variant/30" onclick="document.getElementById('guest-lounge').scrollIntoView({behavior: 'smooth'})">
+<span class="material-symbols-outlined text-secondary text-[18px]">stylus_note</span>
+<span class="font-label-uppercase text-label-uppercase font-medium">Send Blessing</span>
+</button>
+<div class="flex-1 flex items-center justify-center gap-space-xs px-3 py-2.5 rounded-xl bg-secondary-fixed text-on-secondary-fixed border border-secondary/20 shadow-xs">
+<span class="material-symbols-outlined text-[18px]">table_bar</span>
+<span class="font-label-uppercase text-label-uppercase font-semibold tracking-wider">Table 4 • Bellini</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Live Vibe Indicators Bento Ticker -->
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-space-xs p-space-xs bg-surface-container-low rounded-xl shadow-sm border border-surface-container-high">
+<!-- Vibe 1: Current Event -->
+<div class="col-span-2 md:col-span-1 lg:col-span-1 p-space-md rounded-lg bg-surface-container flex flex-col justify-between border-l-4 border-primary">
+<div class="flex items-center justify-between text-secondary mb-space-xs">
+<span class="font-label-uppercase text-label-uppercase font-semibold flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>Cadence</span>
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface leading-tight">Sunset Aperitivo</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Bel Paese Terrace • Toasts in flow</p>
+</div>
+</div>
+<!-- Vibe 2: Weather & Light -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-space-xs">
+<span class="font-label-uppercase text-label-uppercase font-medium">Tuscan Light</span>
+<span class="material-symbols-outlined text-[18px]">wb_twilight</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface leading-tight">Golden Dusk 20°C</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Cypress Breeze • Magic Hour</p>
+</div>
+</div>
+<!-- Vibe 3: Presence -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-space-xs">
+<span class="font-label-uppercase text-label-uppercase font-medium">Presence</span>
+<span class="material-symbols-outlined text-[18px]">group</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface leading-tight">98 / 98 Present</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">100% Guests Reunited &amp; Checked-in</p>
+</div>
+</div>
+<!-- Vibe 4: Vault Media -->
+<div class="p-space-md rounded-lg bg-surface-container flex flex-col justify-between">
+<div class="flex items-center justify-between text-secondary mb-space-xs">
+<span class="font-label-uppercase text-label-uppercase font-semibold text-primary">Shared Snaps</span>
+<span class="material-symbols-outlined text-[18px]">photo_library</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface leading-tight">284 Photos</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">+36 uploaded this past 15m</p>
+</div>
+</div>
+<!-- Vibe 5: Live Soundscape -->
+<div class="col-span-2 md:col-span-2 lg:col-span-1 p-space-md rounded-lg bg-primary-fixed-dim/40 flex flex-col justify-between">
+<div class="flex items-center justify-between text-on-primary-fixed-variant mb-space-xs">
+<span class="font-label-uppercase text-label-uppercase font-semibold">Next Key Moment</span>
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</div>
+<div>
+<div class="font-body-md text-body-md font-semibold text-on-primary-fixed leading-snug">Grand Loggia Dinner</div>
+<p class="font-body-sm text-body-sm text-on-primary-fixed-variant mt-1">Seating Call in 35 Minutes (19:15 CET)</p>
+</div>
+</div>
+</div>
+</section>
+<!-- REAL-TIME PHOTO TICKER: "Just Shared Seconds Ago" -->
+<div class="max-w-7xl mx-auto px-gutter mb-space-md">
+<div class="flex items-center gap-space-sm p-2 px-4 rounded-full bg-secondary-fixed/50 border border-secondary/20 shadow-xs overflow-x-auto">
+<div class="flex items-center gap-1.5 shrink-0">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-label-uppercase text-[11px] font-bold tracking-wider text-secondary uppercase">Just Shared Live:</span>
+</div>
+<div class="flex items-center gap-4 text-xs font-label-md text-on-surface overflow-x-auto whitespace-nowrap">
+<span class="inline-flex items-center gap-1.5 bg-surface/80 px-2.5 py-1 rounded-full"><span class="w-4 h-4 rounded-full bg-secondary text-[9px] text-on-secondary flex items-center justify-center font-bold">SR</span> <strong>Sofia Rossi</strong> uploaded <em>“Spritz cheers on Terrace”</em> • 18s ago</span>
+<span class="inline-flex items-center gap-1.5 bg-surface/80 px-2.5 py-1 rounded-full"><span class="w-4 h-4 rounded-full bg-primary text-[9px] text-on-primary flex items-center justify-center font-bold">MR</span> <strong>Matteo R.</strong> uploaded <em>“Master Roberto crafting Gin Fizz”</em> • 1m ago</span>
+<span class="inline-flex items-center gap-1.5 bg-surface/80 px-2.5 py-1 rounded-full"><span class="w-4 h-4 rounded-full bg-tertiary text-[9px] text-on-tertiary flex items-center justify-center font-bold">CS</span> <strong>Camilla S.</strong> uploaded <em>“Loggia candelabras lit up”</em> • 3m ago</span>
+<span class="inline-flex items-center gap-1.5 bg-surface/80 px-2.5 py-1 rounded-full"><span class="w-4 h-4 rounded-full bg-surface-dim text-[9px] text-on-surface flex items-center justify-center font-bold">LP</span> <strong>Luca P.</strong> uploaded <em>“Sunset panorama over cypress”</em> • 4m ago</span>
+</div>
+</div>
+</div>
+<!-- 2. Central Focus: Live Shared Photo Stream ("Moments in Motion") -->
+<section class="max-w-7xl mx-auto px-gutter py-space-md" id="photo-section">
+<!-- Section Deck -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md pb-space-sm border-b border-surface-container">
+<div>
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">shutter_speed</span>
+<span class="font-label-uppercase text-label-uppercase font-semibold tracking-wider">Atelier Gallery Live Sync • 284 Snaps</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Moments in Motion</h2>
+<p class="font-quote-italic text-quote-italic text-secondary">A living mosaic of spontaneous laughter, golden hour vows, and clinking crystal.</p>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap items-center gap-space-xs" id="photo-filters">
+<button class="px-space-sm py-1.5 rounded-full bg-primary text-on-primary font-label-uppercase text-label-uppercase tracking-wider transition-all shadow-xs flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-on-primary"></span> All Live Snaps (284)
+</button>
+<button class="px-space-sm py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-uppercase text-label-uppercase tracking-wider transition-all">Ceremony Vows (74)</button>
+<button class="px-space-sm py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-uppercase text-label-uppercase tracking-wider transition-all">Sunset Aperitivo (118)</button>
+<button class="px-space-sm py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-uppercase text-label-uppercase tracking-wider transition-all">Lemon Grove (48)</button>
+<button class="px-space-sm py-1.5 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high font-label-uppercase text-label-uppercase tracking-wider transition-all">Guest Candids &amp; Toasts (44)</button>
+</div>
+</div>
+<!-- Prominent Instant Camera & Upload Balustrade Bar -->
+<div class="p-space-md rounded-2xl bg-gradient-to-r from-surface-container-low via-surface-container to-secondary-fixed/40 mt-space-md mb-space-lg shadow-sm border border-secondary-container/40" id="upload-tray">
+<div class="flex flex-col lg:flex-row items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-md w-full lg:w-auto">
+<div class="w-14 h-14 rounded-2xl bg-primary text-on-primary flex items-center justify-center shrink-0 shadow-md">
+<span class="material-symbols-outlined text-[30px]">camera_enhance</span>
+</div>
+<div>
+<div class="flex items-center gap-2">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">Instant Camera &amp; Upload Balustrade</h4>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed-variant text-[10px] font-label-uppercase font-bold">Auto-Sync 4K</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Snap directly from your device or drop photos into Julia &amp; Pedro's shared nuptial vault.</p>
+</div>
+</div>
+<!-- Filter Presets & Actions -->
+<div class="flex flex-wrap items-center gap-space-xs w-full lg:w-auto justify-start lg:justify-end">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant mr-1">Instant Film Filter:</span>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface text-on-surface hover:bg-surface-container-high font-label-md text-xs shadow-xs flex items-center gap-1.5 border border-surface-container-highest">
+<span class="w-2.5 h-2.5 rounded-full bg-secondary"></span> Tuscan Golden Hour
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface text-on-surface hover:bg-surface-container-high font-label-md text-xs shadow-xs flex items-center gap-1.5 border border-surface-container-highest">
+<span class="w-2.5 h-2.5 rounded-full bg-outline"></span> Monochrome 35mm
+</button>
+<button class="px-space-sm py-1.5 rounded-lg bg-surface text-on-surface hover:bg-surface-container-high font-label-md text-xs shadow-xs flex items-center gap-1.5 border border-surface-container-highest">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span> Vintage Kodachrome
+</button>
+<button class="px-space-md py-2 rounded-xl bg-primary text-on-primary font-label-uppercase text-label-uppercase font-semibold tracking-wider hover:bg-on-primary-fixed-variant transition-all flex items-center gap-1.5 ml-1 shadow-md hover:scale-[1.02]">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span> Quick Snap
+</button>
+</div>
+</div>
+</div>
+<!-- Live Spotlight Banner -->
+<div class="relative w-full rounded-2xl overflow-hidden bg-surface-container-lowest shadow-lg mb-space-lg border border-surface-container">
+<div class="grid grid-cols-1 lg:grid-cols-12 items-stretch">
+<div class="lg:col-span-8 relative min-h-[380px] lg:min-h-[480px]">
+<img class="w-full h-full object-cover" data-alt="Breathtaking Tuscan sunset nuptial photograph of Julia and Pedro kissing under a classical stone archway surrounded by ancient olive trees and terracotta urns in Florence Villa Bellissima with soft amber rim light and editorial fine art depth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJG_8QcaIrcsW8gjUEeuFzwLAAZkk-7WhdwKwAiXCszpYVYFV_T3cJryKFsS2AOHOMcUDI2KRqJ9PL7_-qw1SyQPsQa_hOfHtnp9nC2Fqr03MTc2srnxH0J6otZ2OMbSf4c_v8rlOycGyvQs4Kn2Jxyj__zjk3GVR72IOzNg6pG26BoFoCyLkRR7RJYj-Ud8NDbF7znJp_uKw1BG0sU9iX3MpwZIPnecqJXNcveFl0diU2Mj49xI"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-on-surface/20 to-transparent lg:hidden"></div>
+<div class="absolute top-space-md left-space-md flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface/95 backdrop-blur-md shadow-md border border-secondary-container">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="w-2 h-2 rounded-full bg-primary -ml-2"></span>
+<span class="font-label-uppercase text-label-uppercase font-semibold text-on-surface tracking-wider">Spotlight Nuptial Masterpiece</span>
+</div>
+<!-- Live Floating Reactions Overlay on Photo -->
+<div class="absolute bottom-4 left-4 flex flex-wrap items-center gap-1.5">
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-xs font-semibold text-on-surface shadow-xs">❤️ 142</span>
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-xs font-semibold text-on-surface shadow-xs">🥂 89</span>
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-xs font-semibold text-on-surface shadow-xs">✨ 54</span>
+<span class="px-2.5 py-1 rounded-full bg-surface/90 backdrop-blur-md text-xs font-semibold text-on-surface shadow-xs">💃 36</span>
+</div>
+</div>
+<div class="lg:col-span-4 p-space-lg flex flex-col justify-between bg-surface-container-low">
+<div class="space-y-space-sm">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold tracking-widest uppercase">The Olive Terrace • 16:48 CET</span>
+<span class="px-2 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-uppercase text-[10px] font-bold">Featured Cover</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface leading-tight">
+                The Nuptial Kiss Beneath the Cypress Trees
+              </h3>
+<p class="font-quote-italic text-quote-italic text-secondary text-base leading-relaxed">
+                “A breathless silence across the hills, followed by spontaneous applause from every soul present.”
+              </p>
+<div class="pt-space-xs flex items-center gap-space-xs p-2 rounded-xl bg-surface/70 border border-surface-container">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-uppercase text-label-uppercase text-xs font-bold">FB</div>
+<div class="font-body-sm text-body-sm text-on-surface">
+<span class="font-medium block">Federico Bellini</span>
+<span class="text-on-surface-variant text-[11px]">Official Nuptial Documentarian</span>
+</div>
+</div>
+</div>
+<div class="pt-space-md border-t border-surface-container space-y-3">
+<!-- Interactive Emoji Reactions Bar -->
+<div class="flex items-center justify-between gap-1">
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-secondary-fixed text-on-secondary-fixed hover:bg-secondary-fixed-dim transition-colors text-xs font-semibold">
+<span>❤️</span> <span>142</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface">
+<span>🥂</span> <span>89</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface">
+<span>✨</span> <span>54</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-full bg-surface-container hover:bg-surface-container-high transition-colors text-xs font-semibold text-on-surface">
+<span>💃</span> <span>36</span>
+</button>
+</div>
+<div class="flex items-center justify-between">
+<button class="flex items-center gap-1 text-on-surface font-label-md text-xs hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">chat_bubble</span>
+<span>18 guest remarks</span>
+</button>
+<button class="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-surface border border-outline-variant/40 text-on-surface font-label-md text-xs hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-[16px]">file_download</span>
+<span>Save to Keepsake</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Rich Live Photo Masonry Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-space-md">
+<!-- Photo Card 1: Guests Toasting -->
+<div class="group rounded-2xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col border border-surface-container">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Chic guests dressed in linen suits and flowing silk summer dresses raising flutes of sparkling prosecco and limoncello spritz under shaded pergolas in Siena garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEhSfJgvlOJXH9Re7qzxsAJsKeNX_wgYqNVf4efC6PpnXGjsGbrB0Awv_KgT4F0Kz43Q4IYITZncVLLbFhW9X8l4p2yWg8jTaKu5hC9yR0wkdIsP--lM7jSKttMCrFc0QcT0YP7t6wFdxDb5frexGiZZlo6z0m9LkoOIAV9tODrd0rG1YTfrU1z7HGnKQhvhOysTJe8QivCy9m1rajhBTzpi6z2DXfmwBOYCCwKIH9px2F8lpZpU4"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface font-label-uppercase text-[10px] font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px] text-secondary">pin_drop</span> Terrace Bel Paese
+</div>
+<div class="absolute top-3 right-3 bg-primary/90 text-on-primary px-2 py-0.5 rounded-full font-label-uppercase text-[10px] font-semibold">
+  Live • 3m ago
+</div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-[11px] font-semibold text-on-surface shadow-xs">🥂 28</span>
+<span class="px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-[11px] font-semibold text-on-surface shadow-xs">❤️ 41</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-uppercase text-[10px] font-bold ring-2 ring-secondary/20">SR</div>
+<div>
+<span class="font-label-md text-xs font-semibold text-on-surface block">Sofia Rossi</span>
+<span class="text-on-surface-variant text-[11px]">Table 4 • Bellini</span>
+</div>
+</div>
+<span class="text-[11px] text-on-surface-variant font-label-uppercase">3m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+  “The spritz table by the stone fountain is pure poetry. Cheers to the most radiant bride and sweetest couple!”
+</p>
+</div>
+<div class="pt-space-sm mt-space-xs border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 text-tertiary hover:scale-110 transition-transform font-label-md text-xs font-semibold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>41</span>
+</button>
+<button class="flex items-center gap-1 text-secondary hover:scale-110 transition-transform font-label-md text-xs font-semibold">
+<span>🥂</span>
+<span>28</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-[15px]">chat_bubble_outline</span>
+<span>6 remarks</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Photo Card 2: Cocktail Artisanship -->
+<div class="group rounded-2xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col border border-surface-container">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Close up artisanal Italian cocktail bar with sliced Amalfi lemons, sprigs of fresh rosemary, crystal vintage coupe glasses, and chilled Prosecco bottles on aged rustic wood" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCwwcWpwWp7LoH31wYGZhsk2Ry8MnbvtaoMVYayN7AjQfax6ZfwQ9OEjgQ5ipq0_85ibLwA24kBOcmB4shnlrnrtRspB-ubfOAcH3hZAn5thbbk5rY34DgkfqrwWQXLq_LtRVQli5pmceYwbRgzaIBkX9No33XBKbM6V9yJUFgkdmRHfX_D1ifdN8HvRbMXK8-TLpScQpelpNIfsUWRnHddgnowq8JXpiabV5Y3pDXP35Y8q8Du-e8"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface font-label-uppercase text-[10px] font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px] text-secondary">pin_drop</span> Lemon Grove Courtyard
+</div>
+<div class="absolute top-3 right-3 bg-inverse-surface/80 text-inverse-on-surface px-2 py-0.5 rounded-full font-label-uppercase text-[10px]">
+  7m ago
+</div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-[11px] font-semibold text-on-surface shadow-xs">🍸 34</span>
+<span class="px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-[11px] font-semibold text-on-surface shadow-xs">🍋 19</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-label-uppercase text-[10px] font-bold ring-2 ring-primary/20">MR</div>
+<div>
+<span class="font-label-md text-xs font-semibold text-on-surface block">Matteo R.</span>
+<span class="text-on-surface-variant text-[11px]">Limonaia Court • Groomsman</span>
+</div>
+</div>
+<span class="text-[11px] text-on-surface-variant font-label-uppercase">7m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+  “The rosemary infused gin &amp; homemade tonic concoction. Master Mixologist Roberto is pulling off pure magic.”
+</p>
+</div>
+<div class="pt-space-sm mt-space-xs border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 text-tertiary hover:scale-110 transition-transform font-label-md text-xs font-semibold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>29</span>
+</button>
+<button class="flex items-center gap-1 text-secondary hover:scale-110 transition-transform font-label-md text-xs font-semibold">
+<span>🍾</span>
+<span>15</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-[15px]">chat_bubble_outline</span>
+<span>3 remarks</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Photo Card 3: Grand Starlit Loggia Setup -->
+<div class="group rounded-2xl overflow-hidden bg-surface-container-lowest shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col border border-surface-container">
+<div class="relative aspect-[4/3] overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Grand outdoor banquet table setting under Tuscan villa stone arches decorated with ivory taper candles in brass holders, olive branch garlands, and handwritten calligraphy place cards" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7-arweJcX-fNdIDC2Ke6Emq9EAiUHiLluFPhOowLEVO8nWrCJ2Ban01a2KD8Uw20LQBZEbaP-zMjGE8fJJqRxE4IdC9cgzjhsuXY9Qtp_or8DCe7mhqe3Ii_mLR8O-O5uJSHbvxOXoatg-Rtig8YovEG5LEXN-q9YtBDKflcdvXSCs5JH6mukOOI0u0s7gXSYHXCaaY3E3QXdh6ArfvJ2vyeJTzDyT-ZK8yyIXRnx5EmGbTuCexY"/>
+<div class="absolute top-3 left-3 bg-surface/90 backdrop-blur-sm px-2.5 py-1 rounded-full text-on-surface font-label-uppercase text-[10px] font-semibold flex items-center gap-1 shadow-xs">
+<span class="material-symbols-outlined text-[13px] text-secondary">pin_drop</span> Grand Starlit Loggia
+</div>
+<div class="absolute top-3 right-3 bg-inverse-surface/80 text-inverse-on-surface px-2 py-0.5 rounded-full font-label-uppercase text-[10px]">
+  14m ago
+</div>
+<div class="absolute bottom-3 left-3 flex items-center gap-1">
+<span class="px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-[11px] font-semibold text-on-surface shadow-xs">✨ 68</span>
+<span class="px-2 py-0.5 rounded-full bg-surface/90 backdrop-blur-sm text-[11px] font-semibold text-on-surface shadow-xs">🕯️ 52</span>
+</div>
+</div>
+<div class="p-space-md flex flex-col flex-1 justify-between">
+<div>
+<div class="flex items-center justify-between mb-space-xs">
+<div class="flex items-center gap-2">
+<div class="w-7 h-7 rounded-full bg-secondary-fixed-dim text-on-secondary-fixed-variant flex items-center justify-center font-label-uppercase text-[10px] font-bold ring-2 ring-secondary/20">CS</div>
+<div>
+<span class="font-label-md text-xs font-semibold text-on-surface block">Camilla Santoro</span>
+<span class="text-on-surface-variant text-[11px]">Maid of Honor</span>
+</div>
+</div>
+<span class="text-[11px] text-on-surface-variant font-label-uppercase">14m ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+  “Sneak peek of the dining loggia before call to tables. Floating candles are illuminated and the fragrance of olive branches is unreal!”
+</p>
+</div>
+<div class="pt-space-sm mt-space-xs border-t border-surface-container flex items-center justify-between">
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 text-tertiary hover:scale-110 transition-transform font-label-md text-xs font-semibold">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+<span>72</span>
+</button>
+<button class="flex items-center gap-1 text-secondary hover:scale-110 transition-transform font-label-md text-xs font-semibold">
+<span>✨</span>
+<span>39</span>
+</button>
+</div>
+<div class="flex items-center gap-1 text-on-surface-variant font-label-md text-xs">
+<span class="material-symbols-outlined text-[15px]">chat_bubble_outline</span>
+<span>11 remarks</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 3. Celebration Milestones & Chronogram -->
+<section class="max-w-7xl mx-auto px-gutter py-space-lg" id="milestones-section">
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">history_edu</span>
+<span class="font-label-uppercase text-label-uppercase font-semibold tracking-wider">Atelier Itinerary Cadence &amp; Journey</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Celebration Milestones &amp; Chronogram</h2>
+<p class="font-quote-italic text-quote-italic text-secondary">A harmonious progression of moments woven under the Tuscan sky.</p>
+</div>
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-3">
+<div class="flex items-center gap-space-xs bg-surface-container px-space-md py-1.5 rounded-full border border-surface-container-high">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface font-semibold text-xs">Synchronized with Master Chrono</span>
+</div>
+<span class="font-label-uppercase text-[11px] font-bold text-secondary bg-secondary-fixed/60 px-3 py-1 rounded-full">Phase 3 of 5 In Flight</span>
+</div>
+</div>
+<!-- Wedding Journey Progress Bar -->
+<div class="p-space-md rounded-2xl bg-surface-container-low border border-surface-container mb-space-lg">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-uppercase text-xs font-semibold text-on-surface">Wedding Timeline Progress (65% Complete)</span>
+<span class="font-label-uppercase text-xs font-bold text-secondary">Next: Grand Loggia Gala (19:30 CET)</span>
+</div>
+<div class="w-full h-3 rounded-full bg-surface-container overflow-hidden p-0.5">
+<div class="h-full rounded-full bg-gradient-to-r from-primary via-primary-container to-secondary" style="width: 65%;"></div>
+</div>
+<div class="grid grid-cols-4 text-center mt-2 font-label-uppercase text-[10px] text-on-surface-variant">
+<span class="text-primary font-semibold">14:00 Transfers ✓</span>
+<span class="text-primary font-semibold">16:30 Vows Exchanged ✓</span>
+<span class="text-secondary font-bold">18:00 Aperitivo (Now)</span>
+<span class="text-outline">22:00 Cake &amp; Midnight DJ</span>
+</div>
+</div>
+<!-- Split Milestone Architecture: Completed vs In Flight vs Upcoming -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Left: Completed Milestones (Activities Done) -->
+<div class="lg:col-span-5 space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[22px]">task_alt</span> Activities Accomplished
+</h3>
+<span class="font-label-uppercase text-label-uppercase text-primary font-semibold px-2.5 py-0.5 rounded-full bg-primary-fixed text-xs">3 of 7 Concluded</span>
+</div>
+<!-- Completed Item 1 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-xs flex flex-col gap-space-xs border border-surface-container/70 opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold">14:00 CET • Arrival</span>
+<span class="flex items-center gap-1 font-label-uppercase text-label-uppercase text-primary font-bold text-[10px] bg-primary-fixed/60 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluded
+</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Florence S.M. Novella Shuttle Transfers</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">All 42 arriving train passengers chauffeured smoothly through Chianti hills to Villa suites without delay.</p>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-label-md text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">directions_bus</span> 3 Mercedes Sprinters Checked In</span>
+<span class="text-secondary font-medium">Memory logged ✓</span>
+</div>
+</div>
+<!-- Completed Item 2 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-xs flex flex-col gap-space-xs border border-surface-container/70 opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold">15:30 CET • Gathering</span>
+<span class="flex items-center gap-1 font-label-uppercase text-label-uppercase text-primary font-bold text-[10px] bg-primary-fixed/60 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluded
+</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Welcome Aperitivo &amp; Tuscan String Quartet</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Chilled white peach Bellinis and fresh pecorino pastries served in the Lemon Grove under shade umbrellas.</p>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-label-md text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">music_note</span> Vivaldi Spring &amp; Morricone</span>
+<span class="text-secondary font-medium">48 Snaps logged</span>
+</div>
+</div>
+<!-- Completed Item 3 -->
+<div class="p-space-md rounded-xl bg-surface-container-lowest shadow-xs flex flex-col gap-space-xs border border-surface-container/70 opacity-90 hover:opacity-100 transition-opacity">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold">16:30 CET • Sacred Moment</span>
+<span class="flex items-center gap-1 font-label-uppercase text-label-uppercase text-primary font-bold text-[10px] bg-primary-fixed/60 px-2 py-0.5 rounded-full">
+<span class="material-symbols-outlined text-[13px]">check_circle</span> Concluded
+</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface text-[18px]">Nuptial Vows at The Olive Terrace</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Solemn covenant vows exchanged overlooking the Siena valley. Olive branch rings blessed by Father Matteo.</p>
+<div class="pt-1 flex items-center justify-between text-on-surface-variant font-label-md text-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[15px]">favorite</span> 100% Guests in Attendance</span>
+<span class="text-secondary font-medium">Spotlight Moment captured</span>
+</div>
+</div>
+</div>
+<!-- Right: Active & Upcoming Festivities -->
+<div class="lg:col-span-7 space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<h3 class="font-headline-sm text-headline-sm text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">hourglass_top</span> Present Pulse &amp; Upcoming
+</h3>
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold px-2.5 py-0.5 rounded-full bg-secondary-fixed text-xs">Live Focus</span>
+</div>
+<!-- HAPPENING NOW (Hero Accent) -->
+<div class="p-space-lg rounded-2xl bg-surface-container-high shadow-md relative overflow-hidden border border-secondary/30">
+<div class="absolute -right-8 -bottom-8 w-48 h-48 rounded-full bg-secondary-container/40 blur-2xl pointer-events-none"></div>
+<div class="flex flex-wrap items-center justify-between gap-space-xs mb-space-xs">
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-primary text-on-primary shadow-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-on-primary animate-ping"></span>
+<span class="font-label-uppercase text-label-uppercase font-bold tracking-widest uppercase text-xs">Happening Now • 18:00 CET</span>
+</div>
+<span class="font-quote-italic text-quote-italic text-secondary font-medium">Golden Hour Light Window Active</span>
+</div>
+<h4 class="font-headline-md text-headline-md text-on-surface mt-2">
+  Tuscan Sunset Aperitivo &amp; Golden Hour Portraits
+</h4>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs leading-relaxed">
+  Terrace Bel Paese &amp; Cypress Alleé. Savor chilled Limoncello Spritz, freshly sliced San Daniele prosciutto, and artisanal Tuscan fritto misto while our portrait documentarians circulate.
+</p>
+<div class="mt-space-md p-space-sm rounded-xl bg-surface/90 flex flex-wrap items-center justify-between gap-space-sm border border-secondary-container/40">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[20px]">photo_camera</span>
+<span class="font-label-md text-xs text-on-surface font-semibold">Portrait Stations 1 &amp; 2 active on lower stone balustrade</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase text-secondary font-bold text-xs bg-secondary-fixed px-2.5 py-1 rounded-full">Ends in 35m (19:15 CET)</span>
+</div>
+</div>
+<!-- Upcoming Timeline Cards -->
+<div class="space-y-space-xs">
+<!-- Next Up: Gala Dinner -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors border border-surface-container-highest">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-bold text-xs">19:30 CET</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-uppercase text-[10px] uppercase font-bold animate-pulse">In 35 Minutes</span>
+</div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface text-[19px]">Five-Course Tuscan Gala Banquet &amp; Nuptial Toasts</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Grand Starlit Loggia. Seating begins 19:15 CET with welcome glass of vintage Brunello di Montalcino.</p>
+</div>
+<div class="shrink-0 flex flex-col items-end">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold text-xs">Loggia West</span>
+<span class="text-on-surface-variant font-body-sm text-[12px]">Formal Nuptial • 12 Tables</span>
+</div>
+</div>
+<!-- Later Tonight: Cake & DJ -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors border border-surface-container-highest">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-uppercase text-label-uppercase text-outline font-bold text-xs">22:00 CET</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-uppercase text-[10px] uppercase font-semibold">Celebration Peak</span>
+</div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface text-[19px]">Live Millefoglie Assembling, Fireworks &amp; Midnight DJ</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Poolside Lawn &amp; Cellar Club. Monumental crispy pastry built live before midnight fireworks show.</p>
+</div>
+<div class="shrink-0 flex flex-col items-end">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold text-xs">Poolside Lawn</span>
+<span class="text-on-surface-variant font-body-sm text-[12px]">Fireworks at 22:45 CET</span>
+</div>
+</div>
+<!-- Late Night: Pizza & Star Gazing -->
+<div class="p-space-md rounded-xl bg-surface-container flex flex-col md:flex-row items-start md:items-center justify-between gap-space-sm hover:bg-surface-container-high transition-colors border border-surface-container-highest">
+<div class="space-y-1">
+<div class="flex items-center gap-2">
+<span class="font-label-uppercase text-label-uppercase text-outline font-bold text-xs">01:30 CET</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-on-surface-variant font-label-uppercase text-[10px] uppercase font-semibold">Late Night Comfort</span>
+</div>
+<h5 class="font-headline-sm text-headline-sm text-on-surface text-[19px]">Wood-Fired Pizza Oven &amp; Val d'Orcia Star Gazing</h5>
+<p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Courtyard Brick Oven. Neapolitan slices, chilled espresso martinis &amp; astronomical telescope viewing.</p>
+</div>
+<div class="shrink-0 flex flex-col items-end">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-semibold text-xs">Courtyard Oven</span>
+<span class="text-on-surface-variant font-body-sm text-[12px]">Until 03:00 CET</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 4. Enhanced Guest-to-Guest Lounge ("Message the Other Person") -->
+<section class="max-w-7xl mx-auto px-gutter py-space-lg" id="guest-lounge">
+<div class="flex flex-col lg:flex-row items-start lg:items-end justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[20px]">forum</span>
+<span class="font-label-uppercase text-label-uppercase font-semibold tracking-wider">Live Table Conclave &amp; Direct Cheers</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Guest-to-Guest Lounge</h2>
+<p class="font-quote-italic text-quote-italic text-secondary">Exchange table greetings, send celebratory sound bites, and coordinate toasts across the villa.</p>
+</div>
+<div class="flex items-center gap-2 text-on-surface-variant font-label-md text-xs bg-surface-container px-3 py-1.5 rounded-full">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span class="font-semibold text-on-surface">54 guests active in live lounge</span>
+</div>
+</div>
+<!-- Tap-to-Cheer Quick Response Bar -->
+<div class="p-space-sm rounded-2xl bg-secondary-fixed/40 border border-secondary/20 mb-space-md flex flex-wrap items-center justify-between gap-2 shadow-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-uppercase text-xs font-bold text-secondary uppercase">Tap to Cheer Instantly:</span>
+</div>
+<div class="flex flex-wrap items-center gap-1.5">
+<button class="px-3 py-1.5 rounded-full bg-surface text-on-surface hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-xs font-semibold shadow-xs transition-transform active:scale-95 flex items-center gap-1">
+<span>🥂</span> <span>“Cin Cin!”</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface text-on-surface hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-xs font-semibold shadow-xs transition-transform active:scale-95 flex items-center gap-1">
+<span>🍾</span> <span>“Pop the Prosecco!”</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface text-on-surface hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-xs font-semibold shadow-xs transition-transform active:scale-95 flex items-center gap-1">
+<span>❤️</span> <span>“Pure Love!”</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface text-on-surface hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-xs font-semibold shadow-xs transition-transform active:scale-95 flex items-center gap-1">
+<span>💃</span> <span>“To the Dancefloor!”</span>
+</button>
+<button class="px-3 py-1.5 rounded-full bg-surface text-on-surface hover:bg-secondary-container hover:text-on-secondary-container font-label-md text-xs font-semibold shadow-xs transition-transform active:scale-95 flex items-center gap-1">
+<span>🎻</span> <span>“Bravo Maestro!”</span>
+</button>
+</div>
+</div>
+<!-- Main Lounge Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-md items-start">
+<!-- Left: Guest & Table Directory Search & Channels -->
+<div class="lg:col-span-4 bg-surface-container-low p-space-md rounded-2xl shadow-sm space-y-space-md border border-surface-container">
+<div class="space-y-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Find Guests &amp; Channels</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Message your table, page friends, or broadcast to all.</p>
+</div>
+<!-- Search Input -->
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-outline text-[18px]">search</span>
+<input class="w-full pl-9 pr-4 py-2 rounded-xl bg-surface text-on-surface placeholder:text-outline-variant font-body-sm text-xs focus:outline-none focus:ring-1 focus:ring-primary border border-surface-container-highest" placeholder="Search guests (e.g., Matteo, Sofia, Table 4)..." type="text"/>
+</div>
+<!-- Clean Multi-Channel Selector -->
+<div class="space-y-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant block font-semibold text-[10px]">Select Channel:</span>
+<!-- Channel 1: My Table (Active) -->
+<div class="p-space-sm rounded-xl bg-surface-container-high border-2 border-primary/40 flex items-center justify-between cursor-pointer shadow-xs">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<span class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-uppercase text-xs font-bold">T4</span>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-primary border-2 border-surface"></span>
+</div>
+<div>
+<div class="font-label-md text-xs font-bold text-on-surface">Table 4 • Bellini</div>
+<div class="text-[11px] text-on-surface-variant">Your Assigned Table (8 guests active)</div>
+</div>
+</div>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-uppercase text-[9px] font-bold">Active</span>
+</div>
+<!-- Channel 2: Entire Villa -->
+<div class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between cursor-pointer border border-transparent">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<span class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed-variant flex items-center justify-center font-label-uppercase text-xs font-bold">ALL</span>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-primary border-2 border-surface"></span>
+</div>
+<div>
+<div class="font-label-md text-xs font-semibold text-on-surface">The Whole Villa</div>
+<div class="text-[11px] text-on-surface-variant">Public Broadcast (98 guests)</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span>
+</div>
+<!-- Channel 3: Bridal Party -->
+<div class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between cursor-pointer border border-transparent">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<span class="w-9 h-9 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center font-label-uppercase text-xs font-bold">BP</span>
+</div>
+<div>
+<div class="font-label-md text-xs font-semibold text-on-surface">Bridal Party &amp; Honor</div>
+<div class="text-[11px] text-on-surface-variant">Camilla, Matteo &amp; Crew</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span>
+</div>
+<!-- Channel 4: 1-on-1 Direct -->
+<div class="p-space-sm rounded-xl bg-surface-container hover:bg-surface-container-high transition-colors flex items-center justify-between cursor-pointer border border-transparent">
+<div class="flex items-center gap-2.5">
+<div class="relative">
+<span class="w-9 h-9 rounded-full bg-surface-dim text-on-surface flex items-center justify-center font-label-uppercase text-xs font-bold">JP</span>
+</div>
+<div>
+<div class="font-label-md text-xs font-semibold text-on-surface">Juan Pablo Morales</div>
+<div class="text-[11px] text-on-surface-variant">Table 2 Brunello • Direct Cheers</div>
+</div>
+</div>
+<span class="material-symbols-outlined text-[16px] text-secondary">chevron_right</span>
+</div>
+</div>
+<!-- Audio Note Snippet Feature Callout -->
+<div class="p-space-sm rounded-xl bg-surface border border-secondary-container/40 flex items-center justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[22px]">mic</span>
+<div>
+<div class="font-label-md text-xs font-semibold text-on-surface">Audio Toast Snippets</div>
+<div class="text-[11px] text-on-surface-variant">Hold to record 15s blessing</div>
+</div>
+</div>
+<button class="px-2.5 py-1 rounded-lg bg-secondary-fixed text-on-secondary-fixed font-label-uppercase text-[10px] font-bold hover:bg-secondary-fixed-dim transition-colors">
+Record
+</button>
+</div>
+<!-- Concierge Help Note -->
+<div class="p-space-sm rounded-xl bg-surface flex items-start gap-2 border border-surface-container">
+<span class="material-symbols-outlined text-secondary text-[18px] shrink-0 mt-0.5">room_service</span>
+<p class="font-body-sm text-xs text-on-surface-variant leading-snug">
+  Need seating adjustments or shuttle details? Page <span class="font-semibold text-on-surface">Concierge Marco</span> via top right desk icon.
+</p>
+</div>
+</div>
+<!-- Right: Active Stream & Modern Composer -->
+<div class="lg:col-span-8 flex flex-col bg-surface-container-lowest rounded-2xl shadow-sm p-space-md lg:p-space-lg border border-surface-container">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Live Banter &amp; Table Notes</span>
+<span class="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed font-label-uppercase text-[10px] font-bold">Table 4 + Villa Stream</span>
+</div>
+<div class="flex items-center gap-1 font-label-uppercase text-label-uppercase text-secondary font-semibold text-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span> Auto-updating live
+</div>
+</div>
+<!-- Message Thread Previews -->
+<div class="space-y-space-md py-space-md overflow-y-auto max-h-[400px] pr-1">
+<!-- Message 1 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-2xl bg-surface-container-low border border-surface-container/60">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-secondary text-on-secondary flex items-center justify-center font-label-uppercase text-xs font-bold ring-2 ring-secondary/30">SR</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-primary border-2 border-surface"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-xs font-bold text-on-surface">Sofia Rossi</span>
+<span class="px-2 py-0.2 rounded bg-secondary-fixed text-on-secondary-fixed font-label-uppercase text-[9px] font-semibold uppercase">To Table 4 • Bellini</span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">2m ago</span>
+</div>
+<p class="font-body-md text-sm text-on-surface mt-1 leading-relaxed">
+  “Save a seat for the limoncello toast! Heading over from the terrace photo spot in just three minutes. Look at Julia's smile!”
+</p>
+<div class="mt-2 flex items-center gap-3 text-secondary font-label-md text-xs">
+<button class="hover:text-primary transition-colors flex items-center gap-1 bg-surface px-2.5 py-1 rounded-full border border-surface-container shadow-2xs">🥂 <span>Cin Cin (8)</span></button>
+<button class="hover:text-primary transition-colors flex items-center gap-1 bg-surface px-2.5 py-1 rounded-full border border-surface-container shadow-2xs">❤️ <span>(14)</span></button>
+<button class="text-on-surface-variant hover:text-on-surface text-[11px] font-medium ml-1">Reply</button>
+</div>
+</div>
+</div>
+<!-- Message 2: Audio Snippet Post -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-2xl bg-surface-container-low border border-surface-container/60">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-label-uppercase text-xs font-bold ring-2 ring-primary/30">MR</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-primary border-2 border-surface"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-xs font-bold text-on-surface">Matteo Rossi</span>
+<span class="px-2 py-0.2 rounded bg-primary-fixed text-on-primary-fixed-variant font-label-uppercase text-[9px] font-semibold uppercase">Direct Shout-out</span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">5m ago</span>
+</div>
+<!-- Audio Pill -->
+<div class="mt-1.5 p-2 rounded-xl bg-surface flex items-center justify-between gap-3 border border-secondary-container/40">
+<div class="flex items-center gap-2">
+<button class="w-7 h-7 rounded-full bg-primary text-on-primary flex items-center justify-center text-xs shadow-xs"><span class="material-symbols-outlined text-[16px]">play_arrow</span></button>
+<div class="flex flex-col">
+<span class="text-xs font-semibold text-on-surface">Voice Toast: “To Pedro &amp; Julia!”</span>
+<span class="text-[10px] text-on-surface-variant">0:14 • Audio Snippet</span>
+</div>
+</div>
+<div class="flex items-center gap-0.5 h-4">
+<span class="w-1 h-3 bg-secondary rounded-full animate-pulse"></span>
+<span class="w-1 h-4 bg-primary rounded-full"></span>
+<span class="w-1 h-2 bg-secondary rounded-full"></span>
+<span class="w-1 h-5 bg-primary rounded-full animate-pulse"></span>
+<span class="w-1 h-3 bg-secondary rounded-full"></span>
+</div>
+</div>
+<div class="mt-2 flex items-center gap-3 text-secondary font-label-md text-xs">
+<button class="hover:text-primary transition-colors flex items-center gap-1 bg-surface px-2.5 py-1 rounded-full border border-surface-container shadow-2xs">🍷 <span>Salute! (7)</span></button>
+<button class="text-on-surface-variant hover:text-on-surface text-[11px] font-medium">Reply</button>
+</div>
+</div>
+</div>
+<!-- Message 3 -->
+<div class="flex items-start gap-space-sm p-space-sm rounded-2xl bg-surface-container-low border border-surface-container/60">
+<div class="relative shrink-0">
+<div class="w-10 h-10 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-uppercase text-xs font-bold ring-2 ring-tertiary/30">CS</div>
+<span class="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-primary border-2 border-surface"></span>
+</div>
+<div class="flex-1 min-w-0">
+<div class="flex items-baseline justify-between gap-2">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-xs font-bold text-on-surface">Camilla Santoro (Maid of Honor)</span>
+<span class="px-2 py-0.2 rounded bg-tertiary-fixed text-on-tertiary-fixed-variant font-label-uppercase text-[9px] font-semibold uppercase">Villa Broadcast</span>
+</div>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant">11m ago</span>
+</div>
+<p class="font-body-md text-sm text-on-surface mt-1 leading-relaxed">
+  “Bridesmaids and close friends: quick group photo gathering at the stone fountain in 10 minutes before light fades completely!”
+</p>
+<div class="mt-2 flex items-center gap-3 text-secondary font-label-md text-xs">
+<button class="hover:text-primary transition-colors flex items-center gap-1 bg-surface px-2.5 py-1 rounded-full border border-surface-container shadow-2xs">✨ <span>Sparkle (18)</span></button>
+<button class="hover:text-primary transition-colors flex items-center gap-1 bg-surface px-2.5 py-1 rounded-full border border-surface-container shadow-2xs">💃 <span>On our way! (9)</span></button>
+<button class="text-on-surface-variant hover:text-on-surface text-[11px] font-medium ml-1">Reply</button>
+</div>
+</div>
+</div>
+</div>
+<!-- "Send a Note" Composer Box -->
+<div class="pt-space-sm border-t border-surface-container space-y-space-xs">
+<!-- Recipient Selector Row -->
+<div class="flex flex-wrap items-center justify-between gap-space-xs">
+<div class="flex items-center gap-2">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant text-[11px] font-semibold">Audience:</span>
+<select class="px-3 py-1 rounded-lg bg-surface text-on-surface font-label-md text-xs border border-surface-container focus:outline-none focus:ring-1 focus:ring-primary">
+<option selected="">Table 4 • Bellini (My Table)</option>
+<option>The Whole Villa (98 Guests Broadcast)</option>
+<option>Bridal Party &amp; Honor</option>
+<option>Direct: Juan Pablo Morales</option>
+<option>Direct: Elena Silva</option>
+</select>
+</div>
+<!-- Quick Emojis -->
+<div class="flex items-center gap-1">
+<button class="p-1 hover:bg-surface-container rounded-lg text-base transition-colors" title="Prosecco">🥂</button>
+<button class="p-1 hover:bg-surface-container rounded-lg text-base transition-colors" title="Love">❤️</button>
+<button class="p-1 hover:bg-surface-container rounded-lg text-base transition-colors" title="Sparkle">✨</button>
+<button class="p-1 hover:bg-surface-container rounded-lg text-base transition-colors" title="Bottle">🍾</button>
+<button class="p-1 hover:bg-surface-container rounded-lg text-base transition-colors" title="Dance">💃</button>
+</div>
+</div>
+<!-- Composer Input & Send -->
+<div class="relative">
+<textarea class="w-full p-space-sm pr-24 rounded-xl bg-surface-container text-on-surface placeholder:text-outline-variant font-body-md text-sm focus:outline-none focus:ring-1 focus:ring-primary resize-none border border-surface-container-high" placeholder="Write a blessing, table toast, or banter for Julia &amp; Pedro..." rows="2"></textarea>
+<div class="absolute right-2 bottom-2.5 flex items-center gap-1">
+<button class="p-1.5 rounded-lg text-secondary hover:bg-surface transition-colors" title="Add Voice Memo">
+<span class="material-symbols-outlined text-[18px]">mic</span>
+</button>
+<button class="px-space-md py-1.5 rounded-lg bg-primary text-on-primary font-label-uppercase text-label-uppercase font-semibold tracking-wider hover:bg-on-primary-fixed-variant transition-all flex items-center gap-1 shadow-sm active:scale-95">
+<span>Send</span>
+<span class="material-symbols-outlined text-[15px]">send</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 5. Live Status & Admin Pulses (Operational Nuptial Command) -->
+<section class="max-w-7xl mx-auto px-gutter pt-space-lg pb-space-xl" id="admin-pulses">
+<!-- Section Header -->
+<div class="flex flex-col sm:flex-row sm:items-end justify-between gap-space-sm mb-space-md">
+<div>
+<div class="flex items-center gap-space-xs text-secondary mb-1">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span class="font-label-uppercase text-label-uppercase font-semibold tracking-wider">Official Nuptial Command</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Live Status &amp; Admin Pulses</h2>
+<p class="font-quote-italic text-quote-italic text-secondary">Verified operational updates directly from Villa Bellissima's master concierge desk.</p>
+</div>
+<div class="px-space-sm py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-uppercase text-label-uppercase font-semibold flex items-center gap-1.5 text-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-ping"></span>
+<span>Admin Dispatch Live</span>
+</div>
+</div>
+<!-- Live Executive Pulses Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-space-md mb-space-lg">
+<!-- Pulse 1: Concierge Marco -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-sm relative overflow-hidden border border-surface-container-highest">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-bold text-xs">17:45 CET • Villa Concierge</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-label-uppercase text-[11px] font-bold">MC</div>
+<div>
+<h4 class="font-label-md text-xs font-bold text-on-surface">Marco Castiglione</h4>
+<span class="text-[11px] text-on-surface-variant">Head Nuptial Concierge</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs leading-relaxed">
+  “Photographers are now conducting golden hour portraits at Terrace Bel Paese. All guests are warmly invited before the banquet bell tolls at 19:15 CET.”
+</p>
+</div>
+<div class="pt-space-md flex items-center justify-between text-[11px] font-label-uppercase text-on-surface-variant border-t border-surface-container-high">
+<span class="font-semibold text-primary">Verified Broadcast</span>
+<span class="text-secondary font-semibold">Priority 1</span>
+</div>
+</div>
+<!-- Pulse 2: Chef Lorenzo -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-sm relative overflow-hidden border border-surface-container-highest">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-bold text-xs">17:15 CET • Dining Atelier</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<div class="w-8 h-8 rounded-full bg-tertiary-container text-on-tertiary-container flex items-center justify-center font-label-uppercase text-[11px] font-bold">CL</div>
+<div>
+<h4 class="font-label-md text-xs font-bold text-on-surface">Chef Lorenzo Moretti</h4>
+<span class="text-[11px] text-on-surface-variant">Executive Culinary Master</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs leading-relaxed">
+  “Dinner seating begins at 19:15 CET in Grand Loggia. All dietary requirements (nut-free, gluten-free, and pescatarian) are meticulously customized for each table.”
+</p>
+</div>
+<div class="pt-space-md flex items-center justify-between text-[11px] font-label-uppercase text-on-surface-variant border-t border-surface-container-high">
+<span class="font-semibold text-primary">Verified Broadcast</span>
+<span class="text-secondary font-semibold">Catering Confirmed</span>
+</div>
+</div>
+<!-- Pulse 3: Logistics & Transport Alert -->
+<div class="p-space-lg rounded-2xl bg-surface-container flex flex-col justify-between shadow-sm relative overflow-hidden border border-surface-container-highest">
+<div class="space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase text-secondary font-bold text-xs">16:00 CET • Transport Dispatch</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-center gap-space-xs mt-1">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-label-uppercase text-[11px] font-bold">TS</div>
+<div>
+<h4 class="font-label-md text-xs font-bold text-on-surface">Tuscan Chauffeur Services</h4>
+<span class="text-[11px] text-on-surface-variant">Return Shuttle Fleet</span>
+</div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant pt-space-xs leading-relaxed">
+  “Return shuttles to Florence Santa Maria Novella and local Borgo hotels are scheduled for 23:30 CET, 01:00 CET, and 02:30 CET from the main stone courtyard.”
+</p>
+</div>
+<div class="pt-space-md flex items-center justify-between text-[11px] font-label-uppercase text-on-surface-variant border-t border-surface-container-high">
+<span class="font-semibold text-primary">Verified Broadcast</span>
+<span class="text-secondary font-semibold">3 Vehicles on Standby</span>
+</div>
+</div>
+</div>
+<!-- Live Key Metrics Ticker Strip -->
+<div class="p-space-md rounded-2xl bg-surface-container-lowest shadow-sm border border-surface-container">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md text-center md:text-left">
+<!-- Metric 1 -->
+<div class="flex items-center gap-space-md justify-center md:justify-start">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed/60 flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[24px]">how_to_reg</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">98 / 98 Checked In</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">100% Present • All Suites Occupied</p>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="flex items-center gap-space-md justify-center md:justify-start">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed/60 flex items-center justify-center text-secondary shrink-0">
+<span class="material-symbols-outlined text-[24px]">dinner_dining</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">Table Allocations 100%</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">12 Tables • Starlit Loggia Locked</p>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="flex items-center gap-space-md justify-center md:justify-start">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface shrink-0">
+<span class="material-symbols-outlined text-[24px]">restaurant_menu</span>
+</div>
+<div>
+<div class="font-headline-sm text-headline-sm text-on-surface">26 Dietary Flags Active</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Gluten-Free, Nut-Free, Pescatarian Catered</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<script>
+  // Simple reactive filter button state behavior
+  document.addEventListener('DOMContentLoaded', function() {
+    const filterButtons = document.querySelectorAll('#photo-filters button');
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-primary', 'text-on-primary');
+          b.classList.add('bg-surface-container', 'text-on-surface-variant');
+        });
+        btn.classList.add('bg-primary', 'text-on-primary');
+        btn.classList.remove('bg-surface-container', 'text-on-surface-variant');
+      });
+    });
+  });
+</script></main><footer class="w-full bg-surface-container-low mt-space-xl py-space-xl shadow-[0_-1px_6px_rgba(0,0,0,0.02)] border-t border-surface-container"><div class="max-w-7xl mx-auto px-gutter"><div class="flex flex-col md:flex-row items-center justify-between gap-space-lg text-center md:text-left"><div class="flex flex-col gap-space-xs"><span class="font-headline-sm text-headline-sm text-on-surface">Julia &amp; Pedro</span><p class="font-quote-italic text-quote-italic text-secondary">A bespoke nuptial celebration at Villa Bellissima, Florence</p></div><div class="flex flex-col sm:flex-row items-center gap-space-md font-label-md text-label-md text-on-surface-variant"><div class="flex items-center gap-space-xs px-space-sm py-space-xs rounded-full bg-surface-container border border-surface-container-high"><span class="w-2 h-2 rounded-full bg-primary animate-ping"></span><span class="font-label-uppercase text-label-uppercase">Live Sync Active</span></div><span class="hidden sm:inline text-outline-variant">•</span><span>Curated by Atelier Nuptial Services</span></div></div><div class="mt-space-lg pt-space-md flex flex-col sm:flex-row items-center justify-between gap-space-sm font-label-uppercase text-label-uppercase text-on-surface-variant"><p>© 2025 Julia &amp; Pedro Wedding Atelier. All rights reserved.</p><div class="flex items-center gap-space-md"><span class="text-secondary font-medium">Private Invitation Event</span><span>Encrypted Guest Transmission</span></div></div></div></footer></body></html>

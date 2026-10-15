@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300;1,400&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base { html, body { margin: 0; padding: 0; } body { overscroll-behavior: none; } main > :first-child { margin-top: 0 !important; } main > :last-child { margin-bottom: 0 !important; } } ::-webkit-scrollbar { display: none; }</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-secondary-fixed-variant": "#653c2c", "secondary": "#805341", "primary-fixed": "#d2e8d3", "tertiary": "#814f3c", "background": "#fff8f6", "on-secondary-container": "#794d3b", "on-error": "#ffffff", "on-surface-variant": "#434843", "on-secondary-fixed": "#311306", "tertiary-fixed-dim": "#f9b79f", "surface-container-lowest": "#ffffff", "on-primary-fixed": "#0e1f12", "on-secondary": "#ffffff", "on-background": "#211a18", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#394b3b", "error-container": "#ffdad6", "primary-container": "#667a68", "surface-dim": "#e4d7d4", "secondary-fixed-dim": "#f4b9a3", "on-tertiary-fixed-variant": "#683b29", "inverse-primary": "#b7ccb7", "secondary-fixed": "#ffdbce", "error": "#ba1a1a", "secondary-container": "#fdc1ab", "inverse-surface": "#362f2d", "surface-tint": "#506352", "on-error-container": "#93000a", "tertiary-fixed": "#ffdbce", "on-primary-container": "#f6fff4", "outline": "#737872", "surface-container-highest": "#ede0dc", "on-tertiary-fixed": "#331104", "surface-variant": "#ede0dc", "inverse-on-surface": "#fceeea", "surface-container": "#f9ebe7", "on-surface": "#211a18", "surface-container-high": "#f3e5e2", "surface-container-low": "#fff1ed", "surface-bright": "#fff8f6", "primary-fixed-dim": "#b7ccb7", "surface": "#fff8f6", "tertiary-container": "#9d6752", "primary": "#4d6150", "on-tertiary-container": "#fffbff", "outline-variant": "#c3c8c0", "on-primary": "#ffffff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-xl": "3.5rem", "gutter": "1.5rem", "margin-tablet": "2.5rem", "space-sm": "0.75rem", "space-lg": "2rem", "space-xs": "0.375rem", "space-md": "1.25rem", "margin-desktop": "4rem", "margin": "1.25rem", "gutter-desktop": "2.5rem" }, "fontFamily": { "display-hero": [ "Playfair Display" ], "headline-md": [ "Playfair Display" ], "quote-italic": [ "Playfair Display" ], "body-md": [ "Montserrat" ], "headline-sm": [ "Playfair Display" ], "body-lg": [ "Montserrat" ], "label-md": [ "Montserrat" ], "display-hero-mobile": [ "Playfair Display" ], "label-uppercase": [ "Montserrat" ], "headline-lg-mobile": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ], "body-sm": [ "Montserrat" ] }, "fontSize": { "display-hero": [ "56px", { "lineHeight": "68px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" } ], "quote-italic": [ "20px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "300" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "body-lg": [ "17px", { "lineHeight": "28px", "letterSpacing": "0.015em", "fontWeight": "300" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400" } ], "display-hero-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "label-uppercase": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "500" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-secondary-container selection:text-on-secondary-container"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(44,37,35,0.04)]"><div class="h-20 max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between gap-space-md"><div class="flex items-center gap-space-md shrink-0"><div class="flex flex-col items-start"><span class="font-headline-md text-headline-sm tracking-widest text-primary">J &amp; P</span><span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest uppercase">Tuscany • 2025</span></div><div class="hidden sm:flex flex-col border-l border-outline-variant pl-space-md"><span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase tracking-wider">Welcome, Juan Pablo</span><span class="font-label-uppercase text-label-uppercase text-primary font-medium tracking-widest uppercase">VIP Guest • Villa Cetinale</span></div></div><nav class="hidden xl:flex items-center gap-space-lg" data-active-classes="text-primary font-medium border-b border-primary"><a aria-current="page" class="uppercase pb-space-xs transition-colors text-primary font-medium border-b border-primary" data-path="portal-home" href="#">Portal Home</a><a class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant hover:text-on-surface pb-space-xs transition-colors" data-path="schedule-and-itinerary" href="#">Schedule &amp; Itinerary</a><a class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant hover:text-on-surface pb-space-xs transition-colors" data-path="interactive-activities-and-photo-moments" href="#">Interactive Activities &amp; Photo Moments</a><a class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant hover:text-on-surface pb-space-xs transition-colors" data-path="guest-concierge" href="#">Guest Concierge</a><a class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant hover:text-on-surface pb-space-xs transition-colors" data-path="gift-table" href="#">Gift Table</a></nav><div class="flex items-center gap-space-sm shrink-0"><button aria-label="Toggle Ambient Music" class="h-9 px-space-sm rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface flex items-center gap-space-xs transition-colors cursor-pointer" type="button"><span class="material-symbols-outlined text-[18px] text-primary">volume_up</span><span class="hidden md:inline font-label-uppercase text-label-uppercase tracking-wider uppercase text-on-surface-variant">Tuscan Strings</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-sm"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Top Subtle Texture Glow -->
+<div class="relative w-full overflow-hidden">
+<div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[720px] h-[360px] bg-gradient-to-b from-primary-fixed/25 via-secondary-container/10 to-transparent blur-3xl pointer-events-none rounded-full"></div>
+<!-- MAIN EDITORIAL CONTENT CONTAINER -->
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-lg md:py-space-xl flex flex-col gap-space-xl">
+<!-- SECTION 1: HERO & PERSONALIZED GUEST PASS -->
+<section class="relative flex flex-col gap-space-lg">
+<!-- Top Editorial Kicker & Countdown Ribbon -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md border-b-0">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary tracking-widest">Villa Bellissima • Siena, Tuscany</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">26 November 2026</span>
+</div>
+<h1 class="font-display-hero text-headline-lg md:text-display-hero text-on-background tracking-tight">
+              Welcome to the Celebration, <span class="italic font-quote-italic text-primary">Juan Pablo</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+              We have curated this private atelier space to accompany your journey through our vows, banquets, and midnight festivities across the hills of Siena.
+            </p>
+</div>
+<!-- Countdown Counter Widget -->
+<div class="flex items-center gap-space-md p-space-md bg-surface-container-low rounded-xl shadow-sm self-start md:self-auto shrink-0">
+<div class="flex flex-col text-center">
+<span class="font-display-hero text-headline-md text-primary font-medium leading-none" id="countdown-days">46</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase mt-1">Days</span>
+</div>
+<div class="text-outline-variant font-display-hero text-headline-sm leading-none">:</div>
+<div class="flex flex-col text-center">
+<span class="font-display-hero text-headline-md text-primary font-medium leading-none" id="countdown-hours">14</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase mt-1">Hours</span>
+</div>
+<div class="text-outline-variant font-display-hero text-headline-sm leading-none">:</div>
+<div class="flex flex-col text-center">
+<span class="font-display-hero text-headline-md text-primary font-medium leading-none" id="countdown-mins">28</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase mt-1">Mins</span>
+</div>
+</div>
+</div>
+<!-- Bento Layout: Digital Guest Pass (Editorial Stationery) + Quick Villa Vitals -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Stationery Guest Pass (Card Enclosure) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-md md:p-space-lg shadow-xl relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-16 -top-16 w-56 h-56 rounded-full bg-secondary-fixed/30 blur-2xl pointer-events-none"></div>
+<!-- Pass Card Header -->
+<div class="flex flex-wrap items-start justify-between gap-space-md pb-space-md">
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs mb-1">
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-uppercase text-label-uppercase tracking-wider uppercase font-semibold">VIP Honored Guest</span>
+<span class="px-2.5 py-0.5 rounded-full bg-surface-container-high text-secondary font-label-uppercase text-label-uppercase tracking-wider uppercase">Ceremony &amp; Villa Resident</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-background">Juan Pablo &amp; Sofia Rossi</h2>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 Confirmed Reserved Seats • Dietary: Pescatarian • Nut Allergy Noted</span>
+</div>
+<div class="text-right flex flex-col items-end">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase tracking-widest">Estate Voucher</span>
+<span class="font-quote-italic text-quote-italic text-secondary">#J-P-77492-IT</span>
+</div>
+</div>
+<!-- Details Spec Grid -->
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md py-space-md my-space-xs bg-surface-container-low rounded-lg p-space-md">
+<div class="flex flex-col">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Seating Table</span>
+<span class="font-headline-sm text-headline-sm text-primary mt-0.5">Table Bellini</span>
+<span class="font-body-sm text-body-sm text-secondary">Seats 03 &amp; 04</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Arrival Shuttle</span>
+<span class="font-body-lg text-body-lg font-medium text-on-background mt-0.5">14:00 CET</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Florence SMN → Villa</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Residence Suite</span>
+<span class="font-body-lg text-body-lg font-medium text-on-background mt-0.5">Loggia N. 12</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Villa Bellissima West</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Concierge Line</span>
+<span class="font-body-lg text-body-lg font-medium text-on-background mt-0.5">Speed-Dial 04</span>
+<span class="font-body-sm text-body-sm text-primary">Key Available 24h</span>
+</div>
+</div>
+<!-- Pass Bottom: QR Fast-Track + Interactive Actions -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-space-md pt-space-md">
+<div class="flex items-center gap-space-md">
+<!-- Inline SVG QR Code Simulation with Gilded Finish -->
+<div class="w-16 h-16 p-1.5 bg-surface-container rounded-lg shrink-0 flex items-center justify-center shadow-inner">
+<svg class="w-full h-full text-secondary" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 48 48">
+<rect height="16" rx="2" stroke-width="2" width="16" x="4" y="4"></rect>
+<rect fill="currentColor" height="8" width="8" x="8" y="8"></rect>
+<rect height="16" rx="2" stroke-width="2" width="16" x="28" y="4"></rect>
+<rect fill="currentColor" height="8" width="8" x="32" y="8"></rect>
+<rect height="16" rx="2" stroke-width="2" width="16" x="4" y="28"></rect>
+<rect fill="currentColor" height="8" width="8" x="8" y="32"></rect>
+<path d="M28 28h6v6h-6zM38 28h6v6h-6zM28 38h6v6h-6zM38 38h6v6h-6z" fill="currentColor"></path>
+</svg>
+</div>
+<div class="flex flex-col">
+<span class="font-label-uppercase text-label-uppercase uppercase text-on-surface tracking-wider font-semibold">Priority Concierge QR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Scan at estate gate for luggage drop &amp; room access</span>
+</div>
+</div>
+<!-- Button CTA -->
+<button class="w-full sm:w-auto px-6 py-3 rounded-full bg-primary text-on-primary font-label-uppercase text-label-uppercase uppercase tracking-wider hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center justify-center gap-space-xs shadow-md" id="btn-open-guest-modal" type="button">
+<span class="material-symbols-outlined text-[18px]">edit_note</span>
+<span>Update Guest &amp; Dietary Notes</span>
+</button>
+</div>
+</div>
+<!-- Hero Accompanying Visual: Villa Bellissima Scenery & Daily Micro-Brief -->
+<div class="lg:col-span-4 bg-surface-container-high rounded-xl p-space-md flex flex-col justify-between relative overflow-hidden shadow-md">
+<div class="relative w-full h-44 rounded-lg overflow-hidden shadow-sm">
+<div class="w-full h-full bg-cover bg-center" data-alt="Breathtaking panoramic shot of Villa Bellissima in Siena, Tuscany during soft golden hour. Ancient limestone arches, cypress tree driveway, and sunlit terracotta terraces framed by olive groves and rolling hills under a serene pastel sunset." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDiLPn33XF0E7G95lRUHQCA2Oo_R5mtdq7W9XHsCB6ikNssLI31cgkNKVWmiws0uKbij6vmQgY5CO1qKktQ1I5Da3bj8dBUiaOqepLAlR0OkYmqaeML2jYy0Qr1EyOGAqYDOUlgVqu3xbLczlzpzVGsgk3tF463GLf_EcjsxHdUxEQn_-8UDRrc7HHQ8IlAfwc0wV3KFNGGJ4lUKdz66rJLGkxeA4bTM27fIOuTLp_rPDznNTUBZn0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/80 via-transparent to-transparent flex items-end p-space-md">
+<span class="font-quote-italic text-quote-italic text-surface-container-lowest italic">"Benvenuti a Casa Nostra"</span>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs my-space-md">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary">Weather Forecast</span>
+<span class="font-label-uppercase text-label-uppercase uppercase text-primary font-medium">Siena Province</span>
+</div>
+<div class="flex items-center justify-between bg-surface-container-lowest p-space-sm rounded-lg">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[26px]">wb_sunny</span>
+<div class="flex flex-col">
+<span class="font-body-lg text-body-lg font-medium text-on-background">21°C • Golden Sun</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Crisp starlit evening: 14°C</span>
+</div>
+</div>
+<span class="text-primary font-label-uppercase text-label-uppercase uppercase bg-primary-fixed/60 px-2 py-1 rounded">Clear Skies</span>
+</div>
+</div>
+<!-- Attire Palette Guidance -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Dress Code Code</span>
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold">Formal Tuscan Elegance</span>
+</div>
+<div class="flex items-center gap-1.5 mt-1">
+<div class="flex-1 h-3 rounded-full bg-[#4A5D4E]" title="Olive Earth"></div>
+<div class="flex-1 h-3 rounded-full bg-[#8E5E4D]" title="Aged Terracotta"></div>
+<div class="flex-1 h-3 rounded-full bg-[#D4A373]" title="Sunlit Siena Gold"></div>
+<div class="flex-1 h-3 rounded-full bg-[#F4EDE5]" title="Linen Ivory"></div>
+<div class="flex-1 h-3 rounded-full bg-[#2F2926]" title="Espresso Twilight"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: REFRESHED CELEBRATION CHRONOGRAM & REAL-TIME EVENT TIMELINE -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary tracking-widest">Order of Events • 26 Nov</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Celebration Chronogram</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-xl">
+              Live sequence of ceremonial moments, toasts, and dancing. Live updates adapt as the evening unfolds under the Tuscan starlight.
+            </p>
+</div>
+<!-- Chronogram Category Filters -->
+<div class="flex items-center flex-wrap gap-2 p-1 bg-surface-container rounded-full" id="timeline-filters">
+<button class="filter-btn active px-4 py-1.5 rounded-full bg-surface-container-lowest font-label-uppercase text-label-uppercase uppercase tracking-wider text-primary shadow-sm font-semibold transition-all" data-filter="all">All Festivities</button>
+<button class="filter-btn px-4 py-1.5 rounded-full hover:bg-surface-container-lowest font-label-uppercase text-label-uppercase uppercase tracking-wider text-on-surface-variant transition-all" data-filter="ceremony">Ceremony</button>
+<button class="filter-btn px-4 py-1.5 rounded-full hover:bg-surface-container-lowest font-label-uppercase text-label-uppercase uppercase tracking-wider text-on-surface-variant transition-all" data-filter="banquet">Reception &amp; Feast</button>
+<button class="filter-btn px-4 py-1.5 rounded-full hover:bg-surface-container-lowest font-label-uppercase text-label-uppercase uppercase tracking-wider text-on-surface-variant transition-all" data-filter="late-night">Late Night</button>
+</div>
+</div>
+<!-- Chronogram Timeline Cards Stack -->
+<div class="grid grid-cols-1 gap-space-md relative" id="timeline-container">
+<!-- Event 1: Welcome Aperitivo -->
+<div class="timeline-item timeline-banquet bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">local_bar</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase font-semibold">15:30 CET</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Lemon Grove Courtyard</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mt-0.5">Welcome Aperitivo &amp; Tuscan String Quartet</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Chilled Bellini bar, local Pecorino carving station, and classical strings serenading arrivals amidst citrus orchards.
+                </p>
+<div class="flex items-center gap-space-xs mt-2 text-primary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">info</span>
+<span>Bellini &amp; Antipasti Bar open promptly upon arrival</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase uppercase">Aperitivo</span>
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-primary flex items-center justify-center transition-colors" title="Add to calendar">
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</button>
+</div>
+</div>
+<!-- Event 2: Holy Matrimony Ceremony -->
+<div class="timeline-item timeline-ceremony bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:shadow-md transition-shadow relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-primary"></div>
+<div class="flex items-start gap-space-md pl-1">
+<div class="w-12 h-12 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">favorite</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-primary uppercase font-bold">16:30 CET</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">The Olive Terrace</span>
+<span class="px-2 py-0.5 bg-primary/10 text-primary font-label-uppercase text-label-uppercase uppercase rounded text-[10px]">Main Rite</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mt-0.5">Holy Matrimony &amp; Nuptial Vows Exchange</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Processional along the ancient stone steps. Ring blessing, personal letters, and traditional olive branch canopy.
+                </p>
+<div class="flex items-center gap-space-xs mt-2 text-secondary font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px]">eco</span>
+<span>Confetti cones &amp; olive sprigs distributed upon seating</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-uppercase text-label-uppercase uppercase">Ceremonial</span>
+<button class="w-9 h-9 rounded-full bg-surface-container hover:bg-surface-container-high text-primary flex items-center justify-center transition-colors" title="Add to calendar">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+</button>
+</div>
+</div>
+<!-- Event 3: Sunset Cocktails & Portrait Session -->
+<div class="timeline-item timeline-ceremony timeline-banquet bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">wb_twilight</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase font-semibold">18:00 CET</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Terrace Bel Paese</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mt-0.5">Sunset Cocktails &amp; Golden Hour Portraits</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Signature Spritz and Chianti Classico selections. Roaming editorial photographers capturing family and guest portraits against sunset ridges.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase uppercase">Photography • Aperitif</span>
+</div>
+</div>
+<!-- Event 4: Five-Course Banquet -->
+<div class="timeline-item timeline-banquet bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">restaurant</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase font-semibold">19:30 CET</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Grand Starlit Loggia</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mt-0.5">Five-Course Tuscan Gala Banquet &amp; Toasts</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Handcrafted pasta, wild boar ragu or truffle gnudi, followed by speeches by the bridal party and Pedro's father.
+                </p>
+<div class="flex items-center gap-space-xs mt-2 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">table_restaurant</span>
+<span>Juan Pablo: Assigned to Table Bellini • Sommelier Service Included</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase uppercase">Gala Feast</span>
+</div>
+</div>
+<!-- Event 5: Late Night & Millefoglie -->
+<div class="timeline-item timeline-late-night bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-space-md hover:shadow-md transition-shadow">
+<div class="flex items-start gap-space-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed-dim text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">celebration</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-primary uppercase font-bold">22:00 CET - Late</span>
+<span class="text-outline-variant text-xs">•</span>
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase">Poolside Lawn &amp; Cellar Club</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background mt-0.5">Live Millefoglie Assembling, Fireworks &amp; Midnight Lounge</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+                  Master pastry chefs assembling the classic giant berry Millefoglie before your eyes, illuminated by grand fireworks and DJ deep house sets.
+                </p>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 self-end md:self-center">
+<span class="px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-uppercase text-label-uppercase uppercase">Dancing • Fireworks</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: DEDICATED ACTIVITIES & LIVE PHOTO MOMENTS HUB -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary tracking-widest">Interactive Guest Hub</span>
+<span class="px-2 py-0.5 rounded-full bg-primary text-on-primary font-label-uppercase text-label-uppercase uppercase text-[10px]">Live Sync Active</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Moments, Pre-Event &amp; Villa Games</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+              Share your journey to Italy, capture live camera rolls during the gala, and participate in our villa scavenger and tasting challenges.
+            </p>
+</div>
+</div>
+<!-- Two Streams Grid: Pre-Event Snaps & Live Camera -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Stream A: Pre-Event Snaps & Preparations Uploader -->
+<div class="lg:col-span-5 bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold">Stream 01 • Road to Tuscany</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">42 Guest Snaps</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-background">Pre-Event Snaps &amp; Preparations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Share your journey: packing flatlays, airport espresso, Florence layovers, and rehearsal dinner previews before the ceremony.
+              </p>
+<!-- Upload Area -->
+<div class="mt-2 p-space-lg rounded-xl border-2 border-dashed border-outline-variant bg-surface-container-low/50 hover:bg-surface-container-low transition-colors flex flex-col items-center justify-center text-center cursor-pointer group" id="dropzone-pre-event">
+<div class="w-12 h-12 rounded-full bg-surface-container-high group-hover:bg-primary group-hover:text-on-primary text-primary transition-colors flex items-center justify-center mb-space-xs">
+<span class="material-symbols-outlined text-[24px]">cloud_upload</span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-background text-[18px]">Drop Pre-Event Photos Here</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1">or click to browse from device (JPG, PNG, HEIC)</span>
+<input accept="image/*" class="hidden" id="file-pre-event" multiple="" type="file"/>
+</div>
+<!-- Uploaded Previews Mosaic -->
+<div class="mt-space-sm flex flex-col gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Recent Guest Additions</span>
+<div class="grid grid-cols-3 gap-2">
+<div class="relative aspect-square rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="Guest travel photograph showing an antique passport, espresso cup on a marble counter in Florence, and sunlit train ticket with destination Siena." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBY1cbEGbGhMgxRG3PGnN3QdW8zXCCJ_4Tfap_Bl_bIdbG7GnaFlt_ZWoWG4m51kVu9xPYW0FrQ9aeQ7QajDzfrCzGOwCjQc7nQ90hXfJsnMDsc2UPbmb33BwTbDfOMOQpYGI6SpLfrVJCDSYUrpxsR0jx2tYA1U5Uh-5uvxpDIvMDd9oa-dF0Xqq2dLesPk8h88qI7N-WuL8UvprpNkAAMHzHIsBsrUkTIwumIZBhcuA9lDhH4eaA')"></div>
+<span class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-inverse-surface/75 text-inverse-on-surface font-label-uppercase text-label-uppercase text-[9px]">Elena R.</span>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="Overhead aesthetic luggage packing photo with linen wedding suits, Tuscan leather shoes, and sunglasses laid on crisp white bed sheets." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDIjCAI31f1NqXbmvjLybtm9V_naomcZ49b4B-KJKeUFRq-13kF2NJYmZHlGeR1EOeFJuYb6pMbGQBiKhhT8DSL4wTidIV6eEg0nDZkTBIuDhGfYdehoT-_xQ3VWgQNm20xHMRvK_opfSZgupk5nrwBQ397JmaSEMsFH16hqEEJ4vRfn3MzAJ8tk6nvbUGFWEMdMCU-8tLxKx_AEsxVoQyZeuxezI4pFUVRGuQrjLInglnaK3jq0I')"></div>
+<span class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-inverse-surface/75 text-inverse-on-surface font-label-uppercase text-label-uppercase text-[9px]">Marco V.</span>
+</div>
+<div class="relative aspect-square rounded-lg overflow-hidden group">
+<div class="w-full h-full bg-cover bg-center" data-alt="Charming Tuscan winding road with towering cypress trees and golden afternoon sun viewed from the passenger window of a vintage convertible car." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAdXT6-Jv9x2JxK7kSlbcsOw5ugvWACKDy0ZNa5OILtt2bZXJwK_bptI0oUWdZdyDErakt-TgeQo9AC_PJV_5OPc01QegRXqH1_CPPU93W8OF5yYoqE8QgDkNClxidXfCuYHGPR67fboZ5xmWvxQXx4YnKo00HXR_jNFHCu20EGxYgwJs81kVfzkzVY84790rH_BFVihb2KzuMY5DQH4w9um4Y_Yo1tZTEY-Lvx6hde2w9l9Vd9duI')"></div>
+<span class="absolute bottom-1 left-1 px-1.5 py-0.5 rounded bg-inverse-surface/75 text-inverse-on-surface font-label-uppercase text-label-uppercase text-[9px]">Juan Pablo</span>
+</div>
+</div>
+</div>
+</div>
+<button class="mt-space-md w-full py-3 rounded-full bg-surface-container-high hover:bg-surface-container-highest text-on-surface font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors flex items-center justify-center gap-space-xs" onclick="document.getElementById('file-pre-event').click()" type="button">
+<span class="material-symbols-outlined text-[18px]">add_a_photo</span>
+<span>Upload Pre-Event Memory</span>
+</button>
+</div>
+<!-- Stream B: Live Celebration Camera & Album Stream -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-ping"></span>
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold">Live Celebration Camera</span>
+</div>
+<!-- Filter Pills -->
+<div class="flex items-center gap-1.5 text-xs font-label-uppercase text-label-uppercase uppercase">
+<button class="px-2.5 py-1 rounded-full bg-secondary text-on-secondary">Vintage Tuscan</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high">B&amp;W Film</button>
+<button class="px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-surface-container-high">Golden Glow</button>
+</div>
+</div>
+<div class="relative w-full rounded-xl overflow-hidden bg-inverse-surface aspect-video flex items-center justify-center shadow-inner">
+<div class="w-full h-full bg-cover bg-center opacity-90" data-alt="Atmospheric live preview wedding photograph of Julia and Pedro laughing under ancient arches of Villa Bellissima, backlit by golden sunshine with guests cheering in blurred soft-focus background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCDRmLL6Qs0fb74Cyju7drfaqW7X-R14hpmC3bVJQ-IJzvCriXvt-1OK3EB6syoQqavZuQdDXhAOfL3bw_JvfOf4Jit--laImUieTRJrGgkm0jT7F08HQcg4SvzLEbSCFmHnE39JuBptE8_Evw4uaXGZpypMG7xy7TZKggHEwjdJ2LTOiaFyBNe_0W67zoqdhLgCBg8HxTo9qvpTmHeB9W98pYTNXnxR7UK7c6mBRwVJh72fKYvAUo')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-transparent to-transparent flex flex-col justify-end p-space-md">
+<div class="flex items-center justify-between text-surface-container-lowest">
+<div>
+<span class="font-headline-sm text-headline-sm leading-tight block">Live Wedding Cam Feed</span>
+<span class="font-body-sm text-body-sm opacity-80">Synced directly to Julia &amp; Pedro's Master Nuptial Album</span>
+</div>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-full font-label-uppercase text-label-uppercase uppercase tracking-wider flex items-center gap-1.5 shadow-lg hover:scale-105 transition-transform" id="btn-snap-live" type="button">
+<span class="material-symbols-outlined text-[18px]">photo_camera</span>
+<span>Snap &amp; Add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Live Feed Social Bar -->
+<div class="grid grid-cols-2 gap-space-md pt-space-xs">
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">photo_library</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-background">184 Live Photos</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Captured by 38 villa guests</span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded-lg flex items-center gap-space-sm">
+<div class="w-9 h-9 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px]">download</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-background">High-Res Gallery</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Archived after celebration</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Toast / Message when snap clicked -->
+<div class="hidden mt-space-sm p-space-sm bg-primary-fixed text-on-primary-fixed rounded-lg text-center font-body-sm text-body-sm" id="live-snap-alert">
+              Camera shutter engaged • Photo uploaded to Nuptial Roll under "Juan Pablo"
+            </div>
+</div>
+</div>
+<!-- Interactive Activities Quad-Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Activity 1: Digital Tuscan Guestbook -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-full bg-primary-fixed text-on-primary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">stylus</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background mt-space-xs">Tuscan Guestbook</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Inscribe your digital blessings and private wishes directly into our leatherbound printed keepsake.
+              </p>
+</div>
+<button class="mt-space-md text-left font-label-uppercase text-label-uppercase uppercase text-primary font-semibold hover:text-primary-container flex items-center gap-1" id="btn-open-guestbook" type="button">
+<span>Write Dedication</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Activity 2: DJ Song Recommender -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">music_note</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background mt-space-xs">Midnight DJ Curation</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Request an Italian disco track or timeless romantic anthem for the midnight poolside celebration.
+              </p>
+</div>
+<button class="mt-space-md text-left font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold hover:text-tertiary flex items-center gap-1" id="btn-open-music" type="button">
+<span>Suggest a Track</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Activity 3: Tuscan Olive & Wine Game -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">wine_bar</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background mt-space-xs">Wine &amp; Olive Oil Quiz</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Guess the harvest year and vintage of Villa Bellissima's cold-pressed estate olive oil during aperitivo.
+              </p>
+</div>
+<button class="mt-space-md text-left font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold hover:text-tertiary flex items-center gap-1" id="btn-open-quiz" type="button">
+<span>Start Tasting Quiz</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+<!-- Activity 4: Golden Key Scavenger Hunt -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between hover:shadow-md transition-shadow">
+<div class="flex flex-col gap-space-xs">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">key</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background mt-space-xs">Secret Key Hunt</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                Five antique brass keys hidden across the lemon grove and fountain labyrinth. Solve riddle 01.
+              </p>
+</div>
+<button class="mt-space-md text-left font-label-uppercase text-label-uppercase uppercase text-primary font-semibold hover:text-primary-container flex items-center gap-1" id="btn-open-hunt" type="button">
+<span>View First Clue</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- SECTION 4: TABLE TO GIFT AND PRESENT (GIFT REGISTRY INTEGRATION) -->
+<section class="flex flex-col gap-space-lg">
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary tracking-widest">Tavolo dei Regali • Nuptial Registry</span>
+<h2 class="font-headline-lg text-headline-lg text-on-background">Celebration Giving &amp; Bridal Registry</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl">
+            Your presence amidst our loved ones in Tuscany is our greatest honor. If you desire to bestow a blessing upon our new chapter, we have curated these thoughtful voyages and home atelier collections.
+          </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-stretch">
+<!-- Feature Item: Honeymoon Voyage Fund (Japan & Amalfi Coast) -->
+<div class="lg:col-span-7 bg-surface-container-lowest p-space-md md:p-space-lg rounded-xl shadow-md flex flex-col justify-between">
+<div class="flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold">Featured Registry</span>
+<span class="px-2.5 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-uppercase text-label-uppercase uppercase text-[10px]">74% Supported</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-background">Honeymoon Voyage: Kyoto Ryokans &amp; Amalfi Sunsets</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                Supporting our spring journey through ancient cedar sanctuaries in Kyoto, followed by coastal cliffside retreats in Positano and Ravello.
+              </p>
+<!-- Progress Bar -->
+<div class="my-space-sm flex flex-col gap-1.5">
+<div class="w-full h-3 rounded-full bg-surface-container-high overflow-hidden">
+<div class="h-full bg-primary rounded-full transition-all duration-1000" style="width: 74%"></div>
+</div>
+<div class="flex items-center justify-between font-label-uppercase text-label-uppercase text-on-surface-variant">
+<span>€11,840 Contributed</span>
+<span class="text-primary font-semibold">€16,000 Target</span>
+</div>
+</div>
+<!-- Quick Contribution Amount Chips -->
+<div class="flex flex-col gap-space-xs pt-space-xs">
+<span class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Select Blessing Offering</span>
+<div class="flex flex-wrap gap-2">
+<button class="amount-chip px-4 py-2 rounded-lg bg-surface-container hover:bg-secondary hover:text-on-secondary font-body-sm text-body-sm font-medium transition-colors" type="button">€150</button>
+<button class="amount-chip px-4 py-2 rounded-lg bg-surface-container hover:bg-secondary hover:text-on-secondary font-body-sm text-body-sm font-medium transition-colors" type="button">€250</button>
+<button class="amount-chip px-4 py-2 rounded-lg bg-surface-container hover:bg-secondary hover:text-on-secondary font-body-sm text-body-sm font-medium transition-colors" type="button">€500</button>
+<button class="amount-chip px-4 py-2 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-medium transition-colors" type="button">€1,000</button>
+<button class="amount-chip px-4 py-2 rounded-lg bg-surface-container hover:bg-secondary hover:text-on-secondary font-body-sm text-body-sm font-medium transition-colors" type="button">Custom</button>
+</div>
+</div>
+</div>
+<!-- Action Button -->
+<button class="mt-space-md w-full py-3.5 rounded-full bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors flex items-center justify-center gap-space-xs shadow-md" id="btn-contribute-honeymoon" type="button">
+<span class="material-symbols-outlined text-[18px]">flight_takeoff</span>
+<span>Contribute to Honeymoon Voyage</span>
+</button>
+</div>
+<!-- Secondary Column: Atelier Ceramiche & Direct Wire Information -->
+<div class="lg:col-span-5 flex flex-col gap-space-md">
+<!-- Atelier Ceramics Box -->
+<div class="bg-surface-container-lowest p-space-md rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary font-semibold">Tuscan Artisan Registry</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">palette</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-on-background">Handcrafted Siena Dinnerware &amp; Bellini Linens</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+                  Commissioned 12-piece terra-cotta glazed dinner set from Atelier San Gimignano and pure flax linen tablecloths.
+                </p>
+</div>
+<div class="mt-space-sm pt-space-xs flex items-center justify-between">
+<span class="font-label-uppercase text-label-uppercase uppercase text-primary font-semibold">6 of 12 Pieces Claimed</span>
+<button class="text-secondary font-label-uppercase text-label-uppercase uppercase hover:underline" type="button">View Atelier Catalog →</button>
+</div>
+</div>
+<!-- Direct Wire Transfer Details with Verified Badge -->
+<div class="bg-surface-container-low p-space-md rounded-xl shadow-inner flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-primary text-[20px]">verified_user</span>
+<span class="font-label-uppercase text-label-uppercase uppercase text-primary font-semibold">Direct IBAN Digital Wire</span>
+</div>
+<span class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Intesa Sanpaolo IT</span>
+</div>
+<div class="mt-1 p-space-xs px-space-sm bg-surface-container-lowest rounded-md flex items-center justify-between">
+<div class="flex flex-col font-mono text-xs text-on-surface">
+<span class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase text-[9px]">IBAN Account</span>
+<span class="font-medium tracking-wider" id="iban-text">IT60 X054 2811 1010 0000 9821 440</span>
+</div>
+<button class="p-1.5 rounded hover:bg-surface-container text-primary transition-colors" id="btn-copy-iban" title="Copy IBAN" type="button">
+<span class="material-symbols-outlined text-[18px]">content_copy</span>
+</button>
+</div>
+<div class="flex items-center justify-between text-xs text-on-surface-variant mt-1">
+<span>Beneficiary: Julia &amp; Pedro Nuptial Acct</span>
+<span>SWIFT: BCITITMM</span>
+</div>
+</div>
+<!-- In-Person Physical Gift Table Location Notice -->
+<div class="p-space-sm bg-surface-container-high rounded-xl flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-secondary text-[22px] shrink-0 mt-0.5">inventory_2</span>
+<div class="flex flex-col">
+<span class="font-body-md text-body-md font-medium text-on-background">Physical Gift &amp; Letter Table</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">
+                  Located in the Villa Vestibule beside the grand guestbook. Our concierge team is present to receive, catalog, and secure parcels throughout the weekend.
+                </span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- INTERACTIVE MODAL 1: UPDATE GUEST DETAILS / DIETARY NOTES -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-4" id="modal-guest-details">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded-2xl p-space-lg shadow-2xl relative flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary">Guest Concierge Form</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Update Notes for Juan Pablo &amp; Sofia</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant" id="btn-close-guest-modal" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<form class="flex flex-col gap-space-sm" id="form-dietary" onsubmit="event.preventDefault(); window.submitDietaryNotes();">
+<div class="flex flex-col gap-1">
+<label class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Dietary Preference</label>
+<select class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-md outline-none">
+<option>Pescatarian (Seafood &amp; Vegetables)</option>
+<option>Standard Gourmet (All Tuscan courses)</option>
+<option>Strict Vegetarian</option>
+<option>Vegan</option>
+<option>Gluten-Free</option>
+</select>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Allergies &amp; Medical Notes</label>
+<input class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-md outline-none" type="text" value="Tree nut allergy • Sofia: None"/>
+</div>
+<div class="flex flex-col gap-1">
+<label class="font-label-uppercase text-label-uppercase uppercase text-on-surface-variant">Shuttle Pick-Up Confirmation</label>
+<select class="w-full p-2.5 rounded-lg bg-surface-container-low text-on-surface text-body-md outline-none">
+<option>Confirmed 14:00 CET Shuttle (Florence SMN → Villa)</option>
+<option>Arriving via Private Rental Car (Gate access required)</option>
+<option>Request Alternative Transfer Time</option>
+</select>
+</div>
+<div class="flex items-center justify-end gap-space-sm mt-space-sm pt-space-xs">
+<button class="px-4 py-2 rounded-full font-label-uppercase text-label-uppercase uppercase text-on-surface-variant" id="btn-cancel-dietary" type="button">Cancel</button>
+<button class="px-6 py-2.5 rounded-full bg-primary hover:bg-primary-container text-on-primary font-label-uppercase text-label-uppercase uppercase font-medium" type="submit">Save to Concierge</button>
+</div>
+</form>
+</div>
+</div>
+<!-- INTERACTIVE MODAL 2: GUESTBOOK DEDICATION SENDER -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden items-center justify-center p-4" id="modal-guestbook">
+<div class="bg-surface-container-lowest max-w-md w-full rounded-2xl p-space-lg shadow-2xl relative flex flex-col gap-space-md">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase uppercase text-secondary">Inscribe Keepsake</span>
+<h3 class="font-headline-md text-headline-md text-on-background">Sign Tuscan Guestbook</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface-variant" id="btn-close-guestbook" type="button">
+<span class="material-symbols-outlined text-[20px]">close</span>
+</button>
+</div>
+<div class="flex flex-col gap-space-sm">
+<textarea class="w-full p-3 rounded-xl bg-surface-container-low text-on-surface text-body-md outline-none resize-none" id="guestbook-message" placeholder="Dear Julia &amp; Pedro, May your journey together reflect the warmth and grace of this beautiful Tuscan evening..." rows="4"></textarea>
+<div class="flex flex-wrap gap-1.5">
+<button class="tag-chip text-xs px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-secondary hover:text-on-secondary" type="button">+ Eternal Joy</button>
+<button class="tag-chip text-xs px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-secondary hover:text-on-secondary" type="button">+ Tuscan Sunshine</button>
+<button class="tag-chip text-xs px-2.5 py-1 rounded-full bg-surface-container text-on-surface-variant hover:bg-secondary hover:text-on-secondary" type="button">+ Love &amp; Adventure</button>
+</div>
+<button class="mt-space-sm w-full py-3 rounded-full bg-primary text-on-primary font-label-uppercase text-label-uppercase uppercase tracking-wider hover:bg-primary-container" id="btn-submit-guestbook" type="button">
+          Send Dedication to Couple
+        </button>
+</div>
+</div>
+</div>
+<!-- INLINE JAVASCRIPT LOGIC -->
+<script>
+    // Chronogram Filter Logic
+    const filterButtons = document.querySelectorAll('#timeline-filters .filter-btn');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+
+    filterButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterButtons.forEach(b => {
+          b.classList.remove('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+          b.classList.add('text-on-surface-variant');
+        });
+        btn.classList.add('bg-surface-container-lowest', 'text-primary', 'font-semibold', 'shadow-sm');
+        btn.classList.remove('text-on-surface-variant');
+
+        const filter = btn.getAttribute('data-filter');
+        timelineItems.forEach(item => {
+          if (filter === 'all') {
+            item.classList.remove('hidden');
+          } else if (filter === 'ceremony') {
+            item.classList.toggle('hidden', !item.classList.contains('timeline-ceremony'));
+          } else if (filter === 'banquet') {
+            item.classList.toggle('hidden', !item.classList.contains('timeline-banquet'));
+          } else if (filter === 'late-night') {
+            item.classList.toggle('hidden', !item.classList.contains('timeline-late-night'));
+          }
+        });
+      });
+    });
+
+    // Modal Control: Guest Details
+    const guestModal = document.getElementById('modal-guest-details');
+    const openGuestBtn = document.getElementById('btn-open-guest-modal');
+    const closeGuestBtn = document.getElementById('btn-close-guest-modal');
+    const cancelDietaryBtn = document.getElementById('btn-cancel-dietary');
+
+    function toggleGuestModal(show) {
+      if (show) {
+        guestModal.classList.remove('hidden');
+        guestModal.classList.add('flex');
+      } else {
+        guestModal.classList.add('hidden');
+        guestModal.classList.remove('flex');
+      }
+    }
+
+    if (openGuestBtn) openGuestBtn.addEventListener('click', () => toggleGuestModal(true));
+    if (closeGuestBtn) closeGuestBtn.addEventListener('click', () => toggleGuestModal(false));
+    if (cancelDietaryBtn) cancelDietaryBtn.addEventListener('click', () => toggleGuestModal(false));
+
+    window.submitDietaryNotes = function() {
+      toggleGuestModal(false);
+      alert('Guest and dietary details updated in the Villa Bellissima Concierge system.');
+    };
+
+    // Modal Control: Guestbook
+    const guestbookModal = document.getElementById('modal-guestbook');
+    const openGuestbookBtn = document.getElementById('btn-open-guestbook');
+    const closeGuestbookBtn = document.getElementById('btn-close-guestbook');
+    const submitGuestbookBtn = document.getElementById('btn-submit-guestbook');
+
+    function toggleGuestbook(show) {
+      if (show) {
+        guestbookModal.classList.remove('hidden');
+        guestbookModal.classList.add('flex');
+      } else {
+        guestbookModal.classList.add('hidden');
+        guestbookModal.classList.remove('flex');
+      }
+    }
+
+    if (openGuestbookBtn) openGuestbookBtn.addEventListener('click', () => toggleGuestbook(true));
+    if (closeGuestbookBtn) closeGuestbookBtn.addEventListener('click', () => toggleGuestbook(false));
+    if (submitGuestbookBtn) {
+      submitGuestbookBtn.addEventListener('click', () => {
+        toggleGuestbook(false);
+        alert('Your blessing has been lovingly recorded into Julia & Pedro\'s keepsake.');
+      });
+    }
+
+    // Interactive Tag Chips
+    document.querySelectorAll('.tag-chip').forEach(chip => {
+      chip.addEventListener('click', () => {
+        const textarea = document.getElementById('guestbook-message');
+        if (textarea) {
+          textarea.value += ' ' + chip.textContent.replace('+', '').trim() + '!';
+        }
+      });
+    });
+
+    // Copy IBAN Micro-Interaction
+    const copyIbanBtn = document.getElementById('btn-copy-iban');
+    if (copyIbanBtn) {
+      copyIbanBtn.addEventListener('click', () => {
+        const iban = document.getElementById('iban-text').textContent;
+        navigator.clipboard.writeText(iban).then(() => {
+          const original = copyIbanBtn.innerHTML;
+          copyIbanBtn.innerHTML = '<span class="material-symbols-outlined text-[18px] text-primary">check</span>';
+          setTimeout(() => {
+            copyIbanBtn.innerHTML = original;
+          }, 2000);
+        });
+      });
+    }
+
+    // Live Shutter Simulation
+    const snapBtn = document.getElementById('btn-snap-live');
+    const snapAlert = document.getElementById('live-snap-alert');
+    if (snapBtn && snapAlert) {
+      snapBtn.addEventListener('click', () => {
+        snapAlert.classList.remove('hidden');
+        setTimeout(() => {
+          snapAlert.classList.add('hidden');
+        }, 3500);
+      });
+    }
+
+    // Music & Clue Quick Actions
+    const musicBtn = document.getElementById('btn-open-music');
+    if (musicBtn) {
+      musicBtn.addEventListener('click', () => {
+        const song = prompt('Recommend a song for the Midnight DJ Set:');
+        if (song) alert('"' + song + '" added to DJ pool for review!');
+      });
+    }
+
+    const quizBtn = document.getElementById('btn-open-quiz');
+    if (quizBtn) {
+      quizBtn.addEventListener('click', () => {
+        alert('Tasting game opens at 15:30 CET during the Lemon Grove Aperitivo.');
+      });
+    }
+
+    const huntBtn = document.getElementById('btn-open-hunt');
+    if (huntBtn) {
+      huntBtn.addEventListener('click', () => {
+        alert('Clue #1: "Look where the stone nymph gazes upon the ancient olive roots, beneath the arch of rosemary."');
+      });
+    }
+
+    // Honeymoon Contribution CTA
+    const honeymoonBtn = document.getElementById('btn-contribute-honeymoon');
+    if (honeymoonBtn) {
+      honeymoonBtn.addEventListener('click', () => {
+        alert('Thank you, Juan Pablo! Opening secure payment portal for Honeymoon Voyage...');
+      });
+    }
+
+    // File Drop Zone Click
+    const dropzone = document.getElementById('dropzone-pre-event');
+    const fileInput = document.getElementById('file-pre-event');
+    if (dropzone && fileInput) {
+      dropzone.addEventListener('click', () => fileInput.click());
+      fileInput.addEventListener('change', () => {
+        if (fileInput.files.length > 0) {
+          alert(fileInput.files.length + ' memory photo(s) queued for upload.');
+        }
+      });
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-low mt-space-xl"><div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop py-space-xl flex flex-col items-center justify-center text-center"><div class="font-headline-lg text-headline-md text-primary mb-space-xs">Julia &amp; Pedro</div><div class="font-quote-italic text-quote-italic text-secondary mb-space-md italic">Tenuta di Murlo • Siena, Tuscany</div><div class="flex items-center justify-center gap-space-md mb-space-lg text-outline-variant"><div class="w-16 h-px bg-outline-variant"></div><span class="material-symbols-outlined text-primary text-[20px]">favorite</span><div class="w-16 h-px bg-outline-variant"></div></div><p class="font-body-sm text-body-sm text-on-surface-variant max-w-md mb-space-sm">For bespoke travel assistance, dietary accommodations, or transport coordination, kindly reach your dedicated Villa Concierge via the Portal.</p><p class="font-label-uppercase text-label-uppercase text-on-surface-variant uppercase tracking-widest">© 2025 Julia &amp; Pedro Wedding Celebration • Atelier Nuptial Suite</p></div></footer></body></html>

@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;1,300&amp;family=Playfair+Display:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "surface-dim": "#e4d7d4", "secondary-container": "#fdc1ab", "surface-variant": "#ede0dc", "tertiary-fixed-dim": "#f9b79f", "on-error": "#ffffff", "surface-container-highest": "#ede0dc", "primary-container": "#667a68", "on-surface-variant": "#434843", "error": "#ba1a1a", "on-primary-container": "#f6fff4", "primary-fixed-dim": "#b7ccb7", "tertiary-container": "#9d6752", "outline-variant": "#c3c8c0", "surface-container-high": "#f3e5e2", "secondary-fixed": "#ffdbce", "on-secondary-fixed-variant": "#653c2c", "background": "#fff8f6", "on-tertiary-fixed": "#331104", "on-secondary-fixed": "#311306", "tertiary-fixed": "#ffdbce", "on-background": "#211a18", "surface-container-lowest": "#ffffff", "outline": "#737872", "on-primary-fixed": "#0e1f12", "on-secondary-container": "#794d3b", "primary-fixed": "#d2e8d3", "inverse-on-surface": "#fceeea", "on-tertiary-container": "#fffbff", "secondary": "#805341", "error-container": "#ffdad6", "on-surface": "#211a18", "surface": "#fff8f6", "on-secondary": "#ffffff", "primary": "#4d6150", "surface-bright": "#fff8f6", "on-error-container": "#93000a", "on-tertiary-fixed-variant": "#683b29", "inverse-surface": "#362f2d", "on-primary": "#ffffff", "surface-tint": "#506352", "surface-container": "#f9ebe7", "tertiary": "#814f3c", "surface-container-low": "#fff1ed", "on-tertiary": "#ffffff", "on-primary-fixed-variant": "#394b3b", "secondary-fixed-dim": "#f4b9a3", "inverse-primary": "#b7ccb7" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "margin": "1.25rem", "space-lg": "2rem", "space-md": "1.25rem", "space-sm": "0.75rem", "margin-tablet": "2.5rem", "space-xl": "3.5rem", "space-xs": "0.375rem", "gutter": "1.5rem", "margin-desktop": "4rem", "gutter-desktop": "2.5rem" }, "fontFamily": { "body-lg": [ "Montserrat" ], "headline-md": [ "Playfair Display" ], "label-md": [ "Montserrat" ], "headline-sm": [ "Playfair Display" ], "display-hero-mobile": [ "Playfair Display" ], "display-hero": [ "Playfair Display" ], "quote-italic": [ "Playfair Display" ], "headline-lg-mobile": [ "Playfair Display" ], "headline-lg": [ "Playfair Display" ], "label-uppercase": [ "Montserrat" ], "body-md": [ "Montserrat" ], "body-sm": [ "Montserrat" ] }, "fontSize": { "body-lg": [ "17px", { "lineHeight": "28px", "letterSpacing": "0.015em", "fontWeight": "300" } ], "headline-md": [ "28px", { "lineHeight": "36px", "letterSpacing": "0em", "fontWeight": "500" } ], "label-md": [ "14px", { "lineHeight": "20px", "letterSpacing": "0.02em", "fontWeight": "400" } ], "headline-sm": [ "22px", { "lineHeight": "30px", "letterSpacing": "0.01em", "fontWeight": "500" } ], "display-hero-mobile": [ "38px", { "lineHeight": "46px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "display-hero": [ "56px", { "lineHeight": "68px", "letterSpacing": "-0.01em", "fontWeight": "400" } ], "quote-italic": [ "20px", { "lineHeight": "32px", "letterSpacing": "0.01em", "fontWeight": "400" } ], "headline-lg-mobile": [ "30px", { "lineHeight": "38px", "letterSpacing": "0em", "fontWeight": "400" } ], "headline-lg": [ "40px", { "lineHeight": "48px", "letterSpacing": "-0.005em", "fontWeight": "400" } ], "label-uppercase": [ "11px", { "lineHeight": "16px", "letterSpacing": "0.18em", "fontWeight": "500" } ], "body-md": [ "15px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "300" } ], "body-sm": [ "13px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" } ] } } } };</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_16px_36px_-12px_rgba(44,37,35,0.05),0_4px_12px_-2px_rgba(44,37,35,0.02)] transition-all duration-300"><div class="h-20 max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Wedding Monogram Logo" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U-mp69B7WVjkMOfH7wpJbOpz2di2cxQvA86NGGY4ki2Mw85ubx-y-13RnqW4hV9ye-ecifTq6C3ggdHly5UCxfsIxMgsSut8v5JIbVIlUC_NREtkhVeiXxVVXttBMKVXIZz8EPG2dwCxyrhLpCc9TwzdtgvXvBXBsXF0Qd2QDCxkM_NGqgCKW8vbd21kPMfGPiw163JgFu8u_I57IQGBclXSNp3gagQw30SyB0ViH5exReetZBzgzA8Q"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight">Atelier Nuptial</span><span class="font-label-uppercase text-label-uppercase text-secondary uppercase -mt-0.5">Julia &amp; Pedro</span></div></div><nav class="hidden lg:flex items-center gap-space-md" data-active-classes="bg-primary-container text-on-primary-container font-label-md text-label-md px-3 py-1.5 rounded-lg"><a aria-current="page" class="transition-colors bg-primary-container text-on-primary-container font-label-md text-label-md px-3 py-1.5 rounded-lg" data-path="home" href="#">Home</a><a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="our-story" href="#">Our Story</a><a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="timeline" href="#">Timeline</a><a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="rsvp" href="#">RSVP</a><a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="registry" href="#">Registry</a><a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors py-1" data-path="guestbook" href="#">Guestbook</a></nav><div class="flex items-center gap-space-sm"><button aria-label="Ambient Audio Toggle" class="w-9 h-9 rounded-full bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[18px]">music_note</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-surface"><div class="flex flex-col w-full">
+<!-- Personalized Welcome Header Strip -->
+<section class="w-full bg-surface-container-low py-space-sm">
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop flex flex-wrap items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center px-3 py-1 rounded-full bg-surface-container text-secondary font-label-uppercase text-label-uppercase tracking-wider">
+<span class="w-2 h-2 rounded-full bg-primary inline-block mr-2"></span>
+          VIP Invitation • Passcode #JP-8421
+        </span>
+<span class="font-body-sm text-body-sm text-on-surface-variant hidden sm:inline">2 Reserved Seats for Juan Pablo &amp; Guest</span>
+</div>
+<div class="flex items-center gap-space-md">
+<a class="font-label-uppercase text-label-uppercase text-primary hover:text-on-surface transition-colors flex items-center gap-1" href="#rsvp">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+          Confirm Attendance
+        </a>
+<a class="font-label-uppercase text-label-uppercase text-on-surface-variant hover:text-on-surface transition-colors flex items-center gap-1" href="#registry">
+<span class="material-symbols-outlined text-[16px]">card_giftcard</span>
+          Gift Registry
+        </a>
+</div>
+</div>
+</section>
+<!-- Hero & Invitation Section -->
+<section class="w-full relative overflow-hidden bg-surface py-space-xl">
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left: Editorial Invitation Letterpress -->
+<div class="lg:col-span-6 flex flex-col justify-center order-2 lg:order-1 pr-0 lg:pr-space-md">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="w-8 h-[1px] bg-secondary-container"></span>
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase">Personal Invitation for</span>
+</div>
+<h1 class="font-display-hero text-display-hero text-on-surface mb-space-xs tracking-tight">
+            Hello, Juan Pablo
+          </h1>
+<p class="font-headline-sm text-headline-sm text-primary mb-space-md italic">
+            Welcome to the Wedding of Julia &amp; Pedro
+          </p>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-lg max-w-[500px]">
+            With profound happiness and grateful hearts, we warmly invite you to join us on this sacred day of love, vows, and revelry under the timeless Tuscan canopy.
+          </p>
+<!-- Wedding Meta Cards -->
+<div class="grid grid-cols-2 gap-space-sm mb-space-lg">
+<div class="p-space-md bg-surface-container rounded-xl shadow-sm">
+<span class="font-label-uppercase text-label-uppercase text-tertiary block mb-1">When</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">26 Nov 2026</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Thursday, 15:30 CET</p>
+</div>
+<div class="p-space-md bg-surface-container rounded-xl shadow-sm">
+<span class="font-label-uppercase text-label-uppercase text-tertiary block mb-1">Where</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Villa Bellissima</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Tuscany, Italy</p>
+</div>
+</div>
+<!-- Live Wedding Countdown Clock -->
+<div class="p-space-md bg-surface-container-high rounded-xl mb-space-lg shadow-sm">
+<div class="flex items-center justify-between mb-space-xs">
+<span class="font-label-uppercase text-label-uppercase text-secondary">The Countdown to Forever</span>
+<span class="material-symbols-outlined text-primary text-[18px]">hourglass_top</span>
+</div>
+<div class="grid grid-cols-4 gap-2 text-center" id="wedding-countdown">
+<div class="bg-surface rounded-lg py-2">
+<span class="font-headline-md text-headline-md text-on-surface block" id="days-val">682</span>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant uppercase">Days</span>
+</div>
+<div class="bg-surface rounded-lg py-2">
+<span class="font-headline-md text-headline-md text-on-surface block" id="hours-val">14</span>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant uppercase">Hours</span>
+</div>
+<div class="bg-surface rounded-lg py-2">
+<span class="font-headline-md text-headline-md text-on-surface block" id="minutes-val">22</span>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant uppercase">Mins</span>
+</div>
+<div class="bg-surface rounded-lg py-2">
+<span class="font-headline-md text-headline-md text-on-surface block" id="seconds-val">45</span>
+<span class="font-label-uppercase text-[10px] text-on-surface-variant uppercase">Secs</span>
+</div>
+</div>
+</div>
+<!-- Call to actions -->
+<div class="flex flex-wrap items-center gap-space-sm">
+<a class="px-8 py-3 bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-all shadow-md inline-flex items-center gap-2" href="#rsvp">
+<span class="material-symbols-outlined text-[18px]">mail</span>
+              Respond with RSVP
+            </a>
+<a class="px-6 py-3 bg-surface-container hover:bg-surface-container-highest text-on-surface rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors inline-flex items-center gap-2" href="#chronogram">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+              Day Schedule
+            </a>
+</div>
+</div>
+<!-- Right: Photographic Arch & Monogram Feature -->
+<div class="lg:col-span-6 order-1 lg:order-2 flex flex-col items-center relative">
+<div class="relative w-full max-w-[480px]">
+<!-- Decorative Backing Sheet -->
+<div class="absolute -top-4 -right-4 w-full h-full bg-secondary-fixed rounded-full opacity-40 blur-xl"></div>
+<!-- Main Arche Frame -->
+<div class="relative rounded-t-[220px] rounded-b-2xl overflow-hidden shadow-2xl bg-surface-container-low p-2">
+<img class="w-full h-[580px] object-cover rounded-t-[212px] rounded-b-xl" data-alt="Romantic fine-art wedding photograph of bride and groom embracing tenderly on an old Tuscan stone staircase framed by fragrant cypress trees, blooming climbing roses, and a glowing sunlit terracotta Italian villa in soft golden hour light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA2NoHruHGvglCl86WMxiFE4urU6laG_exM1mKG8EXrBckn2IK9JE2DCV3BW686K1RcPC2KhhpWGd3Kz8odFnvKJHfCfln4TBex-S3yWLWptcacNeqQDVF59XYkfT0pNGIXkldsIF51U-KTUKUiGy9Z2d9A3zrePf8vaDbFrXuKR0Pr27N6Cn6pv6HrZtlrLfr5D6XWy2JoOhu9jJReUd8NV83jYgo2zIKZF9ISC8_WlxKyUg1IMb0"/>
+<!-- Floating Gold Monogram Seal -->
+<div class="absolute top-6 left-1/2 -translate-x-1/2 w-20 h-20 bg-surface/90 backdrop-blur-md rounded-full shadow-lg p-2.5 flex items-center justify-center">
+<img alt="Wedding Monogram Logo" class="w-full h-full object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1U-mp69B7WVjkMOfH7wpJbOpz2di2cxQvA86NGGY4ki2Mw85ubx-y-13RnqW4hV9ye-ecifTq6C3ggdHly5UCxfsIxMgsSut8v5JIbVIlUC_NREtkhVeiXxVVXttBMKVXIZz8EPG2dwCxyrhLpCc9TwzdtgvXvBXBsXF0Qd2QDCxkM_NGqgCKW8vbd21kPMfGPiw163JgFu8u_I57IQGBclXSNp3gagQw30SyB0ViH5exReetZBzgzA8Q"/>
+</div>
+<!-- Overlaid Bottom Label -->
+<div class="absolute bottom-6 left-6 right-6 p-space-md bg-surface/90 backdrop-blur-md rounded-xl shadow-md text-center">
+<span class="font-label-uppercase text-label-uppercase text-secondary tracking-widest uppercase block mb-1">Celebration of Unity</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Julia &amp; Pedro</p>
+<p class="font-quote-italic text-quote-italic text-on-surface-variant text-sm mt-1">"Two souls, one destiny amid Tuscan olive boughs."</p>
+</div>
+</div>
+<!-- Handcrafted Badge -->
+<div class="absolute -bottom-4 -left-4 bg-primary text-on-primary py-2 px-4 rounded-full shadow-lg flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+<span class="font-label-uppercase text-[11px] uppercase tracking-wider">Honorary Guest</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: History / Our Love Story -->
+<section class="w-full bg-surface-container-low py-space-xl" id="story">
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="text-center max-w-[680px] mx-auto mb-space-xl">
+<span class="font-label-uppercase text-label-uppercase text-tertiary uppercase tracking-widest block mb-space-xs">Our Journey</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">The Story of Julia &amp; Pedro</h2>
+<p class="font-quote-italic text-quote-italic text-on-surface-variant">
+          "From a chance encounter in a Florentine library to promises exchanged for eternity."
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Chapter 1 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Sun-drenched archival photograph of a young couple walking along the Ponte Vecchio in Florence, Italy, holding artisan leather bound journals, warm golden cinematic sunlight and muted romantic olive tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuByF2GTRJd-S8sOHz114zZ50SV5cS6c01p8HvYyfNojoiyP90lRbqJQAcNgxUiruAs14XV_KsMAjNnrCIcc3f648vwpdouR1DxjXDMTAwYKvY4cgLfD6EYmg1OMu0wO-tnTQ0AMOjjtGpGNQQX04d8Y4mIQ9vM7KSomVBud1O1VeeOykL-R_mx_mLG0D03V9956_cvhwIs1eKiOKGQwNSzY6TQgrMt7gSSiIFFohdcz9GufWz3zclw"/>
+<span class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm text-on-surface px-3 py-1 rounded-full font-label-uppercase text-[11px] uppercase tracking-wider">
+              2020 • Florence
+            </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">The First Encounter</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">
+              A thunderstorm in Piazza Santo Spirito brought us both under the stone loggia of an ancient bookstore. A shared pot of Earl Grey tea turned into four hours of spirited conversation about Renaissance architecture and coastal dreams.
+            </p>
+<div class="mt-space-md pt-space-sm border-none bg-surface-container p-space-sm rounded-lg">
+<span class="font-quote-italic text-quote-italic text-sm text-secondary block">"I knew from our first rainy afternoon." — Pedro</span>
+</div>
+</div>
+</div>
+<!-- Chapter 2 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Scenic vintage film aesthetic of a vintage convertible car driving along the dramatic pastel cliffside highways of Amalfi Coast with sparkling Mediterranean azure waters below in afternoon haze" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATdrnszSSvQrHuKivrFQqvqru6kji1T-RwMBMPznbdY9k_BhqyH2XyxugmBMTkxtCZZISA8yVMbDXOrGf62lCivDN37US1Loh5Pf9n9q6bQI0jKrQI51BxrhZHykQs7lzLMvZ1bw7l-T-tKkCO9eZv2phRjjnMvrdSfdsEWq8RBVMD88wMGXs99h46MaudYDtsDhXcyWoiOSFud6Gq8W25z1IKSq3pPlvbwXbPvUoVzGmAKd4YlaI"/>
+<span class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm text-on-surface px-3 py-1 rounded-full font-label-uppercase text-[11px] uppercase tracking-wider">
+              2022 • Amalfi Coast
+            </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">The Endless Summer</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">
+              A winding road trip through lemon groves and rocky inlets cemented our partnership. We learned each other's favorite melodies, navigated hairpin curves, and promised to build a life rich in curiosity and unhurried laughter.
+            </p>
+<div class="mt-space-md pt-space-sm border-none bg-surface-container p-space-sm rounded-lg">
+<span class="font-quote-italic text-quote-italic text-sm text-secondary block">"Lost in Ravello, we found home." — Julia</span>
+</div>
+</div>
+</div>
+<!-- Chapter 3 -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="h-64 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Intimate candlelit twilight photo in Paris beside the Seine river with delicate champagne flutes, an antique diamond engagement ring case open on linen napkins, softly blurred city lights in background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUrIhDhxxcb0ZbnwXYX2jW6rz3QuuPMG_qeVNxB_8KltR7_zrot5LyJgxJyfdVyaohZfHi9ZSrGr6H290Esf1r8izck4akJjkJMLl9MZcNOGAbbNuD1PXddvcCfWQXUhjmbF6V--kxDG0wlxneFrPX5sV7F-kb4OdfNLYQufBIIUGYsnkzk3oZw8QGpapswk3T_DuAS130Ey4uEwXGAy8kqxrJGtegHt7MuGFwePan5XsxE0M3eGI"/>
+<span class="absolute top-4 left-4 bg-surface/90 backdrop-blur-sm text-on-surface px-3 py-1 rounded-full font-label-uppercase text-[11px] uppercase tracking-wider">
+              2024 • Paris
+            </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">The Eternal Promise</h3>
+<p class="font-body-md text-body-md text-on-surface-variant flex-1">
+              On an autumnal twilight overlooking the Seine, with street violins softly echoing across Île Saint-Louis, Pedro knelt with his grandmother’s heirloom ring. An emphatic, tearful "Yes" sealed our forever.
+            </p>
+<div class="mt-space-md pt-space-sm border-none bg-surface-container p-space-sm rounded-lg">
+<span class="font-quote-italic text-quote-italic text-sm text-secondary block">"The easiest question I have ever answered." — Julia</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 2: Chronogram / Schedule of the Day -->
+<section class="w-full bg-surface py-space-xl" id="chronogram">
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-space-xl gap-space-sm">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase tracking-widest block mb-space-xs">Schedule of Events</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface">The Wedding Chronogram</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">Thursday, the Twenty-Sixth of November, 2026</p>
+</div>
+<div class="flex flex-wrap items-center gap-space-sm">
+<span class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full font-label-uppercase text-label-uppercase text-tertiary">
+<span class="material-symbols-outlined text-[18px]">checkroom</span>
+            Dress Code: Formal Tuscan Elegance
+          </span>
+<a class="inline-flex items-center gap-2 px-4 py-2 bg-surface-container rounded-full font-label-uppercase text-label-uppercase text-primary hover:bg-surface-container-high transition-colors" href="#venue-map">
+<span class="material-symbols-outlined text-[18px]">near_me</span>
+            Villa Directions
+          </a>
+</div>
+</div>
+<!-- Chronogram Timeline Sequence -->
+<div class="relative max-w-[840px] mx-auto">
+<!-- Center connecting subtle line -->
+<div class="absolute left-6 md:left-1/2 top-4 bottom-4 w-0.5 bg-surface-variant -translate-x-1/2"></div>
+<!-- Event 1 -->
+<div class="relative flex flex-col md:flex-row items-start mb-space-xl group">
+<div class="md:w-1/2 md:pr-space-lg pl-14 md:pl-0 md:text-right">
+<span class="font-label-uppercase text-label-uppercase text-primary font-semibold block">15:30 CET</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Welcome Cocktails &amp; String Quartet</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Gather in the historic Lemon Grove for artisanal spritz, infused prosecco, and delicate baroque arrangements as guests arrive.
+            </p>
+<span class="inline-block mt-2 px-3 py-1 rounded bg-surface-container font-label-uppercase text-[10px] text-secondary">The Lemon Grove</span>
+</div>
+<!-- Node Dot -->
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">local_bar</span>
+</div>
+<div class="hidden md:block md:w-1/2 md:pl-space-lg"></div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex flex-col md:flex-row items-start mb-space-xl group">
+<div class="hidden md:block md:w-1/2 md:pr-space-lg"></div>
+<!-- Node Dot -->
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">church</span>
+</div>
+<div class="md:w-1/2 md:pl-space-lg pl-14">
+<span class="font-label-uppercase text-label-uppercase text-primary font-semibold block">16:30 CET</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Holy Matrimony Ceremony</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Exchange of vows and blessing beneath the centuries-old olive canopy overlooking the Chianti hills as the sun descends.
+            </p>
+<span class="inline-block mt-2 px-3 py-1 rounded bg-surface-container font-label-uppercase text-[10px] text-secondary">The Olive Terrace</span>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex flex-col md:flex-row items-start mb-space-xl group">
+<div class="md:w-1/2 md:pr-space-lg pl-14 md:pl-0 md:text-right">
+<span class="font-label-uppercase text-label-uppercase text-primary font-semibold block">18:00 CET</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Tuscan Sunset Aperitivo</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Artisanal pecorino wheels, cured prosciutto di cinta senese, fresh focaccia, and reserve Chianti Classico as twilight bathes the estate.
+            </p>
+<span class="inline-block mt-2 px-3 py-1 rounded bg-surface-container font-label-uppercase text-secondary text-[10px]">Corte dei Fiori</span>
+</div>
+<!-- Node Dot -->
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">wine_bar</span>
+</div>
+<div class="hidden md:block md:w-1/2 md:pl-space-lg"></div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex flex-col md:flex-row items-start mb-space-xl group">
+<div class="hidden md:block md:w-1/2 md:pr-space-lg"></div>
+<!-- Node Dot -->
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">restaurant</span>
+</div>
+<div class="md:w-1/2 md:pl-space-lg pl-14">
+<span class="font-label-uppercase text-label-uppercase text-primary font-semibold block">19:30 CET</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Gala Dinner &amp; Speeches</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              A five-course seasonal banquet illuminated by thousands of fairy lights and floating candles under the starlit glass pergola.
+            </p>
+<span class="inline-block mt-2 px-3 py-1 rounded bg-surface-container font-label-uppercase text-secondary text-[10px]">The Grand Starlit Pergola</span>
+</div>
+</div>
+<!-- Event 5 -->
+<div class="relative flex flex-col md:flex-row items-start group">
+<div class="md:w-1/2 md:pr-space-lg pl-14 md:pl-0 md:text-right">
+<span class="font-label-uppercase text-label-uppercase text-primary font-semibold block">22:00 CET</span>
+<h3 class="font-headline-sm text-headline-sm text-on-surface mt-1">Cake Cutting, Fireworks &amp; Party</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+              Traditional Millefoglie prepared live before your eyes, illuminated celebratory fireworks, open bar, and DJ dance party until dawn.
+            </p>
+<span class="inline-block mt-2 px-3 py-1 rounded bg-surface-container font-label-uppercase text-secondary text-[10px]">The Great Ballroom &amp; Lawn</span>
+</div>
+<!-- Node Dot -->
+<div class="absolute left-6 md:left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-on-primary transition-all shadow-sm">
+<span class="material-symbols-outlined text-[16px]">celebration</span>
+</div>
+<div class="hidden md:block md:w-1/2 md:pl-space-lg"></div>
+</div>
+</div>
+<!-- Venue Map & Shuttle Information -->
+<div class="mt-space-xl p-space-lg bg-surface-container rounded-2xl shadow-sm" id="venue-map">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-5">
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase block mb-1">Getting Here</span>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Villa Bellissima</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Located in the heart of Chianti Classico hills, 45 minutes south of Florence Peretola Airport (FLR). Dedicated guest private shuttles will run continuously from Florence City Center (Piazza Santa Maria Novella) starting at 14:00 CET.
+            </p>
+<div class="space-y-2">
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">directions_bus</span>
+                Complimentary guest shuttles every 30 minutes
+              </div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[18px]">local_parking</span>
+                Valet parking available for all private vehicles
+              </div>
+</div>
+</div>
+<div class="lg:col-span-7">
+<div class="w-full h-64 bg-cover bg-center rounded-xl shadow-inner relative overflow-hidden flex items-end p-4" data-location="Villa Bellissima, Greve in Chianti, Tuscany, Italy" style="">
+<div class="bg-surface/90 backdrop-blur-md px-4 py-2 rounded-lg shadow">
+<p class="font-label-uppercase text-[11px] text-on-surface font-medium uppercase">Greve in Chianti • Tuscany</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">43.5828° N, 11.3172° E</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: RSVP (Confirmate do invitate) -->
+<section class="w-full bg-surface-container-low py-space-xl" id="rsvp">
+<div class="max-w-[760px] mx-auto px-margin md:px-margin-tablet">
+<div class="text-center mb-space-lg">
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase tracking-widest block mb-space-xs">Répondez S’il Vous Plaît</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-xs">Confirm Your Attendance</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Dear <span class="font-medium text-on-surface">Juan Pablo</span>, kindly confirm your attendance before October 15, 2026.
+        </p>
+</div>
+<!-- Formal Stationery RSVP Enclosure Card -->
+<div class="bg-surface rounded-2xl p-space-lg md:p-space-xl shadow-[0_16px_36px_-12px_rgba(44,37,35,0.07)] relative">
+<div class="flex items-center justify-between pb-space-md mb-space-md border-none bg-surface-container p-space-md rounded-xl">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-tertiary uppercase block">Assigned Guest</span>
+<p class="font-headline-sm text-headline-sm text-on-surface">Juan Pablo + 1 Guest</p>
+</div>
+<span class="px-3 py-1 bg-surface rounded-full font-label-uppercase text-[11px] text-primary">Table Bellini Reserved</span>
+</div>
+<form class="space-y-space-md" id="rsvp-form" onsubmit="event.preventDefault(); document.getElementById('rsvp-success').classList.remove('hidden'); document.getElementById('rsvp-form').classList.add('hidden');">
+<!-- Attendance Radio / Toggle -->
+<div>
+<label class="font-label-uppercase text-label-uppercase text-on-surface uppercase block mb-space-xs">Will You Be Attending?</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-sm">
+<label class="cursor-pointer flex items-center gap-space-sm p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container has-[:checked]:text-on-primary-container">
+<input checked="" class="w-4 h-4 accent-primary" name="attendance" type="radio" value="yes"/>
+<div>
+<span class="font-headline-sm text-[16px] block font-medium">Attending Joyfully</span>
+<span class="font-body-sm text-[12px] opacity-80">I will celebrate in Tuscany</span>
+</div>
+</label>
+<label class="cursor-pointer flex items-center gap-space-sm p-space-md rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container has-[:checked]:text-on-primary-container">
+<input class="w-4 h-4 accent-primary" name="attendance" type="radio" value="no"/>
+<div>
+<span class="font-headline-sm text-[16px] block font-medium">Declining with Regret</span>
+<span class="font-body-sm text-[12px] opacity-80">Wishing you well from afar</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Guest Count Selection -->
+<div>
+<label class="font-label-uppercase text-label-uppercase text-on-surface uppercase block mb-space-xs">Total Guests Joining</label>
+<div class="grid grid-cols-2 gap-space-sm">
+<label class="cursor-pointer flex items-center justify-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container has-[:checked]:text-on-primary-container">
+<input class="sr-only" name="guest_count" type="radio" value="1"/>
+<span class="font-body-md text-body-md">Just Myself (1 Guest)</span>
+</label>
+<label class="cursor-pointer flex items-center justify-center p-3 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors has-[:checked]:bg-primary-container has-[:checked]:text-on-primary-container">
+<input checked="" class="sr-only" name="guest_count" type="radio" value="2"/>
+<span class="font-body-md text-body-md">Juan Pablo + Plus-One (2 Guests)</span>
+</label>
+</div>
+</div>
+<!-- Plus One Name Input -->
+<div>
+<label class="font-label-uppercase text-label-uppercase text-on-surface uppercase block mb-space-xs" for="plus-one-name">Plus-One Full Name (if applicable)</label>
+<input class="w-full bg-surface-container px-space-md py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary" id="plus-one-name" placeholder="e.g., Sofia Rossi" type="text"/>
+</div>
+<!-- Dietary Restrictions -->
+<div>
+<label class="font-label-uppercase text-label-uppercase text-on-surface uppercase block mb-space-xs">Dietary &amp; Culinary Preferences</label>
+<div class="flex flex-wrap gap-2 mb-space-xs">
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="accent-primary" name="diet" type="checkbox" value="vegetarian"/> Vegetarian
+              </label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="accent-primary" name="diet" type="checkbox" value="vegan"/> Vegan
+              </label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="accent-primary" name="diet" type="checkbox" value="gluten-free"/> Gluten-Free
+              </label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="accent-primary" name="diet" type="checkbox" value="pescatarian"/> Pescatarian
+              </label>
+<label class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-surface-container text-on-surface font-body-sm text-body-sm cursor-pointer hover:bg-surface-container-high transition-colors">
+<input class="accent-primary" name="diet" type="checkbox" value="nut-allergy"/> Nut Allergy
+              </label>
+</div>
+<input class="w-full bg-surface-container px-space-md py-2.5 rounded-lg text-on-surface font-body-sm text-body-sm placeholder-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary" placeholder="Specific allergies or culinary notes..." type="text"/>
+</div>
+<!-- Song Request -->
+<div>
+<label class="font-label-uppercase text-label-uppercase text-on-surface uppercase block mb-space-xs" for="song-request">Song to Guarantee You on the Dance Floor</label>
+<div class="relative">
+<input class="w-full bg-surface-container pl-10 pr-space-md py-3 rounded-lg text-on-surface font-body-md text-body-md placeholder-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary" id="song-request" placeholder="Artist - Track Name" type="text"/>
+<span class="material-symbols-outlined absolute left-3 top-3.5 text-on-surface-variant text-[18px]">music_note</span>
+</div>
+</div>
+<!-- Shuttle Service Question -->
+<div class="bg-surface-container-low p-space-md rounded-xl">
+<span class="font-label-uppercase text-[11px] text-tertiary block mb-1">Florence Shuttle Accommodation</span>
+<label class="flex items-start gap-2 cursor-pointer">
+<input checked="" class="mt-1 accent-primary" type="checkbox"/>
+<span class="font-body-sm text-body-sm text-on-surface">Please reserve 2 complimentary roundtrip seats on the Florence Piazza Santa Maria Novella shuttle bus.</span>
+</label>
+</div>
+<button class="w-full py-4 bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container rounded-xl font-label-uppercase text-label-uppercase uppercase tracking-widest transition-all shadow-md flex items-center justify-center gap-2" type="submit">
+<span class="material-symbols-outlined text-[20px]">send</span>
+            Confirm Juan Pablo's RSVP
+          </button>
+</form>
+<!-- Feedback Confirmation Banner (Hidden by default) -->
+<div class="hidden text-center py-space-xl" id="rsvp-success">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full mx-auto flex items-center justify-center mb-space-md">
+<span class="material-symbols-outlined text-[32px]">check</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface mb-2">Thank You, Juan Pablo!</h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-[420px] mx-auto mb-space-lg">
+            Your attendance has been graciously recorded. We have notified our banquet team and reserved your table for November 26, 2026.
+          </p>
+<button class="px-6 py-2.5 bg-surface-container rounded-lg font-label-uppercase text-label-uppercase text-on-surface uppercase" onclick="document.getElementById('rsvp-success').classList.add('hidden'); document.getElementById('rsvp-form').classList.remove('hidden');" type="button">
+            Modify Preferences
+          </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Sent Message / Digital Guestbook -->
+<section class="w-full bg-surface py-space-xl" id="guestbook">
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left: Write Your Blessing -->
+<div class="lg:col-span-5 flex flex-col justify-between">
+<div>
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase tracking-widest block mb-space-xs">Words of Love</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mb-space-xs">Digital Guestbook</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-md">
+              Send your personal blessings, shared memories, and warm wishes to Julia and Pedro ahead of their wedding vows.
+            </p>
+<form class="space-y-space-sm" id="wishes-form" onsubmit="event.preventDefault(); appendGuestbookWish();">
+<div>
+<label class="font-label-uppercase text-[11px] text-on-surface uppercase block mb-1">From</label>
+<input class="w-full bg-surface-container px-space-md py-2.5 rounded-lg text-on-surface font-body-sm text-body-sm focus:outline-none focus:ring-1 focus:ring-primary" id="author-input" type="text" value="Juan Pablo"/>
+</div>
+<div>
+<label class="font-label-uppercase text-[11px] text-on-surface uppercase block mb-1">Your Message or Blessing</label>
+<textarea class="w-full bg-surface-container p-space-md rounded-lg text-on-surface font-body-md text-body-md placeholder-on-surface-variant/50 focus:outline-none focus:ring-1 focus:ring-primary resize-none" id="message-input" placeholder="Dear Julia &amp; Pedro, watching your love flourish has been an inspiration..." required="" rows="4"></textarea>
+</div>
+<div class="flex items-center gap-space-sm">
+<button class="px-4 py-2 bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded-lg font-label-uppercase text-[11px] uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">photo_camera</span>
+                  Attach Memory
+                </button>
+<button class="px-4 py-2 bg-surface-container hover:bg-surface-container-high text-on-surface-variant rounded-lg font-label-uppercase text-[11px] uppercase tracking-wider flex items-center gap-1.5 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">mic</span>
+                  Voice Note
+                </button>
+</div>
+<button class="w-full py-3 bg-secondary hover:bg-tertiary-container text-on-secondary rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors shadow-sm flex items-center justify-center gap-2 mt-2" type="submit">
+<span class="material-symbols-outlined text-[18px]">favorite</span>
+                Post to Guestbook
+              </button>
+</form>
+</div>
+<div class="mt-space-lg p-space-md bg-surface-container-low rounded-xl">
+<span class="font-quote-italic text-quote-italic text-sm text-on-surface-variant">
+              "Love is patient and kind; love does not envy or boast; it is not arrogant or rude."
+            </span>
+</div>
+</div>
+<!-- Right: Recent Wishes Wall -->
+<div class="lg:col-span-7">
+<div class="flex items-center justify-between mb-space-md">
+<span class="font-label-uppercase text-label-uppercase text-tertiary uppercase">Received Blessings</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">24 heartfelt messages</span>
+</div>
+<div class="space-y-space-md max-h-[580px] overflow-y-auto pr-2" id="wishes-stream">
+<!-- Message Card 1 -->
+<div class="p-space-md bg-surface-container rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center font-bold text-xs">
+                    MC
+                  </div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface">Matteo &amp; Chiara</h4>
+<span class="font-label-uppercase text-[10px] text-secondary">Milano, Italy</span>
+</div>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">Yesterday</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                "May your journey together be as endless and luminous as the rolling Tuscan hills. We cannot wait to raise our glasses and celebrate this magical milestone with you both!"
+              </p>
+</div>
+<!-- Message Card 2 -->
+<div class="p-space-md bg-surface-container rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center font-bold text-xs">
+                    AL
+                  </div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface">Aunt Lucia &amp; Uncle Roberto</h4>
+<span class="font-label-uppercase text-[10px] text-secondary">Rome, Italy</span>
+</div>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">3 days ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                "Julia, seeing you so radiant next to Pedro fills our entire family with warmth. You two complement each other with such deep respect and grace. All our love and prayers!"
+              </p>
+</div>
+<!-- Message Card 3 -->
+<div class="p-space-md bg-surface-container rounded-xl shadow-sm">
+<div class="flex items-center justify-between mb-2">
+<div class="flex items-center gap-2">
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center font-bold text-xs">
+                    ES
+                  </div>
+<div>
+<h4 class="font-headline-sm text-[16px] text-on-surface">Elena Silva</h4>
+<span class="font-label-uppercase text-[10px] text-secondary">Madrid, Spain</span>
+</div>
+</div>
+<span class="font-body-sm text-[12px] text-on-surface-variant">5 days ago</span>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                "Pedro, my dearest friend since university—you found your queen. Julia, you are a dream. Ready to dance until sunrise at Villa Bellissima!"
+              </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 5: Table to Gift and Present (Gift Registry & Present Table) -->
+<section class="w-full bg-surface-container-low py-space-xl" id="registry">
+<div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop">
+<div class="text-center max-w-[720px] mx-auto mb-space-xl">
+<span class="font-label-uppercase text-label-uppercase text-secondary uppercase tracking-widest block mb-space-xs">Wishes &amp; Gratitude</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface mb-space-sm">Table to Gift &amp; Present</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">
+          Your presence and love on our wedding day is the greatest treasure we could ask for. Should you desire to honor us with a gift, we have prepared thoughtful registries and honeymoon experiences below.
+        </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-space-xl">
+<!-- Registry Card 1: Honeymoon Fund -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="h-52 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Dreamy artistic travel photograph of traditional Kyoto wooden tea house lanterns surrounded by cherry blossom petals and moss gardens in soft misty morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxBk1oArLHBlyqB2HQ_w7ya6Yu-fsOVsI_FacWHwMPzpGtzJ0LYEB7quZinSsIFr656q8J3gaI9QpTXUqeE1C-ZeccOE9YqTws_IRB5v4YmFwJJicj_ptMrTjjnmqy1zHURmQM9iq4nM-aj2OnNHaoq84gymQLPtfZlwAbEfSuahUade8_MU0bV6dcyvTg_FwvpXLUw_1cgLq3SPBgnhs7UYatuWJS6W5KjJ3uWd9mHaEC13-ukpM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute bottom-3 left-3 bg-surface/90 text-on-surface px-3 py-1 rounded-full font-label-uppercase text-[10px] uppercase">
+              Adventure &amp; Voyage
+            </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Honeymoon Voyage: Japan &amp; Amalfi</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">
+              Contribute toward our dream honeymoon: exploring ancient gardens in Kyoto, onsen sanctuaries in Hakone, followed by relaxing coastal sun in Positano.
+            </p>
+<!-- Progress bar -->
+<div class="mt-space-md mb-space-sm">
+<div class="flex justify-between text-xs font-label-uppercase text-on-surface-variant mb-1">
+<span>Funded: 74%</span>
+<span>Goal: €8,000</span>
+</div>
+<div class="w-full h-2 bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 74%;"></div>
+</div>
+</div>
+<button class="w-full py-2.5 bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors" type="button">
+              Contribute to Honeymoon
+            </button>
+</div>
+</div>
+<!-- Registry Card 2: Home Atelier & Ceramics -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="h-52 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Editorial lifestyle still life of handcrafted ceramic tableware, linen napkins, fluted wine glasses, and bronze cutlery arranged neatly on an antique oak dining table" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFr8lVbix1l7ZUtISabi3csy-KvGCmYS8Xs3ygSjtIHg8__A_ZYWUwfHyeMWegVGv0TfAe58gzKMjO32qYPNiLYZeBv-QXZwwiOErQTGDjUWSYyCbP4Gy0ojQibumYv85P4ymiY1u_M7aP-nPfJDGcfJLYgGsfrpK8qZfL31C3biCx8kFc2SjlTIu3na_U1jguGjN4Puqfc1wQqNycVFX1ZtIVAUJqq11uweugLlrPAk6m9GXlA0A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute bottom-3 left-3 bg-surface/90 text-on-surface px-3 py-1 rounded-full font-label-uppercase text-[10px] uppercase">
+              Home &amp; Living
+            </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Curated Home &amp; Atelier Registry</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">
+              Hand-thrown Tuscan terracotta dinnerware, artisanal linen heirlooms, and curated mid-century pieces for our new home in Milan.
+            </p>
+<div class="mt-space-md mb-space-sm flex items-center justify-between text-xs font-label-uppercase text-tertiary">
+<span>Partner: The Conran Shop &amp; Ginori 1735</span>
+<span>18 items left</span>
+</div>
+<button class="w-full py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors" type="button">
+              Browse Gift Catalog
+            </button>
+</div>
+</div>
+<!-- Registry Card 3: Direct Transfer & Reception Table -->
+<div class="bg-surface rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="h-52 overflow-hidden relative">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Close up photograph of a vintage embossed paper card envelope tied with olive green silk ribbon, botanical wax seal stamp, resting on rustic limestone surface with olive branch sprigs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc0IyZIuq0aG4utLQTFpHyrbX7zUZ9DWgNBNnKl4-Cnos8atfQwV5zasT4c0l9kvzx0_wPWPpGl1hP7KXK3RjVwZksrPRFizHqfuyIJpsZQj0aiFmPUFX7rXFjQwXSf7aQdI_YdFVoYlvOC_DCzR5ELDf9ttWS2R5PAB9UePd2cUV3X4e_z34J8Vih8ZNMWHsxPfRgGpVI8-NkSPG_HKxodkiGa6cwLTn49MArBrcUK8xuC1p7WNo"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<span class="absolute bottom-3 left-3 bg-surface/90 text-on-surface px-3 py-1 rounded-full font-label-uppercase text-[10px] uppercase">
+              On-Site &amp; Direct
+            </span>
+</div>
+<div class="p-space-lg flex-1 flex flex-col">
+<h3 class="font-headline-sm text-headline-sm text-on-surface mb-2">Gift Table &amp; Direct Wire</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex-1">
+              A designated reception gift table will be arranged at Villa Bellissima with an archival envelope chest. Alternatively, direct banking details are available below.
+            </p>
+<div class="mt-space-md mb-space-sm p-space-xs bg-surface-container rounded-lg flex items-center justify-between">
+<span class="font-body-sm text-[12px] text-on-surface truncate">IBAN: IT60 X054 2811 1010 0000 0123 45</span>
+<button class="font-label-uppercase text-[10px] text-primary hover:text-on-surface px-2 py-1 uppercase" onclick="navigator.clipboard.writeText('IT60X054281110100000012345'); this.innerText='COPIED';" type="button">
+                Copy
+              </button>
+</div>
+<button class="w-full py-2.5 bg-surface-container hover:bg-surface-container-high text-on-surface rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors" type="button">
+              View Bank &amp; Swift Info
+            </button>
+</div>
+</div>
+</div>
+<!-- Reception Gift Drop-off Advisory -->
+<div class="max-w-[760px] mx-auto p-space-md bg-surface rounded-xl shadow-sm text-center">
+<div class="flex items-center justify-center gap-2 mb-1">
+<span class="material-symbols-outlined text-secondary text-[20px]">inventory_2</span>
+<span class="font-headline-sm text-[18px] text-on-surface">Reception Gift Table Location</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+          Located in the grand entrance gallery of Villa Bellissima, attended by our host concierge throughout the evening.
+        </p>
+</div>
+</div>
+</section>
+<!-- Floating Quick RSVP Action for Juan Pablo -->
+<aside class="fixed bottom-6 right-6 z-40 bg-surface/95 backdrop-blur-md rounded-2xl shadow-xl p-space-sm hidden sm:flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-primary-container text-on-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">drafts</span>
+</div>
+<div class="flex flex-col pr-space-xs">
+<span class="font-label-uppercase text-[10px] text-secondary">Juan Pablo • Invitation</span>
+<span class="font-headline-sm text-[14px] text-on-surface">Nov 26, 2026 • Tuscany</span>
+</div>
+<a class="px-4 py-2 bg-primary hover:bg-primary-container text-on-primary hover:text-on-primary-container rounded-lg font-label-uppercase text-label-uppercase uppercase tracking-wider transition-colors" href="#rsvp">
+      RSVP Now
+    </a>
+</aside>
+</div>
+<script>
+  // Simple Countdown Timer simulation for 26 November 2026
+  (function initWeddingCountdown() {
+    const targetDate = new Date('2026-11-26T15:30:00').getTime();
+
+    function updateTimer() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        const dEl = document.getElementById('days-val');
+        const hEl = document.getElementById('hours-val');
+        const mEl = document.getElementById('minutes-val');
+        const sEl = document.getElementById('seconds-val');
+
+        if (dEl) dEl.textContent = days;
+        if (hEl) hEl.textContent = hours;
+        if (mEl) mEl.textContent = minutes;
+        if (sEl) sEl.textContent = seconds;
+      }
+    }
+
+    updateTimer();
+    setInterval(updateTimer, 1000);
+  })();
+
+  // Dynamic Add Wish to Guestbook
+  function appendGuestbookWish() {
+    const authorInput = document.getElementById('author-input');
+    const msgInput = document.getElementById('message-input');
+    const stream = document.getElementById('wishes-stream');
+
+    if (!msgInput.value.trim()) return;
+
+    const newCard = document.createElement('div');
+    newCard.className = 'p-space-md bg-surface-container rounded-xl shadow-sm transition-all animate-fadeIn';
+    
+    const author = authorInput.value.trim() || 'Juan Pablo';
+    const initials = author.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'JP';
+
+    newCard.innerHTML = `
+      <div class="flex items-center justify-between mb-2">
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-xs">
+            ${initials}
+          </div>
+          <div>
+            <h4 class="font-headline-sm text-[16px] text-on-surface">${author}</h4>
+            <span class="font-label-uppercase text-[10px] text-primary">Special Invited Guest</span>
+          </div>
+        </div>
+        <span class="font-body-sm text-[12px] text-on-surface-variant">Just now</span>
+      </div>
+      <p class="font-body-md text-body-md text-on-surface-variant">
+        "${msgInput.value.trim()}"
+      </p>
+    `;
+
+    stream.insertBefore(newCard, stream.firstChild);
+    msgInput.value = '';
+  }
+</script></main><footer class="w-full bg-surface-container-low pt-space-xl pb-space-lg"><div class="max-w-[1180px] mx-auto px-margin md:px-margin-tablet lg:px-margin-desktop"><div class="text-center max-w-[760px] mx-auto mb-space-xl"><span class="font-label-uppercase text-label-uppercase text-secondary uppercase block mb-space-xs">With Love &amp; Appreciation</span><h3 class="font-headline-md text-headline-md text-on-surface mb-space-sm">Julia &amp; Pedro</h3><p class="font-quote-italic text-quote-italic text-on-surface-variant">"We eagerly look forward to sharing this sacred celebration, cherished fellowship, and joyful evening under the Tuscan olive groves with you."</p></div><div class="grid grid-cols-1 md:grid-cols-3 gap-gutter mb-space-xl text-center md:text-left"><div class="p-space-md bg-surface rounded-xl shadow-[0_16px_36px_-12px_rgba(44,37,35,0.03)]"><span class="font-label-uppercase text-label-uppercase text-primary block mb-space-xs">Celebration Details</span><p class="font-headline-sm text-headline-sm text-on-surface mb-space-xs">Villa di Vignamaggio</p><p class="font-body-sm text-body-sm text-on-surface-variant">Greve in Chianti, Tuscany, Italy<br/>Saturday, the Twelfth of September</p></div><div class="p-space-md bg-surface rounded-xl shadow-[0_16px_36px_-12px_rgba(44,37,35,0.03)]"><span class="font-label-uppercase text-label-uppercase text-primary block mb-space-xs">Guest Concierge &amp; Accommodations</span><p class="font-body-md text-body-md text-on-surface mb-space-xs">Borgo San Felice &amp; Local Villas</p><p class="font-body-sm text-body-sm text-on-surface-variant">Complimentary shuttle shuttles depart Florence central piazza. Room blocks reserved under Nuptial2025.</p></div><div class="p-space-md bg-surface rounded-xl shadow-[0_16px_36px_-12px_rgba(44,37,35,0.03)]"><span class="font-label-uppercase text-label-uppercase text-primary block mb-space-xs">Inquiries &amp; Assistance</span><p class="font-body-md text-body-md text-on-surface mb-space-xs">Wedding Concierge Office</p><p class="font-body-sm text-body-sm text-on-surface-variant">concierge@ateliernuptial.com<br/>+39 055 854 6653</p></div></div><div class="pt-space-md flex flex-col md:flex-row items-center justify-between text-center md:text-left text-on-surface-variant gap-space-xs"><p class="font-body-sm text-body-sm">© Atelier Nuptial: Julia &amp; Pedro. Handcrafted with reverence and grace.</p><div class="flex items-center gap-space-md"><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="timeline" href="#">Schedule of Events</a><a class="font-body-sm text-body-sm hover:text-on-surface transition-colors" data-path="rsvp" href="#">Formal RSVP</a></div></div></div></footer></body></html>
