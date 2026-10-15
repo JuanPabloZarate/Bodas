@@ -13,6 +13,8 @@ import React, {
 import {
   Prospect,
   CoupleSide,
+  AffinityCategory,
+  PriorityTier,
   ProspectStatus,
   CapacityConfig,
   MigrationSummary,
@@ -59,7 +61,10 @@ export interface ProspectsContextType {
   updateProspect: (id: string, updates: Partial<Prospect>) => void;
   deleteProspect: (id: string) => void;
   updateProspectStatus: (id: string, status: ProspectStatus) => void;
+  updateProspectAffinity: (id: string, affinity: AffinityCategory) => void;
   batchUpdateStatus: (status: ProspectStatus) => void;
+  batchUpdateAffinity: (affinity: AffinityCategory) => void;
+  batchUpdateTier: (tier: PriorityTier) => void;
   updateCapacity: (updates: Partial<CapacityConfig>) => void;
   // In / Out Services
   bulkImport: (items: BulkImportItem[]) => number;
@@ -74,7 +79,7 @@ export interface ProspectsContextType {
 const ProspectsContext = createContext<ProspectsContextType | null>(null);
 
 export function ProspectsProvider({ children }: { children: React.ReactNode }) {
-  const { kpis, addGuest } = useWeddingStore();
+  const { kpis, addGuest, addMultipleGuests } = useWeddingStore();
 
   const [prospects, setProspects] = useState<Prospect[]>(INITIAL_PROSPECTS);
   const [capacity, setCapacity] = useState<CapacityConfig>(DEFAULT_CAPACITY_CONFIG);
@@ -210,6 +215,41 @@ export function ProspectsProvider({ children }: { children: React.ReactNode }) {
     [selectedIds]
   );
 
+  const updateProspectAffinity = useCallback(
+    (id: string, affinity: AffinityCategory) => {
+      updateProspect(id, { affinity });
+    },
+    [updateProspect]
+  );
+
+  const batchUpdateAffinity = useCallback(
+    (affinity: AffinityCategory) => {
+      if (selectedIds.length === 0) return;
+      setProspects((prev) => {
+        const next = prev.map((p) =>
+          selectedIds.includes(p.id) ? { ...p, affinity, updatedAt: new Date().toISOString() } : p
+        );
+        saveProspectsToStorage(next);
+        return next;
+      });
+    },
+    [selectedIds]
+  );
+
+  const batchUpdateTier = useCallback(
+    (tier: PriorityTier) => {
+      if (selectedIds.length === 0) return;
+      setProspects((prev) => {
+        const next = prev.map((p) =>
+          selectedIds.includes(p.id) ? { ...p, tier, updatedAt: new Date().toISOString() } : p
+        );
+        saveProspectsToStorage(next);
+        return next;
+      });
+    },
+    [selectedIds]
+  );
+
   const updateCapacity = useCallback((updates: Partial<CapacityConfig>) => {
     setCapacity((prev) => {
       const next: CapacityConfig = {
@@ -279,6 +319,7 @@ export function ProspectsProvider({ children }: { children: React.ReactNode }) {
       selectedIds,
       prospects,
       addGuestFn: addGuest,
+      addMultipleGuestsFn: addMultipleGuests,
       currentOfficialGuestsCount: kpis.totalInvited,
       capacity,
     });
@@ -290,7 +331,7 @@ export function ProspectsProvider({ children }: { children: React.ReactNode }) {
     );
 
     return summary;
-  }, [selectedIds, prospects, addGuest, kpis.totalInvited, capacity]);
+  }, [selectedIds, prospects, addGuest, addMultipleGuests, kpis.totalInvited, capacity]);
 
   const resetProspectsToDefault = useCallback(() => {
     setProspects(INITIAL_PROSPECTS);
@@ -331,7 +372,10 @@ export function ProspectsProvider({ children }: { children: React.ReactNode }) {
     updateProspect,
     deleteProspect,
     updateProspectStatus,
+    updateProspectAffinity,
     batchUpdateStatus,
+    batchUpdateAffinity,
+    batchUpdateTier,
     updateCapacity,
     bulkImport,
     importPresets,
@@ -367,7 +411,10 @@ export function useProspectsStore(): ProspectsContextType {
       updateProspect: () => {},
       deleteProspect: () => {},
       updateProspectStatus: () => {},
+      updateProspectAffinity: () => {},
       batchUpdateStatus: () => {},
+      batchUpdateAffinity: () => {},
+      batchUpdateTier: () => {},
       updateCapacity: () => {},
       bulkImport: () => 0,
       importPresets: () => 0,

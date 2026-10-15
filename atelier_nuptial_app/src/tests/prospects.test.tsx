@@ -407,5 +407,156 @@ Sebastien Blanc,ambos,amigos,B,2,París 2024`;
       ).toBeInTheDocument();
       expect(screen.getByRole('link', { name: /Gestionar Prospectos →/i })).toBeInTheDocument();
     });
+
+    it('allows entering prospective guests directly from the guests page (/admin)', async () => {
+      render(
+        <WeddingStoreProvider>
+          <ProspectsProvider>
+            <AdminPage />
+          </ProspectsProvider>
+        </WeddingStoreProvider>
+      );
+
+      // Verify "+ Ingresar Prospecto" button exists on the guests page (/admin)
+      const addProspectBtns = screen.getAllByRole('button', { name: /\+ Ingresar Prospecto/i });
+      expect(addProspectBtns.length).toBeGreaterThan(0);
+
+      // Click the first "+ Ingresar Prospecto" button (e.g. in banner or toolbar)
+      fireEvent.click(addProspectBtns[0]);
+
+      // ProspectModal opens
+      expect(
+        screen.getByRole('heading', { name: /Registrar Nuevo Prospecto/i })
+      ).toBeInTheDocument();
+
+      // Fill in prospect details
+      const nameInput = screen.getByLabelText(/Nombre Completo del Prospecto/i);
+      fireEvent.change(nameInput, { target: { value: 'Gianluca Moretti & Fam' } });
+
+      // Click save
+      const submitBtn = screen.getByRole('button', { name: /Registrar Prospecto/i });
+      fireEvent.click(submitBtn);
+
+      // Modal closes and prospect count in banner updates
+      await waitFor(() => {
+        expect(
+          screen.queryByRole('heading', { name: /Registrar Nuevo Prospecto/i })
+        ).not.toBeInTheDocument();
+      });
+    });
+
+    it('parses RFC 4180 CSV containing quoted fields with internal commas without shifting columns', () => {
+      const csv = `Nombre,Lado,Afinidad,Tier,Cupos,Notas
+"Rossi, Beatrice & Paolo",novia,familia_directa,A,2,"Invitación especial, con alojamiento"
+"Silva, Tiago & Mariana",novio,familia_directa,A,2,"Padrino de boda, Lisboa"`;
+
+      const items = parseCSVToProspects(csv);
+      expect(items.length).toBe(2);
+      expect(items[0].name).toBe('Rossi, Beatrice & Paolo');
+      expect(items[0].side).toBe('novia');
+      expect(items[0].affinity).toBe('familia_directa');
+      expect(items[0].tier).toBe('A');
+      expect(items[0].partySize).toBe(2);
+      expect(items[0].notes).toBe('Invitación especial, con alojamiento');
+
+      expect(items[1].name).toBe('Silva, Tiago & Mariana');
+      expect(items[1].side).toBe('novio');
+      expect(items[1].notes).toBe('Padrino de boda, Lisboa');
+    });
+
+    it('updates affinity easily in batch for selected prospects', async () => {
+      render(
+        <WeddingStoreProvider>
+          <ProspectsProvider>
+            <AdminProspectsPage />
+          </ProspectsProvider>
+        </WeddingStoreProvider>
+      );
+
+      // Select first row
+      const rows = screen.getAllByRole('row');
+      const firstRowBtn = within(rows[1]).getAllByRole('button')[0];
+      fireEvent.click(firstRowBtn);
+
+      // Batch bar appears with affinity dropdown
+      await waitFor(() => {
+        expect(screen.getByLabelText(/Clasificar afinidad en lote/i)).toBeInTheDocument();
+      });
+
+      // Change affinity in batch to 'vip'
+      const batchAffinitySelect = screen.getByLabelText(/Clasificar afinidad en lote/i);
+      fireEvent.change(batchAffinitySelect, { target: { value: 'vip' } });
+
+      // First row affinity selector should now reflect VIP
+      await waitFor(() => {
+        const rowSelect = within(rows[1]).getByLabelText(/Cambiar afinidad de/i) as HTMLSelectElement;
+        expect(rowSelect.value).toBe('vip');
+      });
+    });
+
+    it('accurately computes overcapacity thresholds for expected and maximum limits', () => {
+      const capacity: CapacityConfig = {
+        capacidadEsperada: 150,
+        capacidadMaxima: 175,
+      };
+
+      // Case 1: Within expected (142 current + 4 seats = 146 <= 150)
+      const p1 = createProspectRecord({ name: 'A', side: 'novia', partySize: 4 });
+      const analysis1 = computeCapacityAnalysis(142, [p1], capacity);
+      expect(analysis1.isWithinExpected).toBe(true);
+      expect(analysis1.isWithinMax).toBe(true);
+      expect(analysis1.isOverMax).toBe(false);
+      expect(analysis1.expectedDeficitOrSurplus).toBe(4);
+
+      // Case 2: Exceeds expected, within max (142 + 15 = 157 > 150, <= 175)
+      const p2 = createProspectRecord({ name: 'B', side: 'novio', partySize: 15 });
+      const analysis2 = computeCapacityAnalysis(142, [p2], capacity);
+      expect(analysis2.isWithinExpected).toBe(false);
+      expect(analysis2.isWithinMax).toBe(true);
+      expect(analysis2.isOverMax).toBe(false);
+      expect(analysis2.expectedDeficitOrSurplus).toBe(-7);
+
+      // Case 3: Exceeds maximum (142 + 40 = 182 > 175)
+      const p3 = createProspectRecord({ name: 'C', side: 'ambos', partySize: 40 });
+      const analysis3 = computeCapacityAnalysis(142, [p3], capacity);
+      expect(analysis3.isWithinExpected).toBe(false);
+      expect(analysis3.isWithinMax).toBe(false);
+      expect(analysis3.isOverMax).toBe(true);
+      expect(analysis3.maxDeficitOrSurplus).toBe(-7);
+    });
+
+    it('performs atomic batch migration of selected prospects using addMultipleGuests', () => {
+      const mockAddMultiple = vi.fn();
+      const prospects = [
+        createProspectRecord({ id: 'pr-t1', name: 'Prospect 1', side: 'novia', partySize: 2 }),
+        createProspectRecord({ id: 'pr-t2', name: 'Prospect 2', side: 'novio', partySize: 3 }),
+        createProspectRecord({ id: 'pr-t3', name: 'Prospect 3', side: 'ambos', partySize: 1 }),
+      ];
+
+      const { updatedProspects, summary } = processMigrationToGuests({
+        selectedIds: ['pr-t1', 'pr-t2'],
+        prospects,
+        addMultipleGuestsFn: mockAddMultiple,
+        currentOfficialGuestsCount: 142,
+        capacity: DEFAULT_CAPACITY_CONFIG,
+      });
+
+      expect(mockAddMultiple).toHaveBeenCalledTimes(1);
+      const insertedGuests = mockAddMultiple.mock.calls[0][0];
+      expect(insertedGuests.length).toBe(2);
+      expect(insertedGuests[0].name).toBe('Prospect 1');
+      expect(insertedGuests[1].name).toBe('Prospect 2');
+
+      expect(summary.success).toBe(true);
+      expect(summary.migratedCount).toBe(2);
+      expect(summary.totalSeats).toBe(5);
+
+      const p1 = updatedProspects.find((p) => p.id === 'pr-t1');
+      expect(p1?.status).toBe('migrated');
+      expect(p1?.migratedToGuestId).toBeDefined();
+
+      const p3 = updatedProspects.find((p) => p.id === 'pr-t3');
+      expect(p3?.status).toBe('draft');
+    });
   });
 });

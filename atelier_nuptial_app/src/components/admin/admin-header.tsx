@@ -18,6 +18,7 @@ import { Button } from '@/components/ui/button';
 
 export interface AdminHeaderProps {
   onOpenAddGuestModal: () => void;
+  onOpenAddProspectModal?: () => void;
   onExportCSV: () => void;
   targetDate?: string; // Default: "2026-11-26T16:30:00Z"
   className?: string;
@@ -25,6 +26,7 @@ export interface AdminHeaderProps {
 
 export function AdminHeader({
   onOpenAddGuestModal,
+  onOpenAddProspectModal,
   onExportCSV,
   targetDate = '2026-11-26T16:30:00Z',
   className = '',
@@ -187,6 +189,18 @@ export function AdminHeader({
               <Users className="w-3.5 h-3.5" />
               <span>Prospectos</span>
             </Link>
+
+            {onOpenAddProspectModal && (
+              <Button
+                variant="secondary"
+                size="sm"
+                onClick={onOpenAddProspectModal}
+                className="text-xs font-label-uppercase tracking-wider hidden md:inline-flex"
+                iconLeft={<Sparkles className="w-3.5 h-3.5 text-secondary" />}
+              >
+                + Ingresar Prospecto
+              </Button>
+            )}
 
             <Button
               variant="primary"

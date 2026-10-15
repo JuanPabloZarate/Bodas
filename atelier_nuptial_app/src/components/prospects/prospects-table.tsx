@@ -45,6 +45,9 @@ export interface ProspectsTableProps {
   onQuickMigrateSingle: (prospect: Prospect) => void;
   sideFilter: CoupleSide | 'all';
   onSideFilterChange: (side: CoupleSide | 'all') => void;
+  onUpdateAffinity?: (id: string, affinity: AffinityCategory) => void;
+  onBatchUpdateAffinity?: (affinity: AffinityCategory) => void;
+  capacityAnalysis?: import('@/lib/prospects-types').CapacityAnalysis;
 }
 
 export function ProspectsTable({
@@ -60,6 +63,9 @@ export function ProspectsTable({
   onQuickMigrateSingle,
   sideFilter,
   onSideFilterChange,
+  onUpdateAffinity,
+  onBatchUpdateAffinity,
+  capacityAnalysis,
 }: ProspectsTableProps) {
   const [searchQuery, setSearchQuery] = useState('');
   const [affinityFilter, setAffinityFilter] = useState<AffinityCategory | 'all'>('all');
@@ -206,12 +212,35 @@ export function ProspectsTable({
 
         {/* 2. Floating Batch Actions Bar (Visible when items selected) */}
         {selectedCount > 0 && (
-          <div className="p-3 bg-secondary/10 border border-secondary/30 rounded-xl flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fadeIn">
-            <div className="flex items-center gap-2 text-xs text-secondary font-semibold">
-              <CheckSquare className="w-4 h-4 text-secondary shrink-0" />
-              <span>
-                {selectedCount} prospectos seleccionados (+{selectedSeats} cupos totales)
-              </span>
+          <div className="p-3 bg-secondary/10 border border-secondary/30 rounded-xl flex flex-col lg:flex-row lg:items-center justify-between gap-3 animate-fadeIn">
+            <div className="flex flex-wrap items-center gap-2 text-xs">
+              <div className="flex items-center gap-1.5 text-secondary font-semibold">
+                <CheckSquare className="w-4 h-4 text-secondary shrink-0" />
+                <span>
+                  {selectedCount} prospectos seleccionados (+{selectedSeats} cupos totales)
+                </span>
+              </div>
+              {capacityAnalysis && (
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-outline text-[11px] hidden sm:inline">•</span>
+                  <span className="text-[11px] text-on-surface font-medium">
+                    Aforo: <strong>{capacityAnalysis.projectedTotal}</strong> / {capacityAnalysis.capacidadMaxima}
+                  </span>
+                  {capacityAnalysis.isOverMax ? (
+                    <span className="px-2 py-0.5 rounded-full bg-rose-100 text-rose-800 text-[10px] font-bold border border-rose-300">
+                      🚨 Supera Límite Máximo ({capacityAnalysis.capacidadMaxima})
+                    </span>
+                  ) : !capacityAnalysis.isWithinExpected ? (
+                    <span className="px-2 py-0.5 rounded-full bg-amber-100 text-amber-800 text-[10px] font-semibold border border-amber-300">
+                      ⚠️ Supera Objetivo ({capacityAnalysis.capacidadEsperada})
+                    </span>
+                  ) : (
+                    <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-medium border border-emerald-300">
+                      ✓ Aforo Permitido ({capacityAnalysis.capacidadEsperada})
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
 
             <div className="flex flex-wrap items-center gap-2">
@@ -224,6 +253,29 @@ export function ProspectsTable({
               >
                 Migrar a Invitados ({selectedCount})
               </Button>
+
+              {onBatchUpdateAffinity && (
+                <select
+                  aria-label="Clasificar afinidad en lote"
+                  defaultValue=""
+                  onChange={(e) => {
+                    if (e.target.value) {
+                      onBatchUpdateAffinity(e.target.value as AffinityCategory);
+                      e.target.value = '';
+                    }
+                  }}
+                  className="px-2.5 py-1.5 rounded-lg bg-surface border border-outline-variant/50 hover:bg-surface-container text-xs text-on-surface font-medium cursor-pointer"
+                >
+                  <option value="" disabled>
+                    Clasificar Afinidad...
+                  </option>
+                  {Object.entries(AFFINITY_LABELS).map(([k, v]) => (
+                    <option key={k} value={k}>
+                      {v.label}
+                    </option>
+                  ))}
+                </select>
+              )}
 
               <button
                 type="button"
@@ -368,13 +420,28 @@ export function ProspectsTable({
                       </div>
                     </td>
 
-                    {/* Affinity Badge */}
+                    {/* Affinity Badge with Quick Inline Selector */}
                     <td className="py-3.5 px-4">
-                      <span
-                        className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium border ${aff.color}`}
-                      >
-                        {aff.label}
-                      </span>
+                      {onUpdateAffinity ? (
+                        <select
+                          aria-label={`Cambiar afinidad de ${prospect.name}`}
+                          value={prospect.affinity}
+                          onChange={(e) => onUpdateAffinity(prospect.id, e.target.value as AffinityCategory)}
+                          className={`text-[11px] font-medium rounded-full px-2 py-0.5 border cursor-pointer ${aff.color}`}
+                        >
+                          {Object.entries(AFFINITY_LABELS).map(([k, v]) => (
+                            <option key={k} value={k}>
+                              {v.label}
+                            </option>
+                          ))}
+                        </select>
+                      ) : (
+                        <span
+                          className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-[11px] font-medium border ${aff.color}`}
+                        >
+                          {aff.label}
+                        </span>
+                      )}
                     </td>
 
                     {/* Tier */}

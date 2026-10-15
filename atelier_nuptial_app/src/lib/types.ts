@@ -172,6 +172,7 @@ export interface WeddingStoreContextType {
   addSongRequest: (song: Omit<SongRequestItem, 'id' | 'votes' | 'status'> & { id?: string; votes?: number; status?: SongStatus }) => void;
   voteSongRequest: (songId: string) => void;
   addGuest: (guest: Omit<Guest, 'id' | 'updatedAt'> & { id?: string }) => void;
+  addMultipleGuests?: (guests: (Omit<Guest, 'id' | 'updatedAt'> & { id?: string })[]) => void;
   updateGuest: (id: string, updates: Partial<Guest>) => void;
   deleteGuest: (id: string) => void;
   assignGuestTable?: (guestId: string, tableId?: string) => void;

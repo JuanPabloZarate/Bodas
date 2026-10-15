@@ -598,16 +598,43 @@ export function exportProspectsToJSON(prospects: Prospect[]): string {
 }
 
 /**
- * IN: Parses CSV text into BulkImportItems.
+ * IN: Parses CSV text into BulkImportItems supporting RFC 4180 (quoted fields with commas).
  */
 export function parseCSVToProspects(csvText: string): BulkImportItem[] {
+  if (!csvText || !csvText.trim()) return [];
+
+  const parseLine = (line: string): string[] => {
+    const fields: string[] = [];
+    let current = '';
+    let inQuotes = false;
+
+    for (let i = 0; i < line.length; i++) {
+      const char = line[i];
+      if (char === '"') {
+        if (inQuotes && line[i + 1] === '"') {
+          current += '"';
+          i++; // skip escaped quote
+        } else {
+          inQuotes = !inQuotes;
+        }
+      } else if (char === ',' && !inQuotes) {
+        fields.push(current.trim());
+        current = '';
+      } else {
+        current += char;
+      }
+    }
+    fields.push(current.trim());
+    return fields.map((c) => c.replace(/^"|"$/g, '').trim());
+  };
+
   const lines = csvText.split(/\r?\n/).filter((l) => l.trim().length > 0);
   if (lines.length <= 1) return [];
 
   const items: BulkImportItem[] = [];
   // Skip header line
   for (let i = 1; i < lines.length; i++) {
-    const cols = lines[i].split(',').map((c) => c.trim().replace(/^"|"$/g, ''));
+    const cols = parseLine(lines[i]);
     if (cols[0]) {
       const name = cols[0];
       const side = (['novia', 'novio', 'ambos'].includes(cols[1]?.toLowerCase())
@@ -637,12 +664,14 @@ export function processMigrationToGuests({
   selectedIds,
   prospects,
   addGuestFn,
+  addMultipleGuestsFn,
   currentOfficialGuestsCount,
   capacity,
 }: {
   selectedIds: string[];
   prospects: Prospect[];
-  addGuestFn: (guest: Omit<Guest, 'id' | 'updatedAt'> & { id?: string }) => void;
+  addGuestFn?: (guest: Omit<Guest, 'id' | 'updatedAt'> & { id?: string }) => void;
+  addMultipleGuestsFn?: (guests: (Omit<Guest, 'id' | 'updatedAt'> & { id?: string })[]) => void;
   currentOfficialGuestsCount: number;
   capacity: CapacityConfig;
 }): {
@@ -652,6 +681,7 @@ export function processMigrationToGuests({
   const selectedProspects = prospects.filter((p) => selectedIds.includes(p.id));
   const migratedGuests: MigrationResultItem[] = [];
   const errors: string[] = [];
+  const newGuestsToInsert: (Omit<Guest, 'id' | 'updatedAt'> & { id?: string })[] = [];
 
   let totalSeatsAdded = 0;
   const now = new Date().toISOString();
@@ -691,8 +721,8 @@ export function processMigrationToGuests({
       ? `[Prospecto ${p.tier} • ${coupleSideNote}] ${p.notes}`
       : `[Prospecto ${p.tier} • ${coupleSideNote}]`;
 
-    // 1. OUTPUT: Add to official Guests database
-    addGuestFn({
+    // 1. OUTPUT: Prepare record for official Guests database
+    newGuestsToInsert.push({
       id: guestId,
       name: p.name,
       passcode,
@@ -727,6 +757,15 @@ export function processMigrationToGuests({
       updatedAt: now,
     };
   });
+
+  // Execute guest creation in official database (prefer atomic batch)
+  if (newGuestsToInsert.length > 0) {
+    if (addMultipleGuestsFn) {
+      addMultipleGuestsFn(newGuestsToInsert);
+    } else if (addGuestFn) {
+      newGuestsToInsert.forEach((g) => addGuestFn(g));
+    }
+  }
 
   // Save updated prospects database
   saveProspectsToStorage(updatedProspects);
@@ -814,10 +853,23 @@ export function computeCoupleBalance(prospects: Prospect[]): CoupleBalanceMetric
   });
 
   const totalSeats = noviaSeats + novioSeats + ambosSeats;
-  const noviaPercentage = totalSeats > 0 ? Math.round((noviaSeats / totalSeats) * 100) : 33;
-  const novioPercentage = totalSeats > 0 ? Math.round((novioSeats / totalSeats) * 100) : 33;
-  const ambosPercentage =
-    totalSeats > 0 ? Math.max(0, 100 - noviaPercentage - novioPercentage) : 34;
+  let noviaPercentage = 33;
+  let novioPercentage = 33;
+  let ambosPercentage = 34;
+
+  if (totalSeats > 0) {
+    noviaPercentage = Math.round((noviaSeats / totalSeats) * 100);
+    novioPercentage = Math.round((novioSeats / totalSeats) * 100);
+    ambosPercentage = 100 - noviaPercentage - novioPercentage;
+    if (ambosPercentage < 0) {
+      if (noviaPercentage >= novioPercentage) {
+        noviaPercentage += ambosPercentage;
+      } else {
+        novioPercentage += ambosPercentage;
+      }
+      ambosPercentage = 0;
+    }
+  }
 
   return {
     totalProspects: total,

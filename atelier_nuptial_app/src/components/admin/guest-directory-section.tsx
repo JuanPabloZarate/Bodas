@@ -8,6 +8,7 @@ import {
   Download,
   MailCheck,
   UserPlus,
+  Sparkles,
 } from 'lucide-react';
 import { Guest } from '@/lib/types';
 import { Button } from '@/components/ui/button';
@@ -29,6 +30,7 @@ export interface GuestDirectorySectionProps {
   activeFilter: GuestDirectoryFilter;
   onFilterChange: (filter: GuestDirectoryFilter) => void;
   onOpenAddGuestModal: () => void;
+  onOpenAddProspectModal?: () => void;
   onOpenEditGuestModal: (guest: Guest) => void;
   onOpenPreviewModal: (guest: Guest) => void;
   onDeleteGuest: (guestId: string) => void;
@@ -47,6 +49,7 @@ export function GuestDirectorySection({
   activeFilter,
   onFilterChange,
   onOpenAddGuestModal,
+  onOpenAddProspectModal,
   onOpenEditGuestModal,
   onOpenPreviewModal,
   onDeleteGuest,
@@ -167,6 +170,18 @@ export function GuestDirectorySection({
               iconLeft={<MailCheck className="w-3.5 h-3.5" />}
             >
               Remind Pending ({counts.pending})
+            </Button>
+          )}
+
+          {onOpenAddProspectModal && (
+            <Button
+              variant="secondary"
+              size="sm"
+              onClick={onOpenAddProspectModal}
+              className="text-xs font-label-uppercase tracking-wider"
+              iconLeft={<Sparkles className="w-3.5 h-3.5 text-secondary" />}
+            >
+              + Ingresar Prospecto
             </Button>
           )}
 

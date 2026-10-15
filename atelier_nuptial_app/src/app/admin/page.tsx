@@ -7,6 +7,8 @@ import Image from 'next/image';
 import { useWeddingStore } from '@/context/wedding-store';
 import { useProspectsStore } from '@/context/prospects-store';
 import { Guest, SeatingTable } from '@/lib/types';
+import { Prospect, CoupleSide } from '@/lib/prospects-types';
+import { ProspectModal } from '@/components/prospects';
 import { showToast, ToastContainer } from '@/components/ui/toast';
 import {
   AdminHeader,
@@ -30,7 +32,7 @@ import {
 } from 'lucide-react';
 
 export default function AdminPage() {
-  const { prospects } = useProspectsStore();
+  const { prospects, addProspect } = useProspectsStore();
   const {
     state,
     kpis,
@@ -45,7 +47,7 @@ export default function AdminPage() {
   const [activeFilter, setActiveFilter] = useState<GuestDirectoryFilter>('all');
   const [selectedTableId, setSelectedTableId] = useState<string | null>(null);
 
-  // Modal State Machine
+  // Modal State Machine (Official Guests)
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     mode: 'add' | 'edit';
@@ -57,6 +59,9 @@ export default function AdminPage() {
   });
 
   const [previewGuest, setPreviewGuest] = useState<Guest | null>(null);
+
+  // Modal State for Ingreso de Prospectos desde la Página de Invitados (Requisito 1)
+  const [isAddProspectModalOpen, setIsAddProspectModalOpen] = useState(false);
 
   // Filtered guests taking into account optional selected table from seating chart
   const displayedGuests = useMemo(() => {
@@ -101,6 +106,14 @@ export default function AdminPage() {
       }
     },
     [modalState.mode, updateGuest, addGuest]
+  );
+
+  const handleSaveProspectFromAdmin = useCallback(
+    (prospectData: Partial<Prospect> & { name: string; side: CoupleSide }) => {
+      addProspect(prospectData);
+      showToast(`Prospecto registrado desde la página de invitados: ${prospectData.name}`);
+    },
+    [addProspect]
   );
 
   const handleDeleteGuest = useCallback(
@@ -176,6 +189,7 @@ export default function AdminPage() {
         {/* 1. Header Banner */}
         <AdminHeader
           onOpenAddGuestModal={handleOpenAddModal}
+          onOpenAddProspectModal={() => setIsAddProspectModalOpen(true)}
           onExportCSV={handleExportCSV}
         />
 
@@ -312,12 +326,22 @@ export default function AdminPage() {
             </div>
           </div>
 
-          <Link
-            href="/admin/prospects"
-            className="shrink-0 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-uppercase text-xs tracking-wider font-semibold hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center gap-2 shadow-sm"
-          >
-            <span>Gestionar Prospectos →</span>
-          </Link>
+          <div className="flex flex-wrap items-center gap-2.5 shrink-0">
+            <button
+              type="button"
+              onClick={() => setIsAddProspectModalOpen(true)}
+              className="px-3.5 py-2.5 rounded-xl border border-secondary text-secondary hover:bg-secondary/10 font-label-uppercase text-xs tracking-wider font-semibold transition-all flex items-center gap-1.5 cursor-pointer shadow-xs"
+            >
+              <Sparkles className="w-3.5 h-3.5" />
+              <span>+ Ingresar Prospecto</span>
+            </button>
+            <Link
+              href="/admin/prospects"
+              className="px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-uppercase text-xs tracking-wider font-semibold hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center gap-2 shadow-sm"
+            >
+              <span>Gestionar Prospectos →</span>
+            </Link>
+          </div>
         </section>
 
         {/* 4. Guest Atelier Directory Table Section */}
@@ -328,6 +352,7 @@ export default function AdminPage() {
           activeFilter={activeFilter}
           onFilterChange={setActiveFilter}
           onOpenAddGuestModal={handleOpenAddModal}
+          onOpenAddProspectModal={() => setIsAddProspectModalOpen(true)}
           onOpenEditGuestModal={handleOpenEditModal}
           onOpenPreviewModal={setPreviewGuest}
           onDeleteGuest={handleDeleteGuest}
@@ -477,6 +502,15 @@ export default function AdminPage() {
         guest={previewGuest}
         onEditGuest={handleOpenEditModal}
         onCopyLink={handleCopyLink}
+      />
+
+      {/* Ingreso de Prospectos desde la Página de Invitados (Requisito 1) */}
+      <ProspectModal
+        isOpen={isAddProspectModalOpen}
+        onClose={() => setIsAddProspectModalOpen(false)}
+        mode="add"
+        prospect={null}
+        onSave={handleSaveProspectFromAdmin}
       />
     </div>
   );

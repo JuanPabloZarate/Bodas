@@ -400,6 +400,53 @@ export function WeddingStoreProvider({ children }: { children: React.ReactNode }
     [persistAndBroadcast]
   );
 
+  // 11b. Mutation: Add Multiple Guests atomically (Batch Migration)
+  const addMultipleGuests = useCallback(
+    (newGuestsData: (Omit<Guest, 'id' | 'updatedAt'> & { id?: string })[]) => {
+      persistAndBroadcast((prev) => {
+        const now = new Date().toISOString();
+        const createdGuests: Guest[] = newGuestsData.map((guest, idx) => {
+          const id = guest.id || `guest-${Date.now()}-${idx}-${Math.floor(Math.random() * 1000)}`;
+          const nameParts = (guest.name || '').trim().split(/\s+/);
+          const initials =
+            nameParts
+              .map((p) => p[0]?.toUpperCase())
+              .filter(Boolean)
+              .join('')
+              .slice(0, 2) || 'GP';
+          const fallbackPasscode = `${initials}-${Math.floor(1000 + Math.random() * 9000)}`;
+          const passcode =
+            guest.passcode && guest.passcode.trim() ? guest.passcode.trim() : fallbackPasscode;
+
+          let tableName = guest.tableName;
+          if (guest.tableId && !tableName) {
+            const found = prev.tables.find((t) => t.id === guest.tableId);
+            tableName = found ? found.name : guest.tableId;
+          }
+
+          return {
+            ...guest,
+            id,
+            passcode,
+            household: guest.household || guest.name,
+            partySize: guest.partySize !== undefined ? Number(guest.partySize) : 1,
+            status: guest.status || 'pending',
+            shuttleReserved: guest.shuttleReserved ?? false,
+            dietaryRestrictions: guest.dietaryRestrictions || [],
+            tableName: tableName || (guest.tableId ? guest.tableId : 'Unassigned'),
+            updatedAt: now,
+          };
+        });
+
+        return {
+          ...prev,
+          guests: [...createdGuests, ...prev.guests],
+        };
+      });
+    },
+    [persistAndBroadcast]
+  );
+
   // 12. Mutation: Update Guest (Admin)
   const updateGuest = useCallback(
     (id: string, updates: Partial<Guest>) => {
@@ -573,6 +620,7 @@ export function WeddingStoreProvider({ children }: { children: React.ReactNode }
     addSongRequest,
     voteSongRequest,
     addGuest,
+    addMultipleGuests,
     updateGuest,
     deleteGuest,
     assignGuestTable,

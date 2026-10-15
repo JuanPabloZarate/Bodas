@@ -31,6 +31,8 @@ export default function AdminProspectsPage() {
     updateProspect,
     deleteProspect,
     batchUpdateStatus,
+    updateProspectAffinity,
+    batchUpdateAffinity,
     updateCapacity,
     bulkImport,
     importPresets,
@@ -161,6 +163,9 @@ export default function AdminProspectsPage() {
           onQuickMigrateSingle={handleQuickMigrateSingle}
           sideFilter={sideFilter}
           onSideFilterChange={setSideFilter}
+          onUpdateAffinity={updateProspectAffinity}
+          onBatchUpdateAffinity={batchUpdateAffinity}
+          capacityAnalysis={capacityAnalysis}
         />
       </main>
 
