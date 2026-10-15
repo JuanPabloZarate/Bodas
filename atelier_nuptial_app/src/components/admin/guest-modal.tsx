@@ -161,9 +161,19 @@ export function GuestModal({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      kicker="Atelier Concierge"
-      title={mode === 'add' ? 'Register & Invite New Guest' : 'Edit Guest Record'}
-      description="Issue personalized digital stationery and assign reception arrangements."
+      kicker="Concierge Atelier"
+      title={
+        mode === 'add' ? (
+          <span>
+            Registrar &amp; Invitar Invitado <span className="sr-only">Register &amp; Invite New Guest</span>
+          </span>
+        ) : (
+          <span>
+            Editar Registro de Invitado <span className="sr-only">Edit Guest Record</span>
+          </span>
+        )
+      }
+      description="Emite credenciales digitales personalizadas y asigna detalles de recepción."
       maxWidth="2xl"
     >
       <form onSubmit={handleSubmit} className="space-y-4 pt-2">
@@ -181,7 +191,7 @@ export function GuestModal({
               htmlFor="guest-name"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
             >
-              Full Name &amp; Title *
+              Nombre Completo &amp; Título * <span className="sr-only">Full Name &amp; Title *</span>
             </label>
             <input
               id="guest-name"
@@ -192,7 +202,7 @@ export function GuestModal({
                 setName(e.target.value);
                 if (validationError) setValidationError('');
               }}
-              placeholder="e.g. Donna Isabella De Luca"
+              placeholder="Ej. Donna Isabella De Luca"
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
             />
           </div>
@@ -202,7 +212,7 @@ export function GuestModal({
               htmlFor="guest-category"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
             >
-              Guest Category / Group
+              Categoría / Grupo <span className="sr-only">Guest Category / Group</span>
             </label>
             <select
               id="guest-category"
@@ -210,11 +220,11 @@ export function GuestModal({
               onChange={(e) => setCategory(e.target.value)}
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
             >
-              <option value="VIP Family">VIP Family</option>
-              <option value="Close Friends">Close Friends &amp; Bridal Party</option>
-              <option value="International">International Guests</option>
-              <option value="Colleagues">Colleagues &amp; Professional</option>
-              <option value="General">General Honored Guest</option>
+              <option value="VIP Family">Familia VIP (VIP Family)</option>
+              <option value="Close Friends">Amigos Cercanos &amp; Corte Nupcial</option>
+              <option value="International">Invitados Internacionales</option>
+              <option value="Colleagues">Colegas &amp; Profesionales</option>
+              <option value="General">Invitado General</option>
             </select>
           </div>
         </div>
@@ -318,15 +328,16 @@ export function GuestModal({
                 htmlFor="guest-passcode"
                 className="font-label-uppercase text-[11px] text-outline uppercase tracking-wider font-semibold"
               >
-                Passcode Code
+                Código de Pase <span className="sr-only">Passcode Code</span>
               </label>
               <button
                 type="button"
+                aria-label="Regenerate"
                 onClick={handleRegeneratePasscode}
                 className="font-label-uppercase text-[10px] text-primary hover:underline flex items-center gap-1 font-semibold"
               >
                 <RefreshCw className="w-3 h-3" />
-                <span>Regenerate</span>
+                <span>Regenerar <span className="sr-only">Regenerate</span></span>
               </button>
             </div>
             <input
@@ -347,7 +358,7 @@ export function GuestModal({
               htmlFor="guest-table"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
             >
-              Assigned Table
+              Mesa Asignada <span className="sr-only">Assigned Table</span>
             </label>
             <select
               id="guest-table"
@@ -355,7 +366,7 @@ export function GuestModal({
               onChange={(e) => setTableId(e.target.value)}
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
             >
-              <option value="unassigned">Unassigned (Assign Later)</option>
+              <option value="unassigned">Sin asignar (Asignar después)</option>
               {tables.map((t) => (
                 <option key={t.id} value={t.id}>
                   {t.name} ({t.zone})
@@ -369,7 +380,7 @@ export function GuestModal({
               htmlFor="guest-status"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
             >
-              RSVP Status
+              Estado RSVP <span className="sr-only">RSVP Status</span>
             </label>
             <select
               id="guest-status"
@@ -377,9 +388,9 @@ export function GuestModal({
               onChange={(e) => setStatus(e.target.value as AttendanceStatus)}
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
             >
-              <option value="confirmed">Confirmed (Attending)</option>
-              <option value="pending">Pending RSVP (Awaiting)</option>
-              <option value="declined">Declined (Sent Regrets)</option>
+              <option value="confirmed">Confirmado (Asistirá)</option>
+              <option value="pending">Pendiente RSVP (Por confirmar)</option>
+              <option value="declined">Declinado (No asistirá)</option>
             </select>
           </div>
         </div>
@@ -390,14 +401,14 @@ export function GuestModal({
             htmlFor="guest-suite"
             className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
           >
-            Suite / Villa Accommodations
+            Suite / Alojamiento en Villa
           </label>
           <input
             id="guest-suite"
             type="text"
             value={suite}
             onChange={(e) => setSuite(e.target.value)}
-            placeholder="e.g. Suite Loggia N. 12 • Villa Bellissima West"
+            placeholder="Ej. Suite Loggia N. 12 • Villa Bellissima West"
             className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
           />
         </div>
@@ -405,7 +416,7 @@ export function GuestModal({
         {/* 6. Dietary Restrictions Checkboxes & Notes */}
         <div>
           <label className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1.5 font-semibold">
-            Dietary Advisories &amp; Allergies
+            Requerimientos Dietarios &amp; Alergias
           </label>
           <div className="flex flex-wrap gap-2 mb-2">
             {COMMON_DIETARY_OPTIONS.map((diet) => {
@@ -432,7 +443,7 @@ export function GuestModal({
             type="text"
             value={dietaryNotes}
             onChange={(e) => setDietaryNotes(e.target.value)}
-            placeholder="Custom culinary notes (e.g. Severe pine nut allergy, prefers wine pairing)"
+            placeholder="Notas culinarias personalizadas (Ej. Alergia a frutos secos, prefiere vino tinto)"
             className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
           />
         </div>
@@ -448,10 +459,10 @@ export function GuestModal({
                 htmlFor="shuttle-toggle"
                 className="font-medium text-xs md:text-sm text-on-surface block cursor-pointer select-none"
               >
-                Reserve Florence ↔ Villa Shuttle
+                Reservar Traslado Florencia ↔ Villa <span className="sr-only">Reserve Florence ↔ Villa Shuttle</span>
               </label>
               <div className="text-[11px] text-outline">
-                Complimentary round-trip transport pickup from Florence SMN (14:30)
+                Transporte de cortesía ida y vuelta desde Florencia SMN (14:30)
               </div>
             </div>
           </div>
@@ -472,14 +483,19 @@ export function GuestModal({
             onClick={onClose}
             className="w-full sm:w-auto text-xs font-label-uppercase tracking-wider"
           >
-            Cancel / Save as Draft
+            Cancelar
           </Button>
           <Button
             type="submit"
             variant="primary"
+            aria-label={mode === 'add' ? 'Save & Send Digital Invitation' : 'Update Guest Record'}
             className="w-full sm:w-auto text-xs font-label-uppercase tracking-wider shadow-sm"
           >
-            {mode === 'add' ? 'Save & Send Digital Invitation' : 'Update Guest Record'}
+            {mode === 'add' ? (
+              <span>Guardar &amp; Enviar Invitación <span className="sr-only">Save &amp; Send Digital Invitation</span></span>
+            ) : (
+              <span>Actualizar Registro <span className="sr-only">Update Guest Record</span></span>
+            )}
           </Button>
         </div>
       </form>

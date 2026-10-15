@@ -13,3 +13,4 @@ export * from './table-card';
 export * from './seating-chart-section';
 export * from './dietary-matrix-section';
 export * from './rsvp-preview-modal';
+export * from './admin-nav-tabs';

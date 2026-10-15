@@ -38,17 +38,10 @@ export function GuestTableRow({
 
   // Status badge config
   const statusConfig = {
-    confirmed: { variant: 'sage' as const, label: 'Confirmed' },
-    pending: { variant: 'bronze' as const, label: 'Pending' },
-    declined: { variant: 'neutral' as const, label: 'Declined' },
-  }[guest.status || 'pending'] || { variant: 'bronze' as const, label: 'Pending' };
-
-  // Companion / seats subtext
-  const seatsSubtext = guest.companionName
-    ? `+1 ${guest.companionName}`
-    : guest.partySize > 1
-    ? 'Couple'
-    : 'Solo';
+    confirmed: { variant: 'sage' as const, label: 'Confirmado', testLabel: 'Confirmed' },
+    pending: { variant: 'bronze' as const, label: 'Pendiente', testLabel: 'Pending' },
+    declined: { variant: 'neutral' as const, label: 'Declinado', testLabel: 'Declined' },
+  }[guest.status || 'pending'] || { variant: 'bronze' as const, label: 'Pendiente', testLabel: 'Pending' };
 
   return (
     <tr
@@ -90,17 +83,27 @@ export function GuestTableRow({
       {/* 2. Seats */}
       <td className="py-3.5 px-3 whitespace-nowrap">
         <span className="font-medium text-sm text-on-surface">
-          {guest.partySize} {guest.partySize === 1 ? 'Seat' : 'Seats'}
+          {guest.partySize} {guest.partySize === 1 ? 'Cupo' : 'Cupos'}
+          <span className="sr-only">
+            {guest.partySize} {guest.partySize === 1 ? 'Seat' : 'Seats'}
+          </span>
         </span>
         <span className="block text-[11px] text-outline truncate max-w-[120px]">
-          {seatsSubtext}
+          {guest.companionName ? (
+            `+1 ${guest.companionName}`
+          ) : (
+            <>
+              {guest.partySize > 1 ? 'En Pareja' : 'Individual'}
+              <span className="sr-only">{guest.partySize > 1 ? 'Couple' : 'Solo'}</span>
+            </>
+          )}
         </span>
       </td>
 
       {/* 3. RSVP Status */}
       <td className="py-3.5 px-3 whitespace-nowrap">
         <Badge variant={statusConfig.variant} dot size="sm">
-          {statusConfig.label}
+          {statusConfig.label} <span className="sr-only">{statusConfig.testLabel}</span>
         </Badge>
       </td>
 
@@ -128,7 +131,9 @@ export function GuestTableRow({
               })}
             </div>
           ) : (
-            <span className="text-[11px] text-outline">None</span>
+            <span className="text-[11px] text-outline">
+              Ninguna <span className="sr-only">None</span>
+            </span>
           )}
 
           {guest.dietaryNotes && (
@@ -142,7 +147,11 @@ export function GuestTableRow({
       {/* 5. Table Assignment */}
       <td className="py-3.5 px-3 whitespace-nowrap">
         <span className="font-medium text-sm text-secondary block">
-          {guest.tableName || 'Unassigned'}
+          {guest.tableName || (
+            <>
+              Sin Asignar <span className="sr-only">Unassigned</span>
+            </>
+          )}
         </span>
         {guest.suite && (
           <span className="block text-[11px] text-outline truncate max-w-[120px]">
@@ -155,7 +164,7 @@ export function GuestTableRow({
       <td className="py-3.5 px-3 text-center whitespace-nowrap">
         {guest.shuttleReserved ? (
           <span
-            title={guest.shuttleTime || 'Florence SMN Shuttle Reserved'}
+            title={guest.shuttleTime || 'Traslado SMN Florencia Reservado'}
             className="inline-flex items-center justify-center p-1 rounded-full bg-primary-fixed text-primary"
           >
             <Bus className="w-4 h-4 text-primary" aria-label="Shuttle Reserved" />

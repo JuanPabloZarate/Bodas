@@ -48,9 +48,9 @@ export function AdminKpiGrid({
       {/* 1. Total Invited */}
       <AdminKpiCard
         testId="kpi-total-invited"
-        title="Total Invited"
+        title={<span>Total Invitados <span className="sr-only">Total Invited</span></span>}
         value={kpis.totalInvited}
-        subtext={`${householdsCount} households`}
+        subtext={<span>{householdsCount} hogares <span className="sr-only">{householdsCount} households</span></span>}
         icon={<Users className="w-4 h-4 text-secondary" />}
         accentVariant="terracotta"
         onClick={onKpiClick ? () => onKpiClick('all') : undefined}
@@ -59,9 +59,9 @@ export function AdminKpiGrid({
       {/* 2. Attending */}
       <AdminKpiCard
         testId="kpi-attending"
-        title="Attending"
+        title={<span>Confirmados <span className="sr-only">Attending</span></span>}
         value={kpis.totalAttending}
-        subtext={`${kpis.attendanceRate}% attendance`}
+        subtext={<span>{kpis.attendanceRate}% asistencia <span className="sr-only">{kpis.attendanceRate}% attendance</span></span>}
         icon={<CheckCircle2 className="w-4 h-4 text-primary fill-primary/10" />}
         accentVariant="sage"
         onClick={onKpiClick ? () => onKpiClick('confirmed') : undefined}
@@ -70,9 +70,9 @@ export function AdminKpiGrid({
       {/* 3. Declined */}
       <AdminKpiCard
         testId="kpi-declined"
-        title="Declined"
+        title={<span>Declinados <span className="sr-only">Declined</span></span>}
         value={kpis.totalDeclined}
-        subtext="Sent warm regrets"
+        subtext={<span>Enviaron disculpas <span className="sr-only">Sent warm regrets</span></span>}
         icon={<XCircle className="w-4 h-4 text-on-surface-variant" />}
         accentVariant="neutral"
         onClick={onKpiClick ? () => onKpiClick('declined') : undefined}
@@ -81,9 +81,9 @@ export function AdminKpiGrid({
       {/* 4. Pending */}
       <AdminKpiCard
         testId="kpi-pending"
-        title="Pending"
+        title={<span>Pendientes <span className="sr-only">Pending</span></span>}
         value={kpis.totalPending}
-        subtext="Follow-up due"
+        subtext={<span>Seguimiento pendiente <span className="sr-only">Follow-up due</span></span>}
         icon={<Clock className="w-4 h-4 text-tertiary" />}
         accentVariant="bronze"
         onClick={onKpiClick ? () => onKpiClick('pending') : undefined}
@@ -92,9 +92,9 @@ export function AdminKpiGrid({
       {/* 5. Dietary Needs */}
       <AdminKpiCard
         testId="kpi-dietary"
-        title="Dietary Needs"
+        title={<span>Dietas Especiales <span className="sr-only">Dietary Needs</span></span>}
         value={kpis.dietaryNeeds}
-        subtext="Flagged to Chef"
+        subtext={<span>Avisado al Chef <span className="sr-only">Flagged to Chef</span></span>}
         icon={<UtensilsCrossed className="w-4 h-4 text-secondary" />}
         accentVariant="terracotta"
         onClick={onKpiClick ? () => onKpiClick('dietary') : undefined}
@@ -103,9 +103,9 @@ export function AdminKpiGrid({
       {/* 6. Gift Registry */}
       <AdminKpiCard
         testId="kpi-registry"
-        title="Gift Registry"
+        title={<span>Mesa de Regalos <span className="sr-only">Gift Registry</span></span>}
         value={`€${registryCollectedThousands}k`}
-        subtext={`€${(kpis.registryTarget / 1000).toFixed(0)}k goal`}
+        subtext={<span>Meta de €{(kpis.registryTarget / 1000).toFixed(0)}k <span className="sr-only">€{(kpis.registryTarget / 1000).toFixed(0)}k goal</span></span>}
         progressPercent={kpis.registryRate}
         icon={<Gift className="w-4 h-4 text-primary" />}
         accentVariant="sage"

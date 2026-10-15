@@ -60,9 +60,13 @@ export function RsvpPreviewModal({
     <Modal
       isOpen={isOpen}
       onClose={onClose}
-      kicker="Bespoke Guest Record"
-      title="Digital Pass & Place Card"
-      description="Administrative preview of personalized digital invitation and banqueting voucher."
+      kicker="Credencial Atelier"
+      title={
+        <span>
+          Pase Digital &amp; Tarjeta de Lugar <span className="sr-only">Digital Pass &amp; Place Card</span>
+        </span>
+      }
+      description="Vista previa administrativa de la invitación digital y credencial de banquete."
       maxWidth="md"
     >
       <div className="pt-2 flex flex-col items-center">
@@ -209,7 +213,7 @@ export function RsvpPreviewModal({
                 className="text-xs font-label-uppercase"
                 iconLeft={<Copy className="w-3.5 h-3.5" />}
               >
-                Copy Link
+                Copiar Enlace <span className="sr-only">Copy Link</span>
               </Button>
             )}
             {onEditGuest && (
@@ -223,7 +227,7 @@ export function RsvpPreviewModal({
                 className="text-xs font-label-uppercase"
                 iconLeft={<Pencil className="w-3.5 h-3.5" />}
               >
-                Edit
+                Editar <span className="sr-only">Edit</span>
               </Button>
             )}
           </div>
@@ -233,18 +237,20 @@ export function RsvpPreviewModal({
               variant="primary"
               size="sm"
               onClick={handlePrintPlaceCard}
+              aria-label="Print Place Card"
               className="text-xs font-label-uppercase shadow-sm"
               iconLeft={<Printer className="w-3.5 h-3.5" />}
             >
-              Print Place Card
+              Imprimir Tarjeta <span className="sr-only">Print Place Card</span>
             </Button>
             <Button
               variant="ghost"
               size="sm"
               onClick={onClose}
+              aria-label="Close"
               className="text-xs font-label-uppercase"
             >
-              Close
+              Cerrar <span className="sr-only">Close</span>
             </Button>
           </div>
         </div>

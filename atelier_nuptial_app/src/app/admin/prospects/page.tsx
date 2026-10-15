@@ -15,6 +15,7 @@ import {
   ProspectBulkModal,
   CapacitySettingsModal,
   MigrationConfirmModal,
+  AdminNavTabs,
 } from '@/components/prospects';
 
 export default function AdminProspectsPage() {
@@ -128,6 +129,12 @@ export default function AdminProspectsPage() {
       <ToastContainer />
 
       <main className="w-full max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col gap-8">
+        {/* Pestañas de Navegación entre Módulos */}
+        <AdminNavTabs
+          activeTab="prospectos"
+          prospectCount={prospects.length}
+        />
+
         {/* 1. Header Banner */}
         <ProspectsHeader
           onOpenAddModal={handleOpenAdd}

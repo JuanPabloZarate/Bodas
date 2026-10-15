@@ -4,9 +4,9 @@
 import React from 'react';
 
 export interface AdminKpiCardProps {
-  title: string;
+  title: string | React.ReactNode;
   value: string | number;
-  subtext?: string;
+  subtext?: string | React.ReactNode;
   icon: React.ReactNode;
   badge?: React.ReactNode;
   progressPercent?: number;

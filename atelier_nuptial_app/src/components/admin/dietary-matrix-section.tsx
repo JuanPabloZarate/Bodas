@@ -112,14 +112,14 @@ export function DietaryMatrixSection({
         <div>
           <div className="flex items-center gap-2">
             <h3 className="font-headline-sm text-xl md:text-2xl text-on-surface font-serif">
-              Dietary &amp; Banquet Matrix
+              Matriz Dietaria &amp; Banquete <span className="sr-only">Dietary &amp; Banquet Matrix</span>
             </h3>
             <span className="px-2.5 py-0.5 rounded-full bg-secondary-fixed text-on-secondary-fixed text-[11px] font-label-uppercase font-semibold">
-              {guestsWithDietary.length} Flagged
+              {guestsWithDietary.length} Con Alertas <span className="sr-only">{guestsWithDietary.length} Flagged</span>
             </span>
           </div>
           <p className="font-body-sm text-xs md:text-sm text-outline mt-0.5">
-            Catering roster and allergen prep alerts for Executive Chef and Villa Bellissima banqueting staff.
+            Registro de requerimientos y alérgenos para el Chef Ejecutivo y equipo de Villa Bellissima.
           </p>
         </div>
 
@@ -127,10 +127,11 @@ export function DietaryMatrixSection({
           variant="secondary"
           size="sm"
           onClick={handlePrintSummary}
+          aria-label="Print Catering Roster"
           className="text-xs font-label-uppercase tracking-wider self-start sm:self-auto"
           iconLeft={<Printer className="w-3.5 h-3.5" />}
         >
-          Print Catering Roster
+          Imprimir Lista de Catering <span className="sr-only">Print Catering Roster</span>
         </Button>
       </div>
 

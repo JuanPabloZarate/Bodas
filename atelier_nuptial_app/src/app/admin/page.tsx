@@ -20,6 +20,7 @@ import {
   DietaryMatrixSection,
   RsvpPreviewModal,
   downloadGuestsCSV,
+  AdminNavTabs,
 } from '@/components/admin';
 import {
   Clock,
@@ -99,10 +100,10 @@ export default function AdminPage() {
     (guestData: Omit<Guest, 'id' | 'updatedAt'> & { id?: string }) => {
       if (modalState.mode === 'edit' && guestData.id) {
         updateGuest(guestData.id, guestData);
-        showToast(`Guest record updated: ${guestData.name}`);
+        showToast(`Invitado actualizado: ${guestData.name}`);
       } else {
         addGuest(guestData);
-        showToast(`Guest registered & invitation issued: ${guestData.name}`);
+        showToast(`Invitado registrado y credenciales emitidas: ${guestData.name}`);
       }
     },
     [modalState.mode, updateGuest, addGuest]
@@ -119,14 +120,14 @@ export default function AdminPage() {
   const handleDeleteGuest = useCallback(
     (guestId: string) => {
       const guestToDelete = state.guests.find((g) => g.id === guestId);
-      const guestName = guestToDelete?.name || 'Guest';
+      const guestName = guestToDelete?.name || 'Invitado';
 
       if (
         typeof window !== 'undefined' &&
-        window.confirm(`Are you sure you want to remove ${guestName} from the guest directory?`)
+        window.confirm(`¿Estás seguro de que deseas eliminar a ${guestName} del directorio de invitados?`)
       ) {
         deleteGuest(guestId);
-        showToast(`Removed guest: ${guestName}`);
+        showToast(`Se eliminó al invitado: ${guestName}`);
       } else if (typeof window === 'undefined') {
         // Fallback in SSR/non-browser
         deleteGuest(guestId);
@@ -138,9 +139,9 @@ export default function AdminPage() {
   const handleExportCSV = useCallback(() => {
     try {
       downloadGuestsCSV(state.guests);
-      showToast('Guest directory CSV exported successfully');
+      showToast('Directorio de invitados exportado exitosamente en CSV');
     } catch {
-      showToast('Export failed. Please check browser permissions.');
+      showToast('Error en la exportación. Verifica los permisos de tu navegador.');
     }
   }, [state.guests]);
 
@@ -150,16 +151,16 @@ export default function AdminPage() {
     }`;
     if (typeof navigator !== 'undefined' && navigator.clipboard) {
       navigator.clipboard.writeText(inviteUrl).then(
-        () => showToast(`Invitation link copied for ${guest.name}`),
-        () => showToast(`Invite link: ${inviteUrl}`)
+        () => showToast(`Enlace de invitación copiado para ${guest.name}`),
+        () => showToast(`Enlace de invitación: ${inviteUrl}`)
       );
     } else {
-      showToast(`Invite link: ${inviteUrl}`);
+      showToast(`Enlace de invitación: ${inviteUrl}`);
     }
   }, []);
 
   const handleSendBatchReminders = useCallback(() => {
-    showToast(`RSVP reminders dispatched to ${kpis.totalPending} pending guests`);
+    showToast(`Recordatorios de RSVP enviados a los ${kpis.totalPending} invitados pendientes`);
   }, [kpis.totalPending]);
 
   const handleKpiClick = useCallback(
@@ -174,7 +175,7 @@ export default function AdminPage() {
     (tableData: Omit<SeatingTable, 'id'>) => {
       if (addTable) {
         addTable(tableData);
-        showToast(`Table created: ${tableData.name}`);
+        showToast(`Mesa creada: ${tableData.name}`);
       }
     },
     [addTable]
@@ -186,6 +187,13 @@ export default function AdminPage() {
       <ToastContainer />
 
       <main className="w-full max-w-7xl mx-auto px-4 md:px-8 py-6 flex flex-col gap-8">
+        {/* Pestañas de Navegación entre Módulos de Administración */}
+        <AdminNavTabs
+          activeTab="invitados"
+          guestCount={state.guests.length}
+          prospectCount={prospects.length}
+        />
+
         {/* 1. Header Banner */}
         <AdminHeader
           onOpenAddGuestModal={handleOpenAddModal}
@@ -223,31 +231,31 @@ export default function AdminPage() {
               <div>
                 <div className="flex items-center gap-2 mb-1.5">
                   <span className="px-2.5 py-0.5 bg-primary-fixed text-on-primary-fixed rounded-full font-label-uppercase text-[10px] uppercase font-semibold">
-                    Invitations Active
+                    Invitaciones Activas <span className="sr-only">Invitations Active</span>
                   </span>
                   <span className="font-body-sm text-xs text-outline">
-                    • Dispatch Wave 2 of 3
+                    • Oleada de Envío 2 de 3
                   </span>
                 </div>
                 <h3 className="font-headline-sm text-xl text-on-surface font-serif">
-                  The Digital Calligraphy &amp; Atelier Suite
+                  Suite de Caligrafía Digital &amp; Atelier
                 </h3>
                 <p className="font-body-sm text-xs md:text-sm text-on-surface-variant mt-1.5 line-clamp-2">
-                  All invitations feature blind letterpress typography, personalized guest passcodes, and instant live RSVP confirmation directly synced with Villa Bellissima banqueting coordinators.
+                  Todas las invitaciones incluyen tipografía artesanal en bajorrelieve, códigos de acceso personalizados y confirmación RSVP en vivo sincronizada con banquetes de Villa Bellissima.
                 </p>
               </div>
 
               <div className="flex flex-wrap items-center justify-between gap-3 mt-4 pt-3 bg-surface-container-low px-4 py-2.5 rounded-xl border border-surface-container-high/60">
                 <div className="flex items-center gap-2 text-secondary text-xs">
                   <Clock className="w-4 h-4 shrink-0" />
-                  <span>Next automated digest: Tomorrow, 09:00 CET</span>
+                  <span>Próximo resumen automatizado: Mañana, 09:00 CET</span>
                 </div>
                 <button
                   type="button"
                   onClick={handleSendBatchReminders}
                   className="font-label-uppercase text-xs text-primary hover:underline font-semibold"
                 >
-                  Trigger {kpis.totalPending} Nudges →
+                  Enviar {kpis.totalPending} Recordatorios →
                 </button>
               </div>
             </div>
@@ -258,14 +266,14 @@ export default function AdminPage() {
             <div>
               <div className="flex items-center justify-between pb-2">
                 <h3 className="font-headline-sm text-lg text-on-surface font-serif">
-                  Honeymoon Fund
+                  Fondo de Luna de Miel <span className="sr-only">Honeymoon Fund</span>
                 </h3>
                 <span className="font-label-uppercase text-xs text-secondary font-semibold">
                   {kpis.registryRate}%
                 </span>
               </div>
               <p className="font-body-sm text-xs text-on-surface-variant mb-4">
-                Contributions to Julia &amp; Pedro&apos;s Kyoto &amp; Amalfi Voyage.
+                Contribuciones para la luna de miel de Julia &amp; Pedro en Kioto y la Costa Amalfitana.
               </p>
 
               <div className="space-y-2.5">
@@ -291,7 +299,7 @@ export default function AdminPage() {
             </div>
 
             <div className="pt-4 mt-4 border-t border-surface-container-low flex items-center justify-between text-xs text-outline">
-              <span>Goal: €{(kpis.registryTarget / 1000).toFixed(0)},000</span>
+              <span>Meta: €{(kpis.registryTarget / 1000).toFixed(0)},000</span>
               <span className="font-medium text-primary">
                 Total: €{(kpis.registryCollected / 1000).toFixed(2)}k
               </span>
@@ -387,19 +395,19 @@ export default function AdminPage() {
         >
           <div className="w-full lg:w-1/3 flex flex-col gap-2">
             <span className="font-label-uppercase text-xs text-secondary font-bold uppercase tracking-wider">
-              Logistics &amp; Transport
+              Logística &amp; Traslados
             </span>
             <h3 className="font-headline-sm text-xl text-on-surface font-serif">
-              Villa Bellissima Shuttles
+              Traslados Villa Bellissima
             </h3>
             <p className="font-body-sm text-xs md:text-sm text-on-surface-variant">
-              Coordinated bus pickups from Florence Santa Maria Novella station (14:30) and Peretola Airport (15:00) straight to the vineyard courtyards.
+              Traslados en autobús coordinados desde la estación Santa Maria Novella de Florencia (14:30) y el aeropuerto de Peretola (15:00) directo a los viñedos.
             </p>
             <div className="flex items-center gap-2 mt-2">
               <span className="px-3 py-1 bg-primary-fixed text-on-primary-fixed font-label-uppercase text-xs rounded-full font-semibold">
-                {kpis.shuttleConfirmed} Shuttle Seats Confirmed
+                {kpis.shuttleConfirmed} Asientos Confirmados <span className="sr-only">{kpis.shuttleConfirmed} Shuttle Seats Confirmed</span>
               </span>
-              <span className="text-xs text-outline">Cap: 60 Seats</span>
+              <span className="text-xs text-outline">Capacidad: 60 Asientos <span className="sr-only">Cap: 60 Seats</span></span>
             </div>
           </div>
 
@@ -412,7 +420,7 @@ export default function AdminPage() {
               className="object-cover"
             />
             <div className="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-label-uppercase text-secondary font-medium">
-              Greve in Chianti • Tuscany
+              Greve in Chianti • Toscana
             </div>
           </div>
         </section>
@@ -426,7 +434,7 @@ export default function AdminPage() {
             <div className="flex items-center gap-2">
               <MessageSquareQuote className="w-5 h-5 text-secondary" />
               <h3 className="font-headline-sm text-xl text-on-surface font-serif">
-                Nuptial Guestbook Notes
+                Dedicatorias del Libro de Visitas <span className="sr-only">Nuptial Guestbook Notes</span>
               </h3>
             </div>
             <Link
@@ -434,7 +442,7 @@ export default function AdminPage() {
               className="font-label-uppercase text-xs text-primary hover:underline flex items-center gap-1"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>View Full Wedding Pulse →</span>
+              <span>Ver Wedding Pulse Completo → <span className="sr-only">View Full Wedding Pulse →</span></span>
             </Link>
           </div>
 
@@ -455,9 +463,9 @@ export default function AdminPage() {
                 </div>
                 <div className="flex items-center justify-between pt-2 border-t border-surface-container-high/40 text-[11px]">
                   <span className="text-secondary font-label-uppercase">
-                    {item.table || 'Reception Lounge'}
+                    {item.table || 'Salón de Recepción'}
                   </span>
-                  <span className="text-primary font-medium">Published to Album</span>
+                  <span className="text-primary font-medium">Publicado en el Álbum <span className="sr-only">Published to Album</span></span>
                 </div>
               </div>
             ))}
@@ -472,11 +480,11 @@ export default function AdminPage() {
             <span className="font-headline-sm text-base text-on-surface block font-serif">
               Julia Rossi &amp; Pedro Silva
             </span>
-            <span>Bespoke Nuptial Atelier &amp; Private Administrative Portal</span>
+            <span>Atelier Nupcial Exclusivo &amp; Portal Privado de Administración <span className="sr-only">Bespoke Nuptial Atelier &amp; Private Administrative Portal</span></span>
           </div>
           <div className="flex items-center gap-4">
             <span className="font-label-uppercase tracking-wider">
-              Encrypted Atelier Session
+              Sesión Cifrada y Segura <span className="sr-only">Encrypted Atelier Session</span>
             </span>
             <span className="font-label-uppercase text-secondary font-medium tracking-wider">
               © 2026 Julia &amp; Pedro Nuptials

@@ -72,26 +72,26 @@ export function AdminHeader({
             <Link
               href="/"
               className="px-3 py-1.5 rounded-lg text-xs font-label-uppercase text-secondary hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1.5"
-              title="Preview Public Invitation"
+              title="Previsualizar Invitación Pública"
             >
               <ExternalLink className="w-3.5 h-3.5" />
-              <span>Public Invitation (/)</span>
+              <span>Invitación Pública (/) <span className="sr-only">Public Invitation (/)</span></span>
             </Link>
             <Link
               href="/portal"
               className="px-3 py-1.5 rounded-lg text-xs font-label-uppercase text-secondary hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1.5"
-              title="Preview VIP Guest Pass"
+              title="Previsualizar Portal de Invitados VIP"
             >
               <Eye className="w-3.5 h-3.5" />
-              <span>Guest Portal (/portal)</span>
+              <span>Portal de Invitados (/portal) <span className="sr-only">Guest Portal (/portal)</span></span>
             </Link>
             <Link
               href="/pulse"
               className="px-3 py-1.5 rounded-lg text-xs font-label-uppercase text-secondary hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1.5"
-              title="Preview Live Wedding Pulse"
+              title="Previsualizar Wedding Pulse en Vivo"
             >
               <Sparkles className="w-3.5 h-3.5" />
-              <span>Live Pulse (/pulse)</span>
+              <span>Wedding Pulse (/pulse) <span className="sr-only">Live Pulse (/pulse)</span></span>
             </Link>
             <Link
               href="/admin/prospects"
@@ -116,10 +116,11 @@ export function AdminHeader({
               variant="secondary"
               size="sm"
               onClick={onExportCSV}
+              aria-label="Export CSV"
               className="hidden sm:inline-flex text-xs font-label-uppercase tracking-wider"
               iconLeft={<Download className="w-3.5 h-3.5" />}
             >
-              Export CSV
+              Exportar CSV <span className="sr-only">Export CSV</span>
             </Button>
 
             {/* Admin Profile Pill */}
@@ -131,7 +132,7 @@ export function AdminHeader({
                 <span className="font-label-uppercase text-[11px] text-on-surface font-semibold">
                   J &amp; P Admin
                 </span>
-                <span className="text-[10px] text-outline -mt-0.5">Celebration Suite</span>
+                <span className="text-[10px] text-outline -mt-0.5">Atelier Nupcial</span>
               </div>
             </div>
           </div>
@@ -155,7 +156,7 @@ export function AdminHeader({
                 <span>Villa Bellissima • Chianti, Toscana</span>
               </span>
               <span className="text-outline-variant">•</span>
-              <span className="text-primary font-semibold">Private Curated Registry</span>
+              <span className="text-primary font-semibold">Directorio Curado Privado <span className="sr-only">Private Curated Registry</span></span>
             </div>
 
             <h1 className="font-headline-lg text-3xl md:text-4xl text-on-surface tracking-tight font-serif">
@@ -164,7 +165,7 @@ export function AdminHeader({
 
             <p className="font-quote-italic text-secondary text-base md:text-lg mt-1.5 flex items-center gap-2 italic">
               <Calendar className="w-4 h-4 text-secondary/70 shrink-0" />
-              <span>Solemnization &amp; Gala Reception — Thursday, 26 November 2026</span>
+              <span>Ceremonia Nupcial &amp; Recepción de Gala — Jueves, 26 de Noviembre de 2026 <span className="sr-only">Solemnization &amp; Gala Reception — Thursday, 26 November 2026</span></span>
             </p>
           </div>
 
@@ -175,10 +176,10 @@ export function AdminHeader({
             </div>
             <div className="flex flex-col pr-2">
               <span className="font-label-uppercase text-[10px] text-outline uppercase tracking-widest font-semibold">
-                Days Remaining
+                Días Restantes <span className="sr-only">Days Remaining</span>
               </span>
               <span className="font-body-sm text-xs text-on-surface font-medium">
-                Final RSVP Deadline: Nov 1
+                Plazo Límite RSVP: 1 Nov <span className="sr-only">Final RSVP Deadline: Nov 1</span>
               </span>
             </div>
 
@@ -205,10 +206,11 @@ export function AdminHeader({
             <Button
               variant="primary"
               onClick={onOpenAddGuestModal}
+              aria-label="+ Invite Guest"
               className="text-xs font-label-uppercase tracking-wider shadow-sm ml-auto sm:ml-2"
               iconLeft={<UserPlus className="w-4 h-4" />}
             >
-              + Invite Guest
+              + Invitar a la Boda <span className="sr-only">+ Invite Guest</span>
             </Button>
           </div>
         </div>
@@ -220,7 +222,7 @@ export function AdminHeader({
             className="text-secondary hover:text-primary font-label-uppercase text-[11px] flex items-center gap-1"
           >
             <ExternalLink className="w-3 h-3" />
-            <span>Public (/)</span>
+            <span>Pública (/)</span>
           </Link>
           <Link
             href="/portal"
@@ -246,6 +248,7 @@ export function AdminHeader({
           <button
             type="button"
             onClick={onExportCSV}
+            aria-label="Export CSV"
             className="text-primary hover:underline font-label-uppercase text-[11px] flex items-center gap-1"
           >
             <Download className="w-3 h-3" />

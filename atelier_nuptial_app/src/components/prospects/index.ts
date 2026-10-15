@@ -7,3 +7,4 @@ export * from './capacity-settings-modal';
 export * from './migration-confirm-modal';
 export * from './prospects-table';
 export * from './prospects-header';
+export { AdminNavTabs } from '@/components/admin/admin-nav-tabs';

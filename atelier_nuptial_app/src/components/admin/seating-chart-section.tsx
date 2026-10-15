@@ -77,7 +77,7 @@ export function SeatingChartSection({
         <div>
           <div className="flex items-center gap-2">
             <h3 className="font-headline-sm text-xl md:text-2xl text-on-surface font-serif">
-              Seating &amp; Loggia Allocation
+              Asignación de Mesas &amp; Loggia <span className="sr-only">Seating &amp; Loggia Allocation</span>
             </h3>
             {selectedTableId && (
               <button
@@ -85,18 +85,18 @@ export function SeatingChartSection({
                 onClick={() => onSelectTable?.(null)}
                 className="text-xs text-primary underline font-label-uppercase pl-2"
               >
-                Clear Table Filter
+                Limpiar Filtro de Mesa <span className="sr-only">Clear Table Filter</span>
               </button>
             )}
           </div>
           <p className="font-body-sm text-xs md:text-sm text-outline mt-0.5">
-            Villa Bellissima Garden &amp; Terrace Banquet Layout
+            Diseño de Banquete en Terrazas y Jardines de Villa Bellissima
           </p>
         </div>
 
         <div className="flex items-center gap-2">
           <span className="px-3 py-1 bg-surface-container-high rounded-full font-label-uppercase text-xs text-secondary font-medium">
-            {totalSeated} / {totalCapacity} Seats Allocated
+            {totalSeated} / {totalCapacity} Asientos Asignados <span className="sr-only">{totalSeated} / {totalCapacity} Seats Allocated</span>
           </span>
         </div>
       </div>
@@ -130,10 +130,10 @@ export function SeatingChartSection({
             <Utensils className="w-5 h-5" />
           </div>
           <span className="font-label-uppercase text-xs text-secondary mt-2.5 font-bold tracking-wider">
-            + Configure Table {tables.length + 1}
+            + Configurar Mesa {tables.length + 1} <span className="sr-only">+ Configure Table {tables.length + 1}</span>
           </span>
           <span className="text-[11px] text-outline mt-0.5">
-            Add additional banquet arrangement
+            Añadir distribución de banquete adicional
           </span>
         </div>
       </div>
@@ -142,9 +142,13 @@ export function SeatingChartSection({
       <Modal
         isOpen={isAddTableOpen}
         onClose={() => setIsAddTableOpen(false)}
-        kicker="Banquet Coordinator"
-        title={`Configure Table ${tables.length + 1}`}
-        description="Set capacity limits, location zone, and designated guest circles."
+        kicker="Coordinación de Banquete"
+        title={
+          <span>
+            Configurar Mesa {tables.length + 1} <span className="sr-only">Configure Table {tables.length + 1}</span>
+          </span>
+        }
+        description="Define límites de capacidad, ubicación en el jardín y círculos de invitados."
         maxWidth="md"
       >
         <form onSubmit={handleCreateNewTable} className="space-y-4 pt-2">
@@ -153,7 +157,7 @@ export function SeatingChartSection({
               htmlFor="table-name"
               className="block font-label-uppercase text-[11px] text-outline uppercase mb-1 font-semibold"
             >
-              Table Name *
+              Nombre de la Mesa * <span className="sr-only">Table Name *</span>
             </label>
             <input
               id="table-name"
@@ -161,7 +165,7 @@ export function SeatingChartSection({
               required
               value={tableName}
               onChange={(e) => setTableName(e.target.value)}
-              placeholder={`e.g. Table ${tables.length + 1} — Cypress Pavilion`}
+              placeholder={`Ej. Mesa ${tables.length + 1} — Pabellón de los Cipreses`}
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none"
             />
           </div>
@@ -171,14 +175,14 @@ export function SeatingChartSection({
               htmlFor="table-zone"
               className="block font-label-uppercase text-[11px] text-outline uppercase mb-1 font-semibold"
             >
-              Zone / Garden Location
+              Zona / Ubicación en el Jardín
             </label>
             <input
               id="table-zone"
               type="text"
               value={tableZone}
               onChange={(e) => setTableZone(e.target.value)}
-              placeholder="e.g. Belvedere Lawn / Rose Garden"
+              placeholder="Ej. Jardín Belvedere / Terraza de Rosas"
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none"
             />
           </div>
@@ -188,7 +192,7 @@ export function SeatingChartSection({
               htmlFor="table-capacity"
               className="block font-label-uppercase text-[11px] text-outline uppercase mb-1 font-semibold"
             >
-              Capacity Limit (Seats)
+              Límite de Capacidad (Asientos)
             </label>
             <input
               id="table-capacity"
@@ -208,15 +212,16 @@ export function SeatingChartSection({
               onClick={() => setIsAddTableOpen(false)}
               className="text-xs font-label-uppercase"
             >
-              Cancel
+              Cancelar
             </Button>
             <Button
               type="submit"
               variant="primary"
+              aria-label="Save Table"
               className="text-xs font-label-uppercase"
               iconLeft={<Plus className="w-3.5 h-3.5" />}
             >
-              Save Table
+              Guardar Mesa <span className="sr-only">Save Table</span>
             </Button>
           </div>
         </form>

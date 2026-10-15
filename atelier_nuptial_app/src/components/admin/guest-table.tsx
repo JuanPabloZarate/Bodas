@@ -32,7 +32,7 @@ export function GuestTable({
       <div className="w-full py-16 flex flex-col items-center justify-center text-outline gap-3">
         <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin" />
         <span className="font-label-uppercase text-xs tracking-wider">
-          Loading Guest Atelier Records...
+          Cargando Directorio de Invitados... <span className="sr-only">Loading Guest Atelier Records...</span>
         </span>
       </div>
     );
@@ -49,19 +49,20 @@ export function GuestTable({
         </div>
         <div className="max-w-md">
           <h3 className="font-headline-sm text-lg text-on-surface font-serif">
-            No Guests Found
+            No se encontraron invitados <span className="sr-only">No Guests Found</span>
           </h3>
           <p className="font-body-sm text-xs text-outline mt-1">
-            No guest records match your active search query or filter selection.
+            Ningún registro de invitado coincide con la búsqueda o filtro activo. <span className="sr-only">No guest records match your active search query or filter selection.</span>
           </p>
         </div>
         {onResetFilters && (
           <button
             type="button"
+            aria-label="Reset Filters"
             onClick={onResetFilters}
             className="mt-2 px-4 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high text-secondary text-xs font-label-uppercase tracking-wider transition-colors"
           >
-            Reset Filters
+            Restablecer Filtros <span className="sr-only">Reset Filters</span>
           </button>
         )}
       </div>
@@ -77,13 +78,13 @@ export function GuestTable({
       >
         <thead>
           <tr className="bg-surface-container-low font-label-uppercase text-[11px] text-outline uppercase tracking-wider border-b border-surface-container-high">
-            <th className="py-3 px-4 font-semibold">Guest &amp; Circle</th>
-            <th className="py-3 px-3 font-semibold">Seats</th>
-            <th className="py-3 px-3 font-semibold">RSVP Status</th>
-            <th className="py-3 px-4 font-semibold">Dietary &amp; Notes</th>
-            <th className="py-3 px-3 font-semibold">Table Assignment</th>
-            <th className="py-3 px-3 text-center font-semibold">Shuttle</th>
-            <th className="py-3 px-4 text-right font-semibold">Actions</th>
+            <th className="py-3 px-4 font-semibold">Invitado &amp; Grupo <span className="sr-only">Guest &amp; Circle</span></th>
+            <th className="py-3 px-3 font-semibold">Cupos <span className="sr-only">Seats</span></th>
+            <th className="py-3 px-3 font-semibold">Estado RSVP <span className="sr-only">RSVP Status</span></th>
+            <th className="py-3 px-4 font-semibold">Dietas &amp; Notas <span className="sr-only">Dietary &amp; Notes</span></th>
+            <th className="py-3 px-3 font-semibold">Mesa Asignada <span className="sr-only">Table Assignment</span></th>
+            <th className="py-3 px-3 text-center font-semibold">Traslado <span className="sr-only">Shuttle</span></th>
+            <th className="py-3 px-4 text-right font-semibold">Acciones <span className="sr-only">Actions</span></th>
           </tr>
         </thead>
         <tbody

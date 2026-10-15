@@ -18,6 +18,8 @@ import {
   Gift,
   User,
   ShieldCheck,
+  Sparkles,
+  Users,
 } from 'lucide-react';
 
 export function Header() {
@@ -30,22 +32,24 @@ export function Header() {
   const gainNodeRef = useRef<GainNode | null>(null);
 
   const navLinks = [
-    { href: '/', label: 'Invitation' },
-    { href: '/portal', label: 'Guest Pass' },
-    { href: '/pulse', label: 'Wedding Pulse' },
-    { href: '/admin', label: 'Admin Atelier' },
+    { href: '/', label: 'Invitación', english: 'Invitation' },
+    { href: '/portal', label: 'Pase VIP', english: 'Guest Pass' },
+    { href: '/pulse', label: 'Wedding Pulse', english: 'Wedding Pulse' },
+    { href: '/admin', label: 'Invitados', english: 'Admin Atelier' },
+    { href: '/admin/prospects', label: 'Prospectos', english: 'Prospects' },
   ];
 
   const drawerSections = [
-    { href: '/', label: 'Home', icon: <Heart className="w-4 h-4 text-primary" /> },
-    { href: '/#story', label: 'Our Story', icon: <BookOpen className="w-4 h-4 text-secondary" /> },
-    { href: '/#chronogram', label: 'Timeline', icon: <Calendar className="w-4 h-4 text-secondary" /> },
+    { href: '/', label: 'Inicio', icon: <Heart className="w-4 h-4 text-primary" /> },
+    { href: '/#story', label: 'Nuestra Historia', icon: <BookOpen className="w-4 h-4 text-secondary" /> },
+    { href: '/#chronogram', label: 'Cronograma', icon: <Calendar className="w-4 h-4 text-secondary" /> },
     { href: '/#rsvp', label: 'RSVP', icon: <Mail className="w-4 h-4 text-primary" /> },
-    { href: '/#guestbook', label: 'Wishes', icon: <PenTool className="w-4 h-4 text-secondary" /> },
-    { href: '/#registry', label: 'Gifts & Registry', icon: <Gift className="w-4 h-4 text-secondary" /> },
+    { href: '/#guestbook', label: 'Deseos', icon: <PenTool className="w-4 h-4 text-secondary" /> },
+    { href: '/#registry', label: 'Regalos', icon: <Gift className="w-4 h-4 text-secondary" /> },
     { href: '/portal', label: 'VIP Pass', icon: <User className="w-4 h-4 text-primary" /> },
     { href: '/pulse', label: 'Wedding Pulse', icon: <Heart className="w-4 h-4 text-secondary" /> },
-    { href: '/admin', label: 'Admin Panel', icon: <ShieldCheck className="w-4 h-4 text-tertiary" /> },
+    { href: '/admin', label: 'Invitados Oficiales', icon: <ShieldCheck className="w-4 h-4 text-tertiary" /> },
+    { href: '/admin/prospects', label: 'Prospectos de Invitados', icon: <Sparkles className="w-4 h-4 text-secondary" /> },
   ];
 
   const toggleAudio = () => {
@@ -133,7 +137,7 @@ export function Header() {
                       : 'text-on-surface-variant hover:text-on-surface hover:bg-surface-container'
                   )}
                 >
-                  {link.label}
+                  {link.label} <span className="sr-only">{link.english}</span>
                 </Link>
               );
             })}
