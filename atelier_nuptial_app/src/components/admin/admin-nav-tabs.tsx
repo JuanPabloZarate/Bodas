@@ -37,6 +37,7 @@ export function AdminNavTabs({
         {/* Tab 1: Invitados Oficiales */}
         <Link
           href="/admin"
+          aria-current={activeTab === 'invitados' ? 'page' : undefined}
           className={cn(
             'group relative flex items-center justify-between p-4 rounded-xl transition-all duration-200 border text-left',
             activeTab === 'invitados'
@@ -88,6 +89,7 @@ export function AdminNavTabs({
         {/* Tab 2: Prospectos de Invitados */}
         <Link
           href="/admin/prospects"
+          aria-current={activeTab === 'prospectos' ? 'page' : undefined}
           className={cn(
             'group relative flex items-center justify-between p-4 rounded-xl transition-all duration-200 border text-left',
             activeTab === 'prospectos'

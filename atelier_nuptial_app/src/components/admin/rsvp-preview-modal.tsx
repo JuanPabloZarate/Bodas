@@ -56,6 +56,12 @@ export function RsvpPreviewModal({
     declined: <XCircle className="w-4 h-4 text-outline" />,
   }[guest.status || 'pending'];
 
+  const statusText = {
+    confirmed: 'Confirmado',
+    pending: 'Pendiente',
+    declined: 'Declinado',
+  }[guest.status || 'pending'];
+
   return (
     <Modal
       isOpen={isOpen}
@@ -102,7 +108,7 @@ export function RsvpPreviewModal({
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-surface-container-highest text-xs font-medium">
               {statusIcons}
               <span className="capitalize text-[11px] font-label-uppercase">
-                {guest.status || 'Pending'}
+                {statusText} <span className="sr-only">{guest.status || 'Pending'}</span>
               </span>
             </div>
           </div>
@@ -118,8 +124,9 @@ export function RsvpPreviewModal({
               </p>
             )}
             <div className="mt-2 inline-block px-3 py-0.5 rounded-full bg-surface-container-high text-secondary text-[11px] font-label-uppercase tracking-wider">
-              {guest.category || guest.household || 'Honored Guest'} • {guest.partySize}{' '}
-              {guest.partySize === 1 ? 'Seat' : 'Seats'}
+              {guest.category || guest.household || 'Invitado de Honor'} • {guest.partySize}{' '}
+              {guest.partySize === 1 ? 'Cupo' : 'Cupos'}
+              <span className="sr-only">{guest.partySize === 1 ? 'Seat' : 'Seats'}</span>
             </div>
           </div>
 
@@ -130,10 +137,10 @@ export function RsvpPreviewModal({
               <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
               <div>
                 <span className="block text-[10px] text-outline font-label-uppercase uppercase">
-                  Table
+                  Mesa <span className="sr-only">Table</span>
                 </span>
                 <span className="font-semibold text-on-surface">
-                  {guest.tableName || 'Unassigned'}
+                  {guest.tableName || 'Sin asignar'}
                 </span>
               </div>
             </div>
@@ -143,10 +150,10 @@ export function RsvpPreviewModal({
               <Home className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
               <div>
                 <span className="block text-[10px] text-outline font-label-uppercase uppercase">
-                  Suite
+                  Alojamiento <span className="sr-only">Suite</span>
                 </span>
                 <span className="font-semibold text-on-surface truncate block max-w-[120px]">
-                  {guest.suite || 'Private Villa Lodging'}
+                  {guest.suite || 'Alojamiento en Villa'}
                 </span>
               </div>
             </div>
@@ -156,10 +163,10 @@ export function RsvpPreviewModal({
               <Utensils className="w-4 h-4 text-tertiary shrink-0 mt-0.5" />
               <div>
                 <span className="block text-[10px] text-outline font-label-uppercase uppercase">
-                  Dietary
+                  Dieta <span className="sr-only">Dietary</span>
                 </span>
                 <span className="font-semibold text-on-surface truncate block max-w-[120px]">
-                  {(guest.dietaryRestrictions || []).join(', ') || 'Standard Menu'}
+                  {(guest.dietaryRestrictions || []).join(', ') || 'Menú Estándar'}
                 </span>
               </div>
             </div>
@@ -169,10 +176,10 @@ export function RsvpPreviewModal({
               <Bus className="w-4 h-4 text-primary shrink-0 mt-0.5" />
               <div>
                 <span className="block text-[10px] text-outline font-label-uppercase uppercase">
-                  Shuttle
+                  Traslado <span className="sr-only">Shuttle</span>
                 </span>
                 <span className="font-semibold text-on-surface">
-                  {guest.shuttleReserved ? 'Florence SMN' : 'Private Arrival'}
+                  {guest.shuttleReserved ? 'SMN Florencia' : 'Llegada Privada'}
                 </span>
               </div>
             </div>
@@ -186,10 +193,10 @@ export function RsvpPreviewModal({
               </div>
               <div className="flex flex-col text-left">
                 <span className="font-label-uppercase text-[10px] uppercase font-bold text-on-surface">
-                  Encrypted Digital Pass
+                  Pase Digital Cifrado <span className="sr-only">Encrypted Digital Pass</span>
                 </span>
                 <span className="text-[10px] font-mono">
-                  passcode: {guest.passcode || 'JP-8421'}
+                  Código: {guest.passcode || 'JP-8421'}
                 </span>
               </div>
             </div>

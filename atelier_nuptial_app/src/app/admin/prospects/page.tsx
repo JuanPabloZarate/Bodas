@@ -4,6 +4,7 @@
 import React, { useState, useCallback } from 'react';
 import Link from 'next/link';
 import { useProspectsStore } from '@/context/prospects-store';
+import { useWeddingStore } from '@/context/wedding-store';
 import { Prospect, CoupleSide, ProspectStatus } from '@/lib/prospects-types';
 import { showToast, ToastContainer } from '@/components/ui/toast';
 import {
@@ -19,6 +20,7 @@ import {
 } from '@/components/prospects';
 
 export default function AdminProspectsPage() {
+  const { state: weddingState } = useWeddingStore();
   const {
     prospects,
     capacity,
@@ -132,6 +134,7 @@ export default function AdminProspectsPage() {
         {/* Pestañas de Navegación entre Módulos */}
         <AdminNavTabs
           activeTab="prospectos"
+          guestCount={weddingState?.guests?.length ?? 142}
           prospectCount={prospects.length}
         />
 

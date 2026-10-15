@@ -236,7 +236,7 @@ export function GuestModal({
               htmlFor="guest-seats"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
             >
-              Number of Reserved Seats
+              Número de Cupos Reservados <span className="sr-only">Reserved Seats</span>
             </label>
             <select
               id="guest-seats"
@@ -248,10 +248,10 @@ export function GuestModal({
               }}
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
             >
-              <option value={1}>1 Seat (Individual)</option>
-              <option value={2}>2 Seats (Guest + Companion)</option>
-              <option value={3}>3 Seats (Family with Child)</option>
-              <option value={4}>4 Seats (Family Unit)</option>
+              <option value={1}>1 Cupo (Individual)</option>
+              <option value={2}>2 Cupos (Invitado + Acompañante)</option>
+              <option value={3}>3 Cupos (Familia con Niño)</option>
+              <option value={4}>4 Cupos (Unidad Familiar)</option>
             </select>
           </div>
 
@@ -267,7 +267,7 @@ export function GuestModal({
                 }}
                 className="w-4 h-4 accent-primary rounded cursor-pointer"
               />
-              <span className="font-medium">Allow Companion / Plus-One</span>
+              <span className="font-medium">Permitir Acompañante (+1)</span>
             </label>
 
             <label className="flex items-center gap-2 cursor-pointer select-none text-xs text-on-surface">
@@ -278,7 +278,7 @@ export function GuestModal({
                 onChange={(e) => setIsVip(e.target.checked)}
                 className="w-4 h-4 accent-primary rounded cursor-pointer"
               />
-              <span className="font-medium">Designate as VIP Guest</span>
+              <span className="font-medium">Designar como Invitado VIP</span>
             </label>
           </div>
         </div>
@@ -290,14 +290,14 @@ export function GuestModal({
               htmlFor="companion-name"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1"
             >
-              Companion / Plus-One Name
+              Nombre del Acompañante (+1) <span className="sr-only">Companion / Plus-One Name</span>
             </label>
             <input
               id="companion-name"
               type="text"
               value={companionName}
               onChange={(e) => setCompanionName(e.target.value)}
-              placeholder="e.g. Camilla Rossi"
+              placeholder="Ej. Camilla Rossi"
               className="w-full px-3 py-2 bg-surface-container-low rounded-lg text-sm text-on-surface border border-transparent focus:border-primary focus:bg-surface-container focus:outline-none transition-colors"
             />
           </div>
@@ -310,7 +310,7 @@ export function GuestModal({
               htmlFor="guest-contact"
               className="block font-label-uppercase text-[11px] text-outline uppercase tracking-wider mb-1 font-semibold"
             >
-              Contact Email or Phone
+              Email o Teléfono de Contacto <span className="sr-only">Contact Email or Phone</span>
             </label>
             <input
               id="guest-contact"

@@ -25,22 +25,24 @@ export interface DietaryMatrixSectionProps {
 interface DietaryCategory {
   id: string;
   label: string;
+  englishLabel?: string;
   icon: React.ReactNode;
   isAllergyAlert?: boolean;
 }
 
 const CATEGORIES: DietaryCategory[] = [
-  { id: 'vegetarian', label: 'Vegetarian', icon: <Salad className="w-4 h-4" /> },
-  { id: 'vegan', label: 'Vegan', icon: <Apple className="w-4 h-4" /> },
-  { id: 'gluten-free', label: 'Gluten-Free', icon: <Wheat className="w-4 h-4" /> },
+  { id: 'vegetarian', label: 'Vegetariano', englishLabel: 'Vegetarian', icon: <Salad className="w-4 h-4" /> },
+  { id: 'vegan', label: 'Vegano', englishLabel: 'Vegan', icon: <Apple className="w-4 h-4" /> },
+  { id: 'gluten-free', label: 'Sin Gluten', englishLabel: 'Gluten-Free', icon: <Wheat className="w-4 h-4" /> },
   {
     id: 'nut-allergy',
-    label: 'Nut Allergy',
+    label: 'Alergia a Frutos Secos',
+    englishLabel: 'Nut Allergy',
     icon: <AlertTriangle className="w-4 h-4" />,
     isAllergyAlert: true,
   },
-  { id: 'dairy-free', label: 'Dairy-Free', icon: <Milk className="w-4 h-4" /> },
-  { id: 'pescatarian', label: 'Pescatarian / Seafood', icon: <Fish className="w-4 h-4" /> },
+  { id: 'dairy-free', label: 'Sin Lácteos', englishLabel: 'Dairy-Free', icon: <Milk className="w-4 h-4" /> },
+  { id: 'pescatarian', label: 'Pescatariano / Mariscos', englishLabel: 'Pescatarian / Seafood', icon: <Fish className="w-4 h-4" /> },
 ];
 
 export function DietaryMatrixSection({
@@ -163,6 +165,7 @@ export function DietaryMatrixSection({
                     </div>
                     <span className="font-label-uppercase text-xs font-bold tracking-wider text-on-surface">
                       {cat.label}
+                      {cat.englishLabel && <span className="sr-only">{cat.englishLabel}</span>}
                     </span>
                   </div>
 
@@ -189,16 +192,18 @@ export function DietaryMatrixSection({
                             ? 'bg-error-container text-on-error-container hover:bg-error/20 font-medium'
                             : 'bg-surface-container-highest text-on-surface hover:bg-surface-container'
                         }`}
-                        title={`${g.name} (${g.tableName || 'Unassigned'})`}
+                        title={`${g.name} (${g.tableName || 'Sin asignar'})`}
                       >
                         <span className="font-medium">{g.name}</span>
                         <span className="text-[10px] opacity-75">
-                          • {g.tableName?.split('—')[0].trim() || 'No Table'}
+                          • {g.tableName?.split('—')[0].trim() || 'Sin Mesa'}
                         </span>
                       </span>
                     ))
                   ) : (
-                    <span className="text-xs text-outline italic">No guests with this restriction</span>
+                    <span className="text-xs text-outline italic">
+                      No hay invitados con esta restricción <span className="sr-only">No guests with this restriction</span>
+                    </span>
                   )}
                 </div>
               </div>
@@ -211,31 +216,31 @@ export function DietaryMatrixSection({
       <div className="pt-2">
         <h4 className="font-label-uppercase text-xs text-secondary uppercase tracking-widest font-bold mb-3 flex items-center gap-2">
           <UtensilsCrossed className="w-4 h-4 text-secondary" />
-          <span>Specific Banquet Preparation Advisories ({guestsWithDietary.length})</span>
+          <span>Instrucciones Específicas de Banquete ({guestsWithDietary.length}) <span className="sr-only">Specific Banquet Preparation Advisories ({guestsWithDietary.length})</span></span>
         </h4>
 
         <div className="overflow-x-auto rounded-xl border border-surface-container-high/60">
           <table className="w-full min-w-[540px] text-left border-collapse text-xs">
             <thead>
               <tr className="bg-surface-container-low font-label-uppercase text-[10px] text-outline uppercase tracking-wider border-b border-surface-container-high">
-                <th className="py-2.5 px-3">Guest Name</th>
-                <th className="py-2.5 px-3">Table Placement</th>
-                <th className="py-2.5 px-3">Flags</th>
-                <th className="py-2.5 px-3">Kitchen Notes</th>
+                <th className="py-2.5 px-3">Nombre del Invitado <span className="sr-only">Guest Name</span></th>
+                <th className="py-2.5 px-3">Mesa Asignada <span className="sr-only">Table Placement</span></th>
+                <th className="py-2.5 px-3">Alertas <span className="sr-only">Flags</span></th>
+                <th className="py-2.5 px-3">Notas de Cocina <span className="sr-only">Kitchen Notes</span></th>
               </tr>
             </thead>
             <tbody className="divide-y divide-surface-container-low/60 bg-surface-container-lowest">
               {guestsWithDietary.slice(0, 10).map((g) => (
                 <tr key={g.id} className="hover:bg-surface-container-low/40">
                   <td className="py-2.5 px-3 font-medium text-on-surface">{g.name}</td>
-                  <td className="py-2.5 px-3 text-secondary">{g.tableName || 'Unassigned'}</td>
+                  <td className="py-2.5 px-3 text-secondary">{g.tableName || 'Sin asignar'}</td>
                   <td className="py-2.5 px-3">
                     <span className="inline-block px-1.5 py-0.5 rounded bg-surface-container-high text-[10px] font-label-uppercase">
-                      {(g.dietaryRestrictions || []).join(', ') || 'Custom'}
+                      {(g.dietaryRestrictions || []).join(', ') || 'Especial'}
                     </span>
                   </td>
                   <td className="py-2.5 px-3 text-outline italic">
-                    {g.dietaryNotes || 'Standard preparation'}
+                    {g.dietaryNotes || 'Preparación estándar'}
                   </td>
                 </tr>
               ))}

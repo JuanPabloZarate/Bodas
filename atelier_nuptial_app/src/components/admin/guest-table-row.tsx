@@ -181,7 +181,7 @@ export function GuestTableRow({
             type="button"
             onClick={() => onCopyLink(guest)}
             className="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors"
-            title="Copy Personalized Invitation Link"
+            title="Copiar enlace de invitación personalizada"
             aria-label={`Copy link for ${guest.name}`}
           >
             <LinkIcon className="w-4 h-4" />
@@ -190,7 +190,7 @@ export function GuestTableRow({
             type="button"
             onClick={() => onPreview(guest)}
             className="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors"
-            title="Preview RSVP Pass"
+            title="Previsualizar pase RSVP y credencial"
             aria-label={`Preview pass for ${guest.name}`}
           >
             <Eye className="w-4 h-4" />
@@ -199,7 +199,7 @@ export function GuestTableRow({
             type="button"
             onClick={() => onEdit(guest)}
             className="p-1.5 text-secondary hover:text-on-surface hover:bg-surface-container-high rounded-lg transition-colors"
-            title="Edit Guest Record"
+            title="Editar registro del invitado"
             aria-label={`Edit ${guest.name}`}
           >
             <Pencil className="w-4 h-4" />
@@ -208,7 +208,7 @@ export function GuestTableRow({
             type="button"
             onClick={() => onDelete(guest.id)}
             className="p-1.5 text-error/80 hover:text-error hover:bg-error-container/40 rounded-lg transition-colors"
-            title="Delete Guest Record"
+            title="Eliminar invitado"
             aria-label={`Delete ${guest.name}`}
           >
             <Trash2 className="w-4 h-4" />

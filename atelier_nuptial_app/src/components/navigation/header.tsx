@@ -121,9 +121,16 @@ export function Header() {
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1.5 p-1 bg-surface-container-low/80 rounded-xl border border-outline-variant/30">
             {navLinks.map((link) => {
+              const isInvitadosActive = pathname === '/admin' || pathname === '/admin/invitados';
+              const isProspectosActive = pathname === '/admin/prospects' || pathname === '/admin/prospectos';
+
               const isActive =
                 link.href === '/'
                   ? pathname === '/'
+                  : link.href === '/admin'
+                  ? isInvitadosActive
+                  : link.href === '/admin/prospects'
+                  ? isProspectosActive
                   : pathname.startsWith(link.href);
 
               return (
