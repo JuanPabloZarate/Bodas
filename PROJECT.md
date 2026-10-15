@@ -65,6 +65,11 @@
 | 41 | Admin Wedding Configuration | Overview settings banner, countdown, and direct preview links to `/`, `/portal`, `/pulse` | M5 | R5 |
 | 42 | Vitest Test Suite | Comprehensive unit and component tests verifying R1 through R6 | M6 | R7 |
 | 43 | Production Build Verification | Zero errors in `npm run build` and `npx tsc --noEmit` | M6 | R7 |
+| 44 | Subpágina de Gestión de Prospectos | `/admin/prospects` route con tabla interactiva, filtros y selección múltiple | M7 | Boost |
+| 45 | Clasificación por Afinidad & Pareja | Clasificación de prospectos (Familia, Amigos, Trabajo, VIP) y lado (Julia, Pedro, Mutuo) | M7 | Boost |
+| 46 | Mini-Servicio IN / OUT & BD Prospectos | CRUD, importación CSV, sugerencias rápidas, exportación CSV/JSON y persistencia en localStorage | M7 | Boost |
+| 47 | Control de Capacidad Esperada vs Máxima | Registro de aforo con monitor visual, cálculo proyectado y alertas preventivas | M7 | Boost |
+| 48 | Proceso de Migración a Invitados Oficiales | Pipeline de migración de prospectos a la base de datos oficial con passcodes automáticos | M7 | Boost |
 
 ## Milestones
 | # | Name | Scope | Dependencies | Status |
@@ -75,6 +80,7 @@
 | M4 | Wedding Pulse Live Celebration Hub | `/pulse` route, Vibe Ticker, Live Photo Stream + Upload, Split Timeline, Guest Lounge, Reactions, DJ Queue | M1 | DONE (100 tests passing, build passing) |
 | M5 | Admin Portal | `/admin` route, KPI Cards, Guest Directory table + search/filters, Add/Edit Guest modal, Seating Chart, Dietary Matrix | M1 | DONE (129 tests passing, build passing) |
 | M6 | E2E Testing & Final Verification | Full Vitest test suite covering all modules, RSVP flow, Admin CRUD, Pulse reactions, production build verification | M1, M2, M3, M4, M5 | DONE (129/129 tests passing, 0 TypeScript errors, 7 static routes generated, Gate PASS) |
+| M7 | Prospects to Guests Module & Migration Pipeline | `/admin/prospects` route, Couple-driven prospect management, Affinity classification, Expected vs Max capacity registry, In-Out mini-service, LocalStorage database, migration to official guests DB | M1, M5 | DONE (157/157 tests passing, 0 TypeScript errors, 8 static routes generated, Vercel build PASS) |
 
 ## Interface Contracts
 

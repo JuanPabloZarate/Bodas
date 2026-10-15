@@ -5,6 +5,7 @@ import React, { useState, useMemo, useCallback } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { useWeddingStore } from '@/context/wedding-store';
+import { useProspectsStore } from '@/context/prospects-store';
 import { Guest, SeatingTable } from '@/lib/types';
 import { showToast, ToastContainer } from '@/components/ui/toast';
 import {
@@ -24,9 +25,12 @@ import {
   Bus,
   MessageSquareQuote,
   Sparkles,
+  Users,
+  ArrowRight,
 } from 'lucide-react';
 
 export default function AdminPage() {
+  const { prospects } = useProspectsStore();
   const {
     state,
     kpis,
@@ -279,6 +283,41 @@ export default function AdminPage() {
               </span>
             </div>
           </div>
+        </section>
+
+        {/* Subpage Banner: Módulo de Prospectos a Invitados */}
+        <section
+          aria-label="Gestión de Prospectos a Invitados"
+          className="w-full bg-gradient-to-r from-surface-container-low via-surface-container-lowest to-surface-container-low rounded-2xl p-5 md:p-6 border border-secondary/25 shadow-xs flex flex-col md:flex-row items-center justify-between gap-4"
+        >
+          <div className="flex items-center gap-4">
+            <div className="w-12 h-12 rounded-xl bg-secondary-fixed flex items-center justify-center text-on-secondary-fixed shrink-0 shadow-xs">
+              <Users className="w-6 h-6" />
+            </div>
+            <div className="flex flex-col">
+              <div className="flex items-center gap-2">
+                <span className="font-label-uppercase text-[10px] text-secondary font-bold uppercase tracking-wider">
+                  Módulo de la Pareja • Subpágina
+                </span>
+                <span className="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed text-[10px] font-label-uppercase font-semibold">
+                  {prospects.length} Prospectos en Pipeline
+                </span>
+              </div>
+              <h3 className="font-headline-sm text-lg text-on-surface font-serif mt-0.5">
+                Gestión y Migración de Prospectos a Invitados
+              </h3>
+              <p className="font-body-sm text-xs text-on-surface-variant line-clamp-1">
+                Clasifica por afinidad (Julia &amp; Pedro), monitorea el aforo esperado vs máximo y migra candidatos a la base de datos oficial.
+              </p>
+            </div>
+          </div>
+
+          <Link
+            href="/admin/prospects"
+            className="shrink-0 px-4 py-2.5 rounded-xl bg-primary text-on-primary font-label-uppercase text-xs tracking-wider font-semibold hover:bg-primary-container hover:text-on-primary-container transition-all flex items-center gap-2 shadow-sm"
+          >
+            <span>Gestionar Prospectos →</span>
+          </Link>
         </section>
 
         {/* 4. Guest Atelier Directory Table Section */}

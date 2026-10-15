@@ -12,6 +12,7 @@ import {
   ExternalLink,
   ShieldCheck,
   Sparkles,
+  Users,
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
@@ -90,10 +91,25 @@ export function AdminHeader({
               <Sparkles className="w-3.5 h-3.5" />
               <span>Live Pulse (/pulse)</span>
             </Link>
+            <Link
+              href="/admin/prospects"
+              className="px-3 py-1.5 rounded-lg text-xs font-label-uppercase text-primary hover:text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1.5 font-semibold"
+              title="Gestión de Prospectos a Invitados"
+            >
+              <Users className="w-3.5 h-3.5" />
+              <span>Prospectos (/admin/prospects)</span>
+            </Link>
           </nav>
 
           {/* Header Action Controls */}
           <div className="flex items-center gap-2">
+            <Link
+              href="/admin/prospects"
+              className="hidden xl:inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-xs font-label-uppercase tracking-wider border border-secondary/40 text-secondary hover:bg-secondary/10 transition-colors"
+            >
+              <Users className="w-3.5 h-3.5" />
+              <span>Prospectos</span>
+            </Link>
             <Button
               variant="secondary"
               size="sm"
@@ -164,6 +180,14 @@ export function AdminHeader({
               </span>
             </div>
 
+            <Link
+              href="/admin/prospects"
+              className="text-xs font-label-uppercase tracking-wider px-3 py-2 rounded-lg border border-secondary text-secondary hover:bg-secondary/10 transition-colors hidden sm:flex items-center gap-1.5"
+            >
+              <Users className="w-3.5 h-3.5" />
+              <span>Prospectos</span>
+            </Link>
+
             <Button
               variant="primary"
               onClick={onOpenAddGuestModal}
@@ -197,6 +221,13 @@ export function AdminHeader({
           >
             <Sparkles className="w-3 h-3" />
             <span>Live (/pulse)</span>
+          </Link>
+          <Link
+            href="/admin/prospects"
+            className="text-primary hover:underline font-label-uppercase text-[11px] flex items-center gap-1 font-semibold"
+          >
+            <Users className="w-3 h-3" />
+            <span>Prospectos</span>
           </Link>
           <button
             type="button"
